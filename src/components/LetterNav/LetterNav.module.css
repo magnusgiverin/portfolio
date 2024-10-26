@@ -1,0 +1,105 @@
+.nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 100;
+  align-items: center;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition added here */
+}
+
+.initialHide {
+  opacity: 0;
+  position: fixed;
+}
+
+.navItem:hover,
+.navItem.active {
+  color: #ffffff; /* Highlight color for active section */
+}
+
+.nav.show {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.nav.hide {
+  opacity: 0; /* No need to move off screen, just fade out */
+  transform: translateX(-100%); /* Optional: move off screen */
+  animation: slideOutOfView 0.5s ease forwards;
+}
+
+.navItem {
+  font-size: 20px;
+  color: rgb(78, 78, 78);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    left: 7px;
+    gap: 3px;
+  }
+  .navItem {
+    font-size: 18px;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutOfView {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.flicker {
+  animation: flicker 0.4s ease-in-out;
+}

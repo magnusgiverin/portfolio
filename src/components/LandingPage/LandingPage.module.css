@@ -194,8 +194,6 @@
   }
 }
 
-
-
 .locked {
   pointer-events: none;
   /* Prevent any pointer events */

@@ -1,66 +1,59 @@
 import { useRef, useState, useEffect } from 'react';
 import LandingPage from '../components/LandingPage/LandingPage';
 import ProjectsPage from '../components/ProjectsPage/ProjectsPage';
-import styles from '../styles/Index.module.css';
+import LetterNav from '../components/LetterNav/LetterNav';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState(null);
-  const landingPageRef = useRef(null);
-  const projectPageRef = useRef(null);
+    const landingPageRef = useRef(null);
+    const projectPageRef = useRef(null);
+    const aboutPageRef = useRef(null);
+    const experiencePageRef = useRef(null);
+    const skillsPageRef = useRef(null);
 
-  // Declare sections outside of useEffect
-  const sections = [landingPageRef, projectPageRef];
+    const sections = [projectPageRef, aboutPageRef, skillsPageRef, experiencePageRef];
+    const [showNav, setShowNav] = useState(false);
 
-  useEffect(() => {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = sections.findIndex((ref) => ref.current === entry.target);
-            setActiveSection(index);
-          }
-        });
-      },
-      { threshold: 0.5 }
+    useEffect(() => {
+        // Observer to control navigation visibility
+        const navVisibilityObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    setShowNav(!entry.isIntersecting);
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (landingPageRef.current) {
+            navVisibilityObserver.observe(landingPageRef.current);
+        }
+
+        return () => {
+            if (landingPageRef.current) {
+                navVisibilityObserver.unobserve(landingPageRef.current);
+            }
+        };
+    }, []);
+    
+    return (
+        <div>
+            <LetterNav sections={sections} showNav={showNav} />
+            {/* Page Sections */}
+            <div ref={landingPageRef}>
+                <LandingPage scrollToRef={projectPageRef} />
+            </div>
+            <div ref={projectPageRef}>
+                <ProjectsPage />
+            </div>
+            <div ref={aboutPageRef}>
+                <ProjectsPage />
+            </div>
+            <div ref={skillsPageRef}>
+                <ProjectsPage />
+            </div>
+            <div ref={experiencePageRef}>
+                <ProjectsPage />
+            </div>
+        </div>
     );
-
-    sections.forEach((ref) => {
-      if (ref.current) sectionObserver.observe(ref.current);
-    });
-
-    return () => {
-      sections.forEach((ref) => {
-        if (ref.current) sectionObserver.unobserve(ref.current);
-      });
-    };
-  }, [sections]);
-
-  return (
-    <div>
-      {/* Left-hand side navigation */}
-      <nav className={styles.nav}>
-        {['A', 'B'].map((label, index) => (
-          <span
-            key={label}
-            className={`${styles.navItem} ${activeSection === index ? styles.active : ''}`}
-            onClick={() => {
-              if (sections[index].current) {
-                sections[index].current.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            [{label}]
-          </span>
-        ))}
-      </nav>
-
-      {/* Page Sections */}
-      <div ref={landingPageRef}>
-        <LandingPage scrollToRef={projectPageRef}/>
-      </div>
-      <div ref={projectPageRef}>
-        <ProjectsPage />
-      </div>
-    </div>
-  );
 }
