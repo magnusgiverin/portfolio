@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 20px;
   transform: translateY(-50%);
   display: flex;

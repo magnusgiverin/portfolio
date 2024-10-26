@@ -12,6 +12,7 @@ const LandingPage = ({ scrollToRef }) => {
   const [scrollLocked, setScrollLocked] = useState(true);
   const [showArrow, setShowArrow] = useState(false);
   const [animationDelays, setAnimationDelays] = useState([]);
+  const [particlesVisible, setParticlesVisible] = useState(false);
 
   const particleContainerRef = useRef(null);
   const landingPageRef = useRef(null); // Ref for the landing page element
@@ -91,7 +92,7 @@ const LandingPage = ({ scrollToRef }) => {
   useEffect(() => {
     let particleInterval;
 
-    if (backgroundLight) {
+    if (particlesVisible) {
       // Start generating particles when backgroundLight is true
       particleInterval = setInterval(() => {
         setParticles((prev) => [...prev, generateParticle()]);
@@ -105,7 +106,7 @@ const LandingPage = ({ scrollToRef }) => {
       clearInterval(particleInterval);
       setParticles([]); // Ensure particles are cleared when unmounting or backgroundLight becomes false
     };
-  }, [backgroundLight]);
+  }, [particlesVisible]);
 
   // Intersection Observer to monitor component visibility
   useEffect(() => {
@@ -113,9 +114,9 @@ const LandingPage = ({ scrollToRef }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            setBackgroundLight(false); // Stop background light when out of view
+            setParticlesVisible(false); // Stop background light when out of view
           } else {
-            setBackgroundLight(true); // Optional: reset background light when in view
+            setParticlesVisible(true)
           }
         });
       },
