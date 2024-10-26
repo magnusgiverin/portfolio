@@ -7,7 +7,7 @@
     background: rgba(255, 255, 255, 0.024); /* Slightly opaque white for glass effect */
     backdrop-filter: blur(1px); /* Add backdrop blur for glass effect */
     transition: background-color 0.7s ease-in-out, opacity 0.7s ease, transform 0.7s ease; /* Transitions for smooth fade-in */
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 100; /* Ensure it's on top of other content */
     color: #fff; /* Text color */
     border-radius: 10px; /* Rounded corners */
     opacity: 0; /* Initially hidden */

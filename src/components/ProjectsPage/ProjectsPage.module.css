@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    color: rgb(184, 184, 184);
 }
 
 .curtainContainer {
@@ -41,7 +40,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
+    background-color: #242424;
     transform: translateX(0);
     /* Start covered */
     transition: transform 1.5s ease;

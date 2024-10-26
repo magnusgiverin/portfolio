@@ -3,6 +3,16 @@ import styles from './LetterNav.module.css';
 
 const LetterNav = ({ sections, showNav }) => {
     const [activeSection, setActiveSection] = useState(null);
+    const [initialHide, setInitialHide] = useState(true); // State to control initial hiding
+
+    useEffect(() => {
+        // Set initialHide to false after a brief delay
+        const timer = setTimeout(() => {
+            setInitialHide(false);
+        }, 100); // Adjust delay as needed
+
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         const sectionObserver = new IntersectionObserver(
@@ -33,7 +43,7 @@ const LetterNav = ({ sections, showNav }) => {
     const letters = ['A', 'B', 'C', 'D'];
 
     return (
-        <nav className={`${styles.nav} ${showNav ? styles.show : styles.hide}`}>
+        <nav className={`${styles.nav} ${showNav ? styles.show : styles.hide} ${initialHide ? styles.initialHide : ''}`}>
             {letters.map((label, index) => (
                 <span
                     key={label}

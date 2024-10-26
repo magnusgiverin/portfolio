@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Hind:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.darkScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(14, 14, 14); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200; /* Higher than your other elements */
+    color: white;
+    font-family: "Courier Prime", monospace;
+    text-align: left; /* Align text to the left */
+    padding: 20px;
+    overflow: hidden; /* Prevent scrolling */
+    padding: 0; /* Remove padding if any */
+    margin: 0; /* Remove margin if any */
+}
+
+.darkScreen {
+    background-color: #000;
+    color: #0f0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.consoleOutput {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    white-space: pre-wrap; /* Ensure preformatted text wraps properly */
+}
+
+.blinkingCursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #0f0;
+    animation: blink 1s step-start infinite;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@media (max-width: 640px) {
+    .consoleOutput {
+        font-size: 0.8rem;
+    }
+}

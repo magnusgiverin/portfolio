@@ -42,7 +42,7 @@ const ExperiencePage = () => {
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
                 style={{ marginBottom: '60px' }}
             >
-                Experience
+                Expes
             </div>
 
             <div ref={curtainRef} className={styles.curtainContainer}>
