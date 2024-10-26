@@ -1,0 +1,202 @@
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  transition: background-color 2s ease, background-image 2s ease;
+  /* Add background animation on light up */
+}
+
+/* Flicker Text Styling with responsive font size */
+.flickerText {
+  font-size: 16.5vw;
+  max-width: 90vw;
+  color: #fff;
+  gap: 2vw;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Flicker Effect for Each Letter */
+.flickerText span {
+  display: inline-block;
+  opacity: 0;
+  animation: flicker-animation 1.5s ease-in-out forwards;
+}
+
+/* Hidden state */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Visible state */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content Styling */
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.lightUp {
+  background-color: #141414;
+}
+
+@keyframes flicker-animation {
+  0% {
+    opacity: 0.1;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  60% {
+    opacity: 0.8;
+  }
+
+  70% {
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.waveFadeIn {
+  animation: wave-fade-in 0.4s ease-in-out forwards;
+}
+
+@keyframes wave-fade-in {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0); /* Start with text hidden from the left */
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0); /* Reveal the text fully */
+  }
+}
+
+@media (max-width: 640px) {
+  .flickerText {
+    font-size: 80px;
+    margin-right: 6px;
+    font-weight: 400;
+    flex-direction: column-reverse;
+    gap: 0px;
+    white-space: normal;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 30px);
+    /* Adjust centering considering navbar height */
+    padding-right: 30px;
+    transform: translateY(-50%);
+  }
+
+  .flickerText span {
+    transform: rotate(270deg);
+    display: block;
+    margin: -20px 0;
+    /* Adjust margin to bring letters closer */
+  }
+
+  /* Adjust centering based on available space above navbar */
+  .landingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 2s ease, background-image 2s ease;
+    /* Add background animation on light up */
+    padding-bottom: 60px;
+  }
+
+  /* Media Query for Smaller Screens */
+  .particle {
+    background: rgba(255, 255, 255, 0.5);
+    /* Slightly transparent for smaller screens */
+  }
+}
+
+/* Particle Effect */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  /* Prevent interaction */
+  animation: particleAnimation infinite;
+  /* Keep animation infinite */
+  z-index: 1;
+  /* Ensure particles are behind the main content */
+}
+
+.particleContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* Confine particles to the height of the screen */
+  overflow: hidden;
+  pointer-events: none;
+  /* So it doesn't interfere with user interactions */
+}
+
+@keyframes particleAnimation {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(100vw, 100vh);
+    /* Move particles diagonally */
+    opacity: 0;
+  }
+}
+
+
+
+.locked {
+  pointer-events: none;
+  /* Prevent any pointer events */
+}
