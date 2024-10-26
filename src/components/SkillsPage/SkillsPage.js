@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './ProjectsPage.module.css';
+import styles from './SkillsPage.module.css';
 import PageHeader from '../PageHeader/PageHeader';
 
-const ProjectsPage = () => {
+const SkillsPage = () => {
     const [showMore, setShowMore] = useState(false);
     const curtainRef = useRef(null);
     const largeTextRef = useRef(null);
@@ -42,7 +42,7 @@ const ProjectsPage = () => {
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
                 style={{ marginBottom: '60px' }}
             >
-                Projects
+                Skills
             </div>
 
             <div ref={curtainRef} className={styles.curtainContainer}>
@@ -63,4 +63,4 @@ const ProjectsPage = () => {
     );
 };
 
-export default ProjectsPage;
+export default SkillsPage;

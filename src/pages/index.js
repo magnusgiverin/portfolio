@@ -2,6 +2,9 @@ import { useRef, useState, useEffect } from 'react';
 import LandingPage from '../components/LandingPage/LandingPage';
 import ProjectsPage from '../components/ProjectsPage/ProjectsPage';
 import LetterNav from '../components/LetterNav/LetterNav';
+import AboutPage from '../components/AboutPage/AboutPage';
+import SkillsPage from '../components/SkillsPage/SkillsPage';
+import ExperiencePage from '../components/ExperiencePage/ExperiencePage';
 
 export default function Home() {
     const landingPageRef = useRef(null);
@@ -46,13 +49,13 @@ export default function Home() {
                 <ProjectsPage />
             </div>
             <div ref={aboutPageRef}>
-                <ProjectsPage />
+                <AboutPage />
             </div>
             <div ref={skillsPageRef}>
-                <ProjectsPage />
+                <SkillsPage />
             </div>
             <div ref={experiencePageRef}>
-                <ProjectsPage />
+                <ExperiencePage />
             </div>
         </div>
     );

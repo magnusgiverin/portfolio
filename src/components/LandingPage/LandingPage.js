@@ -140,7 +140,7 @@ const LandingPage = ({ scrollToRef }) => {
   useEffect(() => {
     // Set random delays on the client side only after the first render
     setAnimationDelays(
-      text.split("").map(() => Math.random() * 1.6 + 0.3)
+      text.split("").map(() => Math.random() * 1.8 + 0.3)
     );
   }, [text]);
 
