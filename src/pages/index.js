@@ -17,6 +17,9 @@ export default function Home() {
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
+        // Scroll to the top of the page on refresh
+        window.scrollTo(0, 0);
+
         // Observer to control navigation visibility
         const navVisibilityObserver = new IntersectionObserver(
             (entries) => {
