@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './ProjectsPage.module.css';
+import styles from './ProjectsComponent.module.css';
 
 import PageHeader from '../PageHeader/PageHeader';
 import TerminalAnimation from './TerminalAnimation';
 
-const ProjectsPage = () => {
+const ProjectsComponent = () => {
     const curtainRef = useRef(null);
     const largeTextRef = useRef(null);
     const [fadeInText, setFadeInText] = useState(false);
@@ -39,7 +39,7 @@ const ProjectsPage = () => {
     };
     
     return (
-        <div className={`min-h-screen ${styles.projectsPage} ${styles.lightUp}`}>
+        <div className={`min-h-screen ${styles.projectsComponent}`}>
             <PageHeader />
 
             <div 
@@ -61,4 +61,4 @@ const ProjectsPage = () => {
     );
 };
 
-export default ProjectsPage;
+export default ProjectsComponent;

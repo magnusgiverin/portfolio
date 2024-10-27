@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './SkillsPage.module.css';
+import styles from './AboutComponent.module.css';
 import PageHeader from '../PageHeader/PageHeader';
 
-const SkillsPage = () => {
+const AboutComponent = () => {
     const largeTextRef = useRef(null);
     const [fadeInText, setFadeInText] = useState(false);
 
@@ -22,17 +22,17 @@ const SkillsPage = () => {
     }, []);
 
     return (
-        <div className={`min-h-screen ${styles.projectsPage} ${styles.lightUp}`}>
+        <div className={`min-h-screen ${styles.aboutComponent} ${styles.lightUp}`}>
            <PageHeader/>
             <div 
                 ref={largeTextRef} 
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
                 style={{ marginBottom: '60px' }}
             >
-                Skills
+                About
             </div>
         </div>
     );
 };
 
-export default SkillsPage;
+export default AboutComponent;

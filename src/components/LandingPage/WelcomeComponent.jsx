@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import styles from './LandingPage.module.css';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import styles from './WelcomeComponent.module.css';
 import Navbar from '../Navbar/Navbar';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
 
-const LandingPage = ({ scrollToRef }) => {
+const WelcomeComponent = ({ scrollToRef }) => {
   const text = "WELCOME";
   const [lettersState, setLettersState] = useState(Array(text.length).fill(false));
   const [backgroundLight, setBackgroundLight] = useState(false);
@@ -13,6 +13,7 @@ const LandingPage = ({ scrollToRef }) => {
   const [showArrow, setShowArrow] = useState(false);
   const [animationDelays, setAnimationDelays] = useState([]);
   const [particlesVisible, setParticlesVisible] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false);
 
   const particleContainerRef = useRef(null);
   const landingPageRef = useRef(null); // Ref for the landing page element
@@ -31,7 +32,7 @@ const LandingPage = ({ scrollToRef }) => {
           });
         }, index * Math.random() * 60 + 14);
       });
-    }, 1500);
+    }, 1100);
 
     return () => {
       clearTimeout(flickerTimeout);
@@ -98,7 +99,6 @@ const LandingPage = ({ scrollToRef }) => {
         setParticles((prev) => [...prev, generateParticle()]);
       }, 400);
     } else {
-      // Clear particles if backgroundLight is false
       setParticles([]);
     }
 
@@ -114,7 +114,7 @@ const LandingPage = ({ scrollToRef }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            setParticlesVisible(false); // Stop background light when out of view
+            setParticlesVisible(false);
           } else {
             setParticlesVisible(true)
           }
@@ -140,16 +140,24 @@ const LandingPage = ({ scrollToRef }) => {
   useEffect(() => {
     // Set random delays on the client side only after the first render
     setAnimationDelays(
-      text.split("").map(() => Math.random() * 1.8 + 0.3)
+      text.split("").map(() => Math.random())
     );
   }, [text]);
 
+  const handleOverlayStatus = (status) => {
+    // Only log or perform actions when the status changes
+    if (overlayVisible !== status) {
+      setOverlayVisible(status);
+      setParticlesVisible(!status);
+    }
+  }
+
   return (
     <div
-      className={`h-screen ${styles.landingPage} ${backgroundLight ? styles.lightUp : ''} ${scrollLocked ? styles.locked : ''}`}
+      className={`h-screen ${styles.welcomeComponent} ${backgroundLight ? styles.lightUp : ''} ${scrollLocked ? styles.locked : ''}`}
       ref={landingPageRef} // Attach the ref to the landing page div
     >
-      <Navbar visible={backgroundLight} />
+      <Navbar visible={backgroundLight} sendOverLayStatus={handleOverlayStatus}/>
       <div className={styles.flickerText}>
         {text.split("").map((letter, index) => (
           <span
@@ -158,7 +166,6 @@ const LandingPage = ({ scrollToRef }) => {
               display: 'inline-block',
               animationDelay: !lettersState[index] && `${animationDelays[index]}s`,
               opacity: lettersState[index] ? 1 : 0,
-              transition: 'opacity 0.3s ease',
             }}
             className='flex items-center justify-center'
           >
@@ -195,4 +202,4 @@ const LandingPage = ({ scrollToRef }) => {
   );
 };
 
-export default LandingPage;
+export default WelcomeComponent;

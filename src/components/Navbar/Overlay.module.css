@@ -1,0 +1,313 @@
+/* Overlay background styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #28292c;
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+/* Overlay visible styling */
+.overlay-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Overlay content styling */
+.overlayContent {
+    margin-top: 100px;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    color: rgb(189, 189, 189);
+    overflow-y: auto;
+}
+
+/* Navigation section styling */
+.navSection {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.navLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2.5rem; /* Large font size for navigation */
+}
+
+.navLinks > li {
+    margin: 1.5rem 0;
+    cursor: pointer;
+    position: relative; /* Allow positioning of sublinks */
+    opacity: 0; /* Start hidden */
+    animation: flyInNav 0.5s forwards ease-in-out; /* Apply fly-in animation */
+}
+
+.navLinks > li:nth-child(1) { animation-delay: 0.2s; } /* Stagger effect */
+.navLinks > li:nth-child(2) { animation-delay: 0.4s; }
+.navLinks > li:nth-child(3) { animation-delay: 0.6s; }
+.navLinks > li:nth-child(4) { animation-delay: 0.8s; }
+.navLinks > li:nth-child(5) { animation-delay: 1s; }
+
+.navLinks > li > a {
+    transition: color 0.3s;
+}
+
+.navLinks > li:hover > a {
+    color: #ffffff; /* Highlight the parent link on hover */
+}
+
+.sublinks {
+    list-style: none;
+    padding-left: 20px; /* Indent for sublinks */
+    margin: 0; /* Reset margin for sublinks */
+}
+
+.sublinks li {
+    margin: 0.5rem 0; /* Smaller margin for sublinks */
+    font-size: 1.8rem; /* Adjust size for sublinks */
+    transition: color 0.3s;
+    opacity: 0; /* Start hidden */
+    animation: flyInSublink 0.5s forwards ease-in-out; /* Apply fly-in animation */
+}
+
+.sublinks li:nth-child(1) { animation-delay: 0.3s; } /* Stagger effect */
+.sublinks li:nth-child(2) { animation-delay: 0.5s; }
+.sublinks li:nth-child(3) { animation-delay: 0.7s; }
+
+.sublinks li a {
+    color: rgb(189, 189, 189); /* Default color for sublinks */
+}
+
+.sublinks li:hover a {
+    color: #ffffff; /* Highlight only the hovered sublink */
+}
+
+/* Contact section styling */
+.contactSection {
+    flex: 1;
+    text-align: right;
+}
+
+.profilePic {
+    text-align: right;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular profile picture */
+    margin: 10px 0;
+}
+
+.mainTitle {
+    border-top: 1px solid #fff; /* Dividing line */
+    padding-top: 25px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: slideInContact 0.5s forwards ease-in-out;
+    animation-delay: 0.6s; /* Delay for contact section */
+}
+
+/* Contact form styling */
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: flyInContact 0.5s forwards ease-in-out;
+}
+
+.inputField, .textareaField {
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+.textareaField {
+    height: 170px;
+}
+
+.inputField::placeholder, .textareaField::placeholder {
+    color: #ccc;
+}
+
+.submitButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #242424;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submitButton:hover {
+    background: #ccc;
+}
+
+.profileContainer {
+    display: flex;              /* Use flexbox for alignment */
+    align-items: center;       /* Center vertically */
+    margin: 20px 0;           /* Adjust spacing if needed */
+}
+
+.linksContainer {
+    display: flex;              /* Use flexbox for the links */
+    margin-left: 40px;         /* Space between the profile picture and links */
+    gap: 40px;                 /* Even spacing between links */
+}
+
+.socialLink {
+    text-decoration: none;      /* Remove underline from links */
+    font-weight: bold;          /* Make the links bold */
+    opacity: 0;                /* Start hidden */
+    animation: flyInSocialLinks 0.8s forwards ease-in-out; /* Animation applied */
+}
+
+/* Adding delays for each child social link */
+.socialLink:nth-child(1) {
+    animation-delay: 0.4s; /* Delay for the first link */
+}
+
+.socialLink:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for the second link */
+}
+
+.socialLink:nth-child(3) {
+    animation-delay: 0.6s; /* Delay for the third link */
+}
+
+/* Fly-in animations */
+@keyframes flyInNav {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flyInSublink {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in animations */
+@keyframes slideInContact {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flyInSocialLinks {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for flying in contact section elements */
+@keyframes flyInContact {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .overlayContent {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 640px) {
+    .overlay {
+        height: 100vh;
+        min-height: 100vh;
+        flex-direction: column; /* Change to column layout on small screens */
+        overflow: auto; 
+        pointer-events: auto; 
+    }
+
+    .overlayContent {
+        padding-top: 20px;
+        padding-bottom: 100px;
+        margin-top: 0px;
+        flex-direction: column; /* Stack sections vertically on small screens */
+        width: 90%; /* Adjust width for smaller screens */
+        height: 100vh;
+        max-height: 100vh; /* Add max height for better scrolling */
+        overflow-y: auto; /* Ensure scrolling is possible */
+    }
+
+    .navLinks {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .sublinks {
+        padding-left: 5px; 
+    }
+
+    .sublinks li {
+        font-size: 1.7rem;
+    }
+
+    .inputField, .textareaField {
+        font-size: 0.9rem;
+    }
+
+    .mainTitle {
+        border-top: 0px;
+        border-bottom: 1px solid #fff; /* Dividing line */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        color: #ffffff;
+        font-size: 0.9rem;
+    }
+
+    .navSection {
+        margin-bottom: 30px;
+    }
+}
+
