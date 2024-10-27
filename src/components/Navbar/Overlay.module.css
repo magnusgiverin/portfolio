@@ -4,7 +4,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     background-color: #28292c;
     opacity: 0;
     pointer-events: none;
@@ -13,6 +14,7 @@
     align-items: center;
     justify-content: center;
     overflow-y: auto;
+    padding-bottom: 100px;
 }
 
 /* Overlay visible styling */
@@ -23,7 +25,7 @@
 
 /* Overlay content styling */
 .overlayContent {
-    margin-top: 100px;
+    padding-top: 100px;
     height: 90vh;
     display: flex;
     justify-content: space-between;
@@ -261,16 +263,15 @@
     }
 }
 
-/* Responsive styling */
-@media (max-width: 640px) {
+@media (max-width: 800px) {
     .overlay {
         height: 100vh;
         min-height: 100vh;
         flex-direction: column; /* Change to column layout on small screens */
         overflow: auto; 
         pointer-events: auto; 
+        padding-top: 80px;
     }
-
     .overlayContent {
         padding-top: 20px;
         padding-bottom: 100px;
@@ -279,7 +280,13 @@
         width: 90%; /* Adjust width for smaller screens */
         height: 100vh;
         max-height: 100vh; /* Add max height for better scrolling */
-        overflow-y: auto; /* Ensure scrolling is possible */
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 640px) {
+    .overlay {
+        padding-top: 0px;
     }
 
     .navLinks {
