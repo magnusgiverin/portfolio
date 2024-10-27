@@ -30,7 +30,6 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
         </div>
       </nav>
 
-      {/* Overlay Component */}
         <Overlay visible={overlayVisible} />
     </>
   );

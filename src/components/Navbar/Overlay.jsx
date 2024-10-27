@@ -19,7 +19,7 @@ const Overlay = ({ visible, onClose }) => {
       document.body.style.overflow = 'auto';
     }
   }, [visible]);
-  
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -28,11 +28,11 @@ const Overlay = ({ visible, onClose }) => {
 
   return (
     <div
-      className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
-      onClick={onClose}
-      aria-hidden={!visible}
-    >
-      {visible && (
+    className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
+    onClick={onClose}
+    aria-hidden={!visible}
+    style={{ zIndex: visible ? 90 : 70 }} // Set z-index conditionally
+  >
         <div className={styles.overlayContent} key={animationKey} onClick={(e) => e.stopPropagation()}>
           <div className={styles.navSection}>
             <h1 className={styles.mainTitle}>Navigation</h1>
@@ -95,7 +95,6 @@ const Overlay = ({ visible, onClose }) => {
             </form>
           </div>
         </div>
-      )}
     </div>
   );
 };
