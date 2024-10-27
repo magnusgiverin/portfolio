@@ -1,19 +1,14 @@
-'use server';
-
 import React, { useEffect, useState } from 'react';
 import styles from './Overlay.module.css';
 import navigationLinks from '../../data/navigation';
 import { LuCornerDownRight } from "react-icons/lu";
-import { Resend } from 'resend';
-import Image from 'next/image';
+import { sendEmail } from './sendEmail';
 
 const Overlay = ({ visible, onClose }) => {
   const [animationKey, setAnimationKey] = useState(0); // Key to reset animations
   const [senderName, setSenderName] = useState('');
   const [senderEmail, setSenderEmail] = useState('');
   const [message, setMessage] = useState('');
-
-  const resend = new Resend("re_UU6jea9o_6GbWufDECFxBSGTdoQ3bLGqf");
 
   // Lock scrolling when overlay is visible
   useEffect(() => {
@@ -24,49 +19,11 @@ const Overlay = ({ visible, onClose }) => {
       document.body.style.overflow = 'auto';
     }
   }, [visible]);
-
-  const formatEmail = (name, message, email) => {
-    return `
-      <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
-        <h1 style="color: #007BFF;">Melding fra ${name}</h1>
-        <p><strong>E-post:</strong> ${email}</p>
-        <hr style="border: 1px solid #007BFF;" />
-        <h2>Beskrivelse:</h2>
-        <p>${message}</p>
-      </div>
-    `;
-  };
-
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const emailContent = formatEmail(senderName, message, senderEmail);
-
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'Contact Form <onboarding@resend.dev>',
-        to: 'magnusgiverin@icloud.com',
-        subject: 'Message from Contact Form - ' + senderName,
-        html: emailContent,
-        headers: {
-          Authorization: 'Bearer re_UU6jea9o_6GbWufDECFxBSGTdoQ3bLGqf'
-        }
-      });
-
-      if (error) {
-        console.error({ error });
-        alert('Failed to send email. Please try again later.');
-        return;
-      }
-
-      setSenderName('');
-      setSenderEmail('');
-      setMessage('');
-      alert('Email sent successfully!');
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send email. Please try again later.');
-    }
+    sendEmail(senderName, message, senderEmail);
   };
 
   return (
