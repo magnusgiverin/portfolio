@@ -30,7 +30,7 @@ const Overlay = ({ visible, onClose }) => {
     <div
     className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
     onClick={onClose}
-    style={{ zIndex: visible ? 90 : 10 }} // Set z-index conditionally
+    style={{ zIndex: visible ? 90 : 0 }} // Set z-index conditionally
   >
         <div className={styles.overlayContent} key={animationKey} onClick={(e) => e.stopPropagation()}>
           <div className={styles.navSection}>
