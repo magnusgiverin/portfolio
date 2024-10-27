@@ -13,12 +13,16 @@ const WelcomeComponent = ({ scrollToRef }) => {
   const [showArrow, setShowArrow] = useState(false);
   const [animationDelays, setAnimationDelays] = useState([]);
   const [particlesVisible, setParticlesVisible] = useState(false);
-  const [overlayVisible, setOverlayVisible] = useState(false);
 
   const particleContainerRef = useRef(null);
   const landingPageRef = useRef(null); // Ref for the landing page element
 
   useEffect(() => {
+
+    if(backgroundLight) {
+      return;
+    };
+
     // Flicker effect on letters
     document.body.style.overflow = 'hidden';
 
@@ -145,10 +149,10 @@ const WelcomeComponent = ({ scrollToRef }) => {
   }, [text]);
 
   const handleOverlayStatus = (status) => {
-    // Only log or perform actions when the status changes
-    if (overlayVisible !== status) {
-      setOverlayVisible(status);
-      setParticlesVisible(!status);
+    if(status === true) {
+      setParticlesVisible(false);
+    } else {
+      setParticlesVisible(true);
     }
   }
 
