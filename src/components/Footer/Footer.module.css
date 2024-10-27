@@ -1,0 +1,51 @@
+.footer {
+    background-color: #696a6e; /* Match the overlay background */
+    color: rgb(189, 189, 189);
+    padding: 20px;
+    text-align: center;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerTitle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.linksSection, .contactSection, .socialMediaSection {
+    margin: 20px 0;
+}
+
+.linksTitle, .contactTitle, .socialMediaTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.navLinks, .socialLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navLinks > li, .socialLinks > li {
+    margin: 10px 0;
+}
+
+.navLinks > li a, .socialLinks > li a {
+    color: rgb(189, 189, 189);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navLinks > li a:hover, .socialLinks > li a:hover {
+    color: #ffffff; /* Highlight on hover */
+}
+
+.footerAuthor {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
