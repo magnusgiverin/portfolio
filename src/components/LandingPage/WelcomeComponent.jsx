@@ -23,9 +23,6 @@ const WelcomeComponent = ({ scrollToRef }) => {
       return;
     };
 
-    // Flicker effect on letters
-    document.body.style.overflow = 'hidden';
-
     const flickerTimeout = setTimeout(() => {
       lettersState.forEach((_, index) => {
         setTimeout(() => {
@@ -40,7 +37,6 @@ const WelcomeComponent = ({ scrollToRef }) => {
 
     return () => {
       clearTimeout(flickerTimeout);
-      document.body.style.overflow = 'auto';
     };
   }, []);
 
@@ -49,7 +45,6 @@ const WelcomeComponent = ({ scrollToRef }) => {
     const backgroundTimer = setTimeout(() => {
       setBackgroundLight(true);
       setScrollLocked(false);
-      document.body.style.overflow = 'auto';
     }, 1550);
 
     return () => clearTimeout(backgroundTimer);

@@ -173,7 +173,6 @@
   height: 100vh;
   /* Confine particles to the height of the screen */
   overflow: hidden;
-  pointer-events: none;
   /* So it doesn't interfere with user interactions */
 }
 
