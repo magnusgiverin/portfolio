@@ -48,6 +48,9 @@ const Overlay = ({ visible, onClose }) => {
         to: 'magnusgiverin@icloud.com',
         subject: 'Message from Contact Form - ' + senderName,
         html: emailContent,
+        headers: {
+          Authorization: 'Bearer re_UU6jea9o_6GbWufDECFxBSGTdoQ3bLGqf'
+        }
       });
 
       if (error) {
@@ -100,7 +103,7 @@ const Overlay = ({ visible, onClose }) => {
           <div className={styles.contactSection}>
             <h1 className={styles.mainTitle}>Contact Me</h1>
             <div className={styles.profileContainer}> {/* New container for profile picture and links */}
-              <Image src="magnus.JPG" alt="Magnus" className={styles.profilePic} />
+              <img src="magnus.JPG" alt="Magnus" className={styles.profilePic} />
               <div className={styles.linksContainer}>
                 <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
                 <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
