@@ -5,6 +5,7 @@ import styles from './Overlay.module.css';
 import navigationLinks from '../../data/navigation';
 import { LuCornerDownRight } from "react-icons/lu";
 import { Resend } from 'resend';
+import Image from 'next/image';
 
 const Overlay = ({ visible, onClose }) => {
   const [animationKey, setAnimationKey] = useState(0); // Key to reset animations
@@ -99,7 +100,7 @@ const Overlay = ({ visible, onClose }) => {
           <div className={styles.contactSection}>
             <h1 className={styles.mainTitle}>Contact Me</h1>
             <div className={styles.profileContainer}> {/* New container for profile picture and links */}
-              <img src="public/magnus.JPG" alt="Magnus" className={styles.profilePic} />
+              <Image src="magnus.JPG" alt="Magnus" className={styles.profilePic} />
               <div className={styles.linksContainer}>
                 <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
                 <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
