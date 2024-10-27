@@ -6,9 +6,5 @@
     z-index: 100;
     font-size: 17px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 120px;
-    padding-left: 70px;
-    padding-right: 70px;
 }

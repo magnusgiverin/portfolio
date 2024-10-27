@@ -3,10 +3,10 @@
     position: absolute;
     bottom: 20px;
     opacity: 0; /* Start invisible */
-    left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.5s ease-in-out; /* Smooth transition for fade-in */
     animation: bounce 5s infinite; /* Keep the same speed but increase duration for less frequency */
+    justify-content: center;
 }
 
 .arrow {

@@ -55,5 +55,6 @@
 @media (max-width: 640px) {
     .consoleOutput {
         font-size: 0.8rem;
+        margin: 5px;
     }
 }
