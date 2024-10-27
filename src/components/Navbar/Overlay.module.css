@@ -176,10 +176,13 @@
 }
 
 .socialLink {
-    text-decoration: none;      /* Remove underline from links */
     font-weight: bold;          /* Make the links bold */
     opacity: 0;                /* Start hidden */
     animation: flyInSocialLinks 0.8s forwards ease-in-out; /* Animation applied */
+}
+
+.socialLink:hover {
+    text-decoration: underline;      /* Remove underline from links */
 }
 
 /* Adding delays for each child social link */
