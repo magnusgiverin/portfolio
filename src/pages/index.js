@@ -4,16 +4,16 @@ import ProjectsPage from '../components/ProjectsPage/ProjectsPage';
 import LetterNav from '../components/LetterNav/LetterNav';
 import AboutPage from '../components/AboutPage/AboutPage';
 import SkillsPage from '../components/SkillsPage/SkillsPage';
-import ExperiencePage from '../components/ExperiencePage/ExperiencePage';
+import CareerPage from '../components/CareerPage/CareerPage';
 
 export default function Home() {
     const landingPageRef = useRef(null);
     const projectPageRef = useRef(null);
     const aboutPageRef = useRef(null);
-    const experiencePageRef = useRef(null);
+    const careerPageRef = useRef(null);
     const skillsPageRef = useRef(null);
 
-    const sections = [projectPageRef, aboutPageRef, skillsPageRef, experiencePageRef];
+    const sections = [projectPageRef, aboutPageRef, skillsPageRef, careerPageRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -54,8 +54,8 @@ export default function Home() {
             <div ref={skillsPageRef}>
                 <SkillsPage />
             </div>
-            <div ref={experiencePageRef}>
-                <ExperiencePage />
+            <div ref={careerPageRef}>
+                <CareerPage />
             </div>
         </div>
     );

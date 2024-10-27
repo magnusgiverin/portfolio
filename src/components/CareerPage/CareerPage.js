@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './AboutPage.module.css';
+import styles from './CareerPage.module.css';
 import PageHeader from '../PageHeader/PageHeader';
 
-const AboutPage = () => {
+const ExperiencePage = () => {
     const largeTextRef = useRef(null);
     const [fadeInText, setFadeInText] = useState(false);
 
@@ -29,10 +29,10 @@ const AboutPage = () => {
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
                 style={{ marginBottom: '60px' }}
             >
-                About
+                Career
             </div>
         </div>
     );
 };
 
-export default AboutPage;
+export default ExperiencePage;

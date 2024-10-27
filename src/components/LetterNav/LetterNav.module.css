@@ -22,7 +22,7 @@
 
 .navItem:hover,
 .navItem.active {
-  color: #ffffff; /* Highlight color for active section */
+  color: #c5c5c5; /* Highlight color for active section */
 }
 
 .navItem {
