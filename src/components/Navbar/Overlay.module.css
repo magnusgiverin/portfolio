@@ -1,5 +1,4 @@
 /* Overlay background styling */
-/* Overlay background styling */
 .overlay {
     position: fixed;
     top: 0;
@@ -22,10 +21,12 @@
 
 /* Overlay content styling */
 .overlayContent {
+    gap: 30px;
     display: flex;
     height: max-content;
     flex-direction: row; /* Keep content in a row layout */
     width: 80%; /* Full width of the overlay with margins */
+    max-width: 2000px;
     margin-top: 100px; /* Space for the navbar */
     margin-left: auto; /* Center the content */
     margin-right: auto; /* Center the content */
@@ -291,6 +292,10 @@
         flex-direction: column; /* Stack sections vertically on small screens */
         width: 90%; /* Adjust width for smaller screens */
     }
+
+    .submitButton {
+        margin-bottom: 70px;
+    }
 }
 
 /* Responsive styling */
@@ -327,10 +332,6 @@
 
     .navSection {
         margin-bottom: 30px;
-    }
-
-    .submitButton {
-        margin-bottom: 100px;
     }
 }
 
