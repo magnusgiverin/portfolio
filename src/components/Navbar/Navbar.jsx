@@ -22,7 +22,7 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
 
         <div className={`${styles.buttons} ${visible ? styles.visible : styles.hidden}`}>
           <button
-            className="border-white border-2 flex items-center justify-center p-2 my-2 hover:text-gray-800 hover:bg-gray-100 transition-all duration-200"
+            className="border-white border-2 flex items-center justify-center p-2 my-2 hover:text-gray-800 hover:bg-gray-100 transition-all duration-200 cursor-pointer"
             onClick={toggleOverlay}
           >
             {overlayVisible ? <LuX className="text-xl" /> : <LuAlignJustify className="text-xl" />}
@@ -30,7 +30,7 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
         </div>
       </nav>
 
-        <Overlay visible={overlayVisible} />
+      <Overlay visible={overlayVisible} />
     </>
   );
 };

@@ -7,7 +7,6 @@
   background-color: #000;
   transition: background-color 2s ease, background-image 2s ease;
   /* Add background animation on light up */
-  z-index: 1;
 }
 
 /* Flicker Text Styling with responsive font size */
@@ -19,7 +18,6 @@
   display: flex;
   justify-content: center;
   white-space: nowrap;
-  z-index: 0.5;
 }
 
 /* Flicker Effect for Each Letter */
