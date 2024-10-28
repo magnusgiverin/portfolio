@@ -120,8 +120,8 @@
 
 .profilePic {
     text-align: right;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%; /* Circular profile picture */
     margin: 10px 0;
 }
