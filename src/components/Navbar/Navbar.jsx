@@ -34,9 +34,9 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
       <nav className={`${styles.navbar} ${navbarVisible ? styles.visible : styles.hidden} ${overlayVisible && styles.overlay} flex items-center justify-between`}>
         <span>MAGNUS GIVERIN</span>
 
-        <div className={`${styles.buttons} ${navbarVisible ? styles.visible : styles.hidden}`}>
+        <div className={`${navbarVisible ? styles.visible : styles.hidden}`}>
           <button
-            className="border-white border-2 flex items-center justify-center p-2 my-2 hover:text-gray-800 hover:bg-gray-100 transition-all duration-200 cursor-pointer"
+            className="border-white border-2 flex items-center justify-center p-2 hover:text-gray-800 hover:bg-gray-100 transition-all duration-200 cursor-pointer"
             onClick={toggleOverlay}
           >
             {overlayVisible ? <LuX className="text-xl" /> : <LuAlignJustify className="text-xl" />}

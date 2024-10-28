@@ -2,7 +2,9 @@
     position: fixed; /* Default: Set position to absolute */
     top: 15px; /* Align it to the top of the screen by default */
     height: 60px;
-    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
     width: 80vw;
     transform: translateX(-50%) translateY(-30px); /* Center horizontally and slide upwards initially */
     left: 50%; /* Center horizontally */
@@ -30,6 +32,12 @@
     background: rgba(255, 255, 255, 0); /* Slightly opaque white for glass effect */
 }
 
+@media (max-width: 900px) {
+    .navbar {
+        width: 95vw;
+}
+}
+
 /* Media query for smaller screens (phones) */
 @media (max-width: 640px) {
     .navbar {
@@ -38,9 +46,11 @@
         top: auto; /* Remove top alignment */
         left: 50%; /* Center horizontally */
         transform: translateX(-50%) translateY(30px); /* Center horizontally and slide upwards when hidden */
-        padding: 20px; /* Reduce padding for mobile view */
+        padding-top: 30px; /* Reduce padding for mobile view */
+        padding-bottom: 30px; /* Reduce padding for mobile view */
         width: 100vw; /* Make navbar full width on mobile */
         border-radius: 0px; /* Remove rounded corners on mobile */
+        backdrop-filter: blur(10px); /* Add backdrop blur for glass effect */
     }
 
     .visible {

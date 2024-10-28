@@ -49,14 +49,14 @@ const Overlay = ({ visible, onClose }) => {
           <ul className={styles.navLinks}>
             {navigationLinks.map((link) => (
               <li key={link.title}>
-                <a href={link.path}>{link.title}</a>
+                <a className="hover:text-white" href={link.path}>{link.title}</a>
                 {link.sublinks.length > 0 && (
                   <ul className={styles.sublinks}>
                     {link.sublinks.map((sublink) => (
                       <li key={sublink.title}>
                         <span className='flex flex-row items-center gap-2'>
                           <LuCornerDownRight />
-                          <a href={sublink.path}>{sublink.title}</a>
+                          <a className="hover:text-white" href={sublink.path}>{sublink.title}</a>
                         </span>
                       </li>
                     ))}

@@ -4,11 +4,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Fill the full height of the viewport */
-    background-color: #28292c;
+    height: 100%; /* Fill the full height of the viewport */
+    background-color: #18181b;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.2s ease;
     display: flex;
     overflow-y: auto; /* Allow scrolling if content exceeds viewport */
 }
@@ -52,22 +52,10 @@
     cursor: pointer;
     position: relative; /* Allow positioning of sublinks */
     opacity: 0; /* Start hidden */
-    animation: flyInNav 0.5s forwards ease-in-out; /* Apply fly-in animation */
+    animation: flyInNav 0.2s forwards ease-in-out; /* Apply fly-in animation */
 }
 
-.navLinks > li:nth-child(1) { animation-delay: 0.2s; } /* Stagger effect */
-.navLinks > li:nth-child(2) { animation-delay: 0.4s; }
-.navLinks > li:nth-child(3) { animation-delay: 0.6s; }
-.navLinks > li:nth-child(4) { animation-delay: 0.8s; }
-.navLinks > li:nth-child(5) { animation-delay: 1s; }
 
-.navLinks > li > a {
-    transition: color 0.3s;
-}
-
-.navLinks > li:hover > a {
-    color: #ffffff; /* Highlight the parent link on hover */
-}
 
 .sublinks {
     list-style: none;
@@ -78,38 +66,29 @@
 .sublinks li {
     margin: 0.5rem 0; /* Smaller margin for sublinks */
     font-size: 1.8rem; /* Adjust size for sublinks */
-    transition: color 0.3s;
     opacity: 0; /* Start hidden */
-    animation: flyInSublink 0.5s forwards ease-in-out; /* Apply fly-in animation */
+    animation: flyInSublink 0.2s forwards ease-in-out; /* Apply fly-in animation */
 }
 
-/* Proportional delays for sublinks based on their parent navLink */
-.navLinks > li:nth-child(1) .sublinks li:nth-child(1) { animation-delay: 0.4s; } 
-.navLinks > li:nth-child(1) .sublinks li:nth-child(2) { animation-delay: 0.5s; } 
-.navLinks > li:nth-child(1) .sublinks li:nth-child(3) { animation-delay: 0.6s; } 
+.navLinks > li:nth-child(1) { animation-delay: 0.1s; } /* Stagger effect */
 
-.navLinks > li:nth-child(2) .sublinks li:nth-child(1) { animation-delay: 0.5s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(2) { animation-delay: 0.6s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(3) { animation-delay: 0.7s; }
+.navLinks > li:nth-child(2) { animation-delay: 0.2s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(1) { animation-delay: 0.3s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(2) { animation-delay: 0.4s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(3) { animation-delay: 0.5s; }
 
-.navLinks > li:nth-child(3) .sublinks li:nth-child(1) { animation-delay: 0.6s; } 
-.navLinks > li:nth-child(3) .sublinks li:nth-child(2) { animation-delay: 0.7s; }
-.navLinks > li:nth-child(3) .sublinks li:nth-child(3) { animation-delay: 0.8s; }
+.navLinks > li:nth-child(3) { animation-delay: 0.6s; }
+.navLinks > li:nth-child(3) .sublinks li:nth-child(1) { animation-delay: 0.7s; } 
+.navLinks > li:nth-child(3) .sublinks li:nth-child(2) { animation-delay: 0.8s; }
 
-.navLinks > li:nth-child(4) .sublinks li:nth-child(1) { animation-delay: 0.7s; } 
-.navLinks > li:nth-child(4) .sublinks li:nth-child(2) { animation-delay: 0.8s; } 
-.navLinks > li:nth-child(4) .sublinks li:nth-child(3) { animation-delay: 0.0s; } 
+.navLinks > li:nth-child(4) { animation-delay: 0.9s; }
 
-.navLinks > li:nth-child(5) .sublinks li:nth-child(1) { animation-delay: 0.8s; }
-.navLinks > li:nth-child(5) .sublinks li:nth-child(2) { animation-delay: 0.9s; } 
-.navLinks > li:nth-child(5) .sublinks li:nth-child(3) { animation-delay: 1.0s; } 
+.navLinks > li:nth-child(5) { animation-delay: 1.0s; }
+.navLinks > li:nth-child(5) .sublinks li:nth-child(1) { animation-delay: 1.1s; }
+.navLinks > li:nth-child(5) .sublinks li:nth-child(2) { animation-delay: 1.2s; } 
 
 .sublinks li a {
     color: rgb(189, 189, 189); /* Default color for sublinks */
-}
-
-.sublinks li:hover a {
-    color: #ffffff; /* Highlight only the hovered sublink */
 }
 
 /* Contact section styling */
@@ -138,7 +117,7 @@
     margin-bottom: 0.5rem;
     opacity: 0;
     animation: slideInContact 0.5s forwards ease-in-out;
-    animation-delay: 0.6s; /* Delay for contact section */
+    animation-delay: 0.2s; /* Delay for contact section */
 }
 
 /* Contact form styling */
@@ -195,7 +174,7 @@
 .socialLink {
     font-weight: bold;          /* Make the links bold */
     opacity: 0;                /* Start hidden */
-    animation: flyInSocialLinks 0.8s forwards ease-in-out; /* Animation applied */
+    animation: flyInSocialLinks 0.6s forwards ease-in-out; /* Animation applied */
 }
 
 .socialLink:hover {
@@ -219,7 +198,7 @@
 @keyframes flyInNav {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Start from below */
+        transform: translateY(5px); /* Start from below */
     }
     to {
         opacity: 1;
@@ -230,7 +209,7 @@
 @keyframes flyInSublink {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Start from below */
+        transform: translateY(5px); /* Start from below */
     }
     to {
         opacity: 1;
@@ -277,6 +256,10 @@
     .overlayContent {
         width: 90%; /* Adjust width for smaller screens */
     }
+
+    .linksContainer {
+        gap: 30px;                 /* Even spacing between links */
+    }
 }
 
 @media (max-width: 800px) {
@@ -294,7 +277,13 @@
     }
 
     .submitButton {
-        margin-bottom: 70px;
+        margin-bottom: 100px;
+    }
+
+    .profilePic {
+        text-align: right;
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -330,8 +319,7 @@
         font-size: 0.9rem;
     }
 
-    .submitButton {
-        margin-bottom: 200px;
+    .linksContainer {
+        gap: 20px;                 /* Even spacing between links */
     }
 }
-
