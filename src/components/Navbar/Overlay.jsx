@@ -13,6 +13,7 @@ const Overlay = ({ visible, onClose }) => {
   // Lock scrolling when overlay is visible
   useEffect(() => {
     if (visible) {
+      document.body.style.overflow = 'hidden';
       setAnimationKey((prevKey) => prevKey + 1);
       const overlay = document.querySelector(`.${styles.overlay}`);
       if (overlay) {
