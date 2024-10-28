@@ -265,7 +265,7 @@
 @keyframes flyInContact {
     from {
         opacity: 0;
-        transform: translateY(10px); /* Start from below */
+        transform: translateY(40px); /* Start from below */
     }
     to {
         opacity: 1;
