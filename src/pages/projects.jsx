@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Navbar from '../components/Navbar/Navbar';
 
 const ProjectsPage = () => {
-    const [slideIn, setSlideIn] = useState(false);
-
-    useEffect(() => {
-        setSlideIn(true); // Trigger slide-in when component mounts
-    }, []);
-
     return (
         <div>
+            <Navbar/> {/* Pass navbar visibility state */}
             <h1>Projects</h1>
             {/* Page content */}
         </div>

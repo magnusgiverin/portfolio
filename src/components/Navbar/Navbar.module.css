@@ -4,6 +4,8 @@
     height: 60px;
     padding: 40px;
     width: 80vw;
+    transform: translateX(-50%) translateY(-30px); /* Center horizontally and slide upwards initially */
+    left: 50%; /* Center horizontally */
     background: rgba(255, 255, 255, 0.024); /* Slightly opaque white for glass effect */
     backdrop-filter: blur(1px); /* Add backdrop blur for glass effect */
     transition: background-color 0.1s ease-in-out, opacity 0.7s ease, transform 0.7s ease; /* Transitions for smooth fade-in */
@@ -11,34 +13,21 @@
     color: #fff; /* Text color */
     border-radius: 10px; /* Rounded corners */
     opacity: 0; /* Initially hidden */
-    transform: translateY(-30px); /* Slide the navbar upwards initially */
 }
 
 /* Show navbar when visible */
 .visible {
     opacity: 1; /* Fully visible */
-    transform: translateY(0); /* No longer translated upwards */
+    transform: translateX(-50%) translateY(0); /* Centered horizontally, no vertical translation */
 }
 
 .hidden {
     opacity: 0; /* Hidden when not visible */
-    transform: translateY(-30px); /* Slight upward translation when hidden */
+    transform: translateX(-50%) translateY(-30px); /* Slide upwards when hidden */
 }
 
 .overlay {
     background: rgba(255, 255, 255, 0); /* Slightly opaque white for glass effect */
-}
-
-.buttons {
-    display: flex; /* Use flexbox for buttons */
-    gap: 10px; /* Space between buttons */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.7s ease; /* Smooth fade-in effect */
-}
-
-/* Show buttons when navbar is visible */
-.visible .buttons {
-    opacity: 1; /* Fully visible */
 }
 
 /* Media query for smaller screens (phones) */
@@ -47,6 +36,8 @@
         position: fixed; /* Change position to fixed */
         bottom: 0; /* Align it to the bottom of the screen */
         top: auto; /* Remove top alignment */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%) translateY(30px); /* Center horizontally and slide upwards when hidden */
         padding: 20px; /* Reduce padding for mobile view */
         width: 100vw; /* Make navbar full width on mobile */
         border-radius: 0px; /* Remove rounded corners on mobile */
@@ -54,15 +45,11 @@
 
     .visible {
         opacity: 1; /* Fully visible */
-        transform: translateY(0); /* No longer translated upwards */
+        transform: translateX(-50%) translateY(0); /* Centered horizontally, no vertical translation */
     }
     
     .hidden {
         opacity: 0; /* Hidden when not visible */
-        transform: translateY(30px); /* Slight upward translation when hidden */
-    }
-
-    .overlay {
-        background: #232427f4; /* Slightly opaque white for glass effect */
+        transform: translateX(-50%) translateY(30px); /* Slide upwards when hidden */
     }
 }
