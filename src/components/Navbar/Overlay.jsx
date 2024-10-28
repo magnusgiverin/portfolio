@@ -9,6 +9,7 @@ const Overlay = ({ visible, onClose }) => {
   const [senderName, setSenderName] = useState('');
   const [senderEmail, setSenderEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [zIndex, setZIndex] = useState(0);
 
   // Lock scrolling when overlay is visible
   useEffect(() => {
@@ -19,8 +20,14 @@ const Overlay = ({ visible, onClose }) => {
       if (overlay) {
         overlay.scrollTop = 0; // Set scroll position to the top
       }
+      setZIndex(90); // Set zIndex to 100 when visible
     } else {
       document.body.style.overflow = 'auto';
+      const timer = setTimeout(() => {
+        setZIndex(0); // Reset zIndex after a delay
+      }, 400); // Match the duration of the opacity transition
+
+      return () => clearTimeout(timer);
     }
   }, [visible]);
 
@@ -34,7 +41,7 @@ const Overlay = ({ visible, onClose }) => {
     <div
       className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
       onClick={onClose}
-      style={{ zIndex: visible ? 90 : 0 }} // Set z-index conditionally
+      style={{ zIndex: zIndex }} // Set z-index conditionally
     >
       <div className={styles.overlayContent} key={animationKey} onClick={(e) => e.stopPropagation()}>
         <div className={styles.navSection}>

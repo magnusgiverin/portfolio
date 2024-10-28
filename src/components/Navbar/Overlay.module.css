@@ -333,5 +333,9 @@
     .navSection {
         margin-bottom: 30px;
     }
+
+    .submitButton {
+        margin-bottom: 100px;
+    }
 }
 
