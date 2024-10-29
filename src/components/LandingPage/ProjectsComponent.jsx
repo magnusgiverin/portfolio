@@ -35,27 +35,34 @@ const ProjectsComponent = () => {
     }, []);
 
     const handleButtonClick = () => {
-        setAnimationOn(true); // Turn on dark screen
+        setAnimationOn(true);
     };
-    
+
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
             <PageHeader />
 
-            <div 
-                ref={largeTextRef} 
+            <div
+                ref={largeTextRef}
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
                 style={{ marginBottom: '60px' }}
             >
                 Projects
             </div>
 
-            <button className={styles.showMoreBtn} onClick={handleButtonClick}>
-                Go to Projects
-            </button>
+            <div className={`${styles.teaserText} ${styles.teaserTextContainer} ${fadeInText ? styles.fadeIn : ''}`}>
+                <p>Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.</p>
+                <p>Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.</p>
+                <p className={styles.invitation}>The journey awaits. Are you ready to dive in?</p>
+                
+                <button className={styles.showMoreBtn} onClick={handleButtonClick}>
+                    Explore My Projects
+                </button>
+
+            </div>
 
             {animationOn && (
-               <TerminalAnimation/>
+                <TerminalAnimation />
             )}
         </div>
     );

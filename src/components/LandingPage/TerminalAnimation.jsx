@@ -31,8 +31,8 @@ const TerminalAnimation = () => {
     const followUpCommand = 'cd projects';
 
     const lines = consoleOutput.split('\n');
-    const typingDelay = 15;
-    const newlineDelay = 500;
+    const typingDelay = 10;
+    const newlineDelay = 400;
 
     useEffect(() => {
         let typingTimeout;
@@ -96,16 +96,12 @@ const TerminalAnimation = () => {
                 setDisplayedText((prev) => prev + '.');
                 setDotCount((prev) => prev + 1);
 
-                if (dotCount > 3) {
+                if (dotCount === 3) {
                     setDotCount(0);
-                    setDisplayedText((prev) => prev.slice(0, -3)); // Reset dots after 3
+                    const redirectUrl = '/projects';
+                    router.push(redirectUrl);
                 }
-            }, 800);
-
-            setTimeout(() => {
-                const redirectUrl = '/projects';
-                router.push(redirectUrl);
-            }, 3000); // Delay before redirecting
+            }, 600);
         }
 
         return () => clearInterval(dotInterval);

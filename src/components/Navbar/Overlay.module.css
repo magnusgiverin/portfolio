@@ -8,7 +8,7 @@
     background-color: #18181b;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.5s ease;
     display: flex;
     overflow-y: auto; /* Allow scrolling if content exceeds viewport */
 }
@@ -30,7 +30,6 @@
     margin-top: 100px; /* Space for the navbar */
     margin-left: auto; /* Center the content */
     margin-right: auto; /* Center the content */
-    color: rgb(189, 189, 189);
 }
 
 /* Navigation section styling */
@@ -45,6 +44,7 @@
     padding: 0;
     margin: 0;
     font-size: 2.5rem; /* Large font size for navigation */
+    color: rgb(189, 189, 189);
 }
 
 .navLinks > li {
