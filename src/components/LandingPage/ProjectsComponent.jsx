@@ -22,7 +22,7 @@ const ProjectsComponent = () => {
             (entries) => {
                 if (entries[0].isIntersecting) setFadeInText(true);
             },
-            { threshold: 0.5 }
+            { threshold: 1.0 }
         );
 
         if (curtainRef.current) curtainObserver.observe(curtainRef.current);
@@ -41,13 +41,11 @@ const ProjectsComponent = () => {
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
             <PageHeader />
-
             <div
                 ref={largeTextRef}
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
-                style={{ marginBottom: '60px' }}
             >
-                Projects
+                {"Projects </>"}
             </div>
 
             <div className={`${styles.teaserText} ${styles.teaserTextContainer} ${fadeInText ? styles.fadeIn : ''}`}>

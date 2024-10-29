@@ -21,3 +21,9 @@
     background-color: #ccc; /* Color of the line */
     margin: 0 10px; /* Space between the line and the text */
 }
+
+@media (max-width: 640px) {
+    .header {
+        font-size: 14px;
+    }
+}
