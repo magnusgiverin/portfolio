@@ -28,11 +28,8 @@
     margin-left: 80px;
     display: flex;
     flex-direction: column;
-    color: rgba(230, 230, 230);
     gap: 20px;
     align-items: flex-start;
-    font-size: 1.3rem;
-    opacity: 0;
     transform: translateY(50px); /* Initial off-screen position */
 }
 
@@ -40,7 +37,13 @@
     font-weight: bold;
     font-size: 1.6rem;
     color: rgba(253, 253, 253);
-    transform: translateY(50px); /* Initial off-screen position */
+    opacity: 0; /* Start hidden */
+}
+
+.teaserText {
+    font-size: 1.3rem;
+    opacity: 0; /* Start hidden */
+    color: rgb(230, 230, 230);
 }
 
 .showMoreBtn {
@@ -52,7 +55,7 @@
     cursor: pointer;
     width: max-content;
     transition: background-color 0.3s, color 0.3s;
-    transform: translateY(50px); /* Initial off-screen position */
+    opacity: 0; /* Start hidden */
 }
 
 .showMoreBtn:hover {
@@ -72,7 +75,24 @@
 }
 
 .fadeIn {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Delay classes for each child */
+.delay-1 {
+    animation-delay: 0.1s; /* 100ms delay */
+}
+
+.delay-2 {
+    animation-delay: 0.3s; /* 300ms delay */
+}
+
+.delay-3 {
+    animation-delay: 0.5s; /* 500ms delay */
+}
+
+.delay-btn {
+    animation-delay: 0.7s; /* 700ms delay */
 }
 
 /* Responsive styling for smaller screens */
@@ -81,17 +101,21 @@
         font-size: 3.6rem;
         margin-left: 60px;
         margin-right: 60px;
+        margin-top: 100px;
     }
 
-.invitation {
-    font-size: 1.0em;
-}
+    .invitation {
+        font-size: 1.0em;
+    }
 
     .teaserTextContainer {
         margin-left: 60px;
         margin-right: 60px;
-    font-size: 0.9em;
+        gap: 70px
+    }
 
+    .teaserText {
+        font-size: 0.9em;
     }
 
     .showMoreBtn {
@@ -105,6 +129,7 @@
         letter-spacing: 2px;
         margin-left: 25px;
         margin-right: 25px;
+        margin-bottom: 0px;
     }
 
     .teaserTextContainer {
@@ -113,9 +138,10 @@
     }
 
     .teaserText {
-        font-size: 0.8rem;
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+        letter-spacing: 1px; /* Maintain letter spacing */
     }
-    
+
     .invitation {
         font-size: 1.0rem;
     }

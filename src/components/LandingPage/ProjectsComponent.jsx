@@ -1,35 +1,34 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ProjectsComponent.module.css';
-
 import PageHeader from '../PageHeader/PageHeader';
 import TerminalAnimation from './TerminalAnimation';
 
 const ProjectsComponent = () => {
     const largeTextRef = useRef(null);
     const teaserTextContainerRef = useRef(null);
-    const [fadeInText, setFadeInText] = useState(false);
-    const [fadeInTeaser, setFadeInTeaser] = useState(false);
     const [animationOn, setAnimationOn] = useState(false);
+    const [fadeIn, setFadeIn] = useState(false);
 
     useEffect(() => {
-        const textObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target === largeTextRef.current) setFadeInText(true);
-                        if (entry.target === teaserTextContainerRef.current) setFadeInTeaser(true);
-                    }
-                });
-            },
-            { threshold: 0.5 } // Trigger when 50% visible
-        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setFadeIn(true);
+                    observer.disconnect(); // Stop observing after the first trigger
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 100% of the component is in view
 
-        if (largeTextRef.current) textObserver.observe(largeTextRef.current);
-        if (teaserTextContainerRef.current) textObserver.observe(teaserTextContainerRef.current);
+        const currentRef = teaserTextContainerRef.current;
+
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
 
         return () => {
-            if (largeTextRef.current) textObserver.unobserve(largeTextRef.current);
-            if (teaserTextContainerRef.current) textObserver.unobserve(teaserTextContainerRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
         };
     }, []);
 
@@ -42,23 +41,30 @@ const ProjectsComponent = () => {
             <PageHeader />
             <div
                 ref={largeTextRef}
-                className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
+                className={`${styles.largeText} ${fadeIn ? styles.fadeIn : ''}`}
             >
                 {"Projects </>"}
             </div>
 
             <div
                 ref={teaserTextContainerRef}
-                className={`${styles.teaserTextContainer} ${fadeInTeaser ? styles.fadeIn : ''}`}
+                className={styles.teaserTextContainer}
             >
-                <p>Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.</p>
-                <p>Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.</p>
-                <p className={styles.invitation}>The journey awaits. Are you ready to dive in?</p>
-                
-                <button className={styles.showMoreBtn} onClick={handleButtonClick}>
+                <p className={`${fadeIn ? styles['delay-1'] + ' ' + styles.fadeIn : ''} ${styles.teaserText}`}>
+                    Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.
+                </p>
+                <p className={`${fadeIn ? styles['delay-2'] + ' ' + styles.fadeIn : ''} ${styles.teaserText}`}>
+                    Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.
+                </p>
+                <p className={`${fadeIn ? styles['delay-3'] + ' ' + styles.fadeIn : ''} ${styles.invitation}`}>
+                    The journey awaits. Are you ready to dive in?
+                </p>
+
+                <button className={`${fadeIn ? styles['delay-btn'] + ' ' + styles.fadeIn : ''} ${styles.showMoreBtn}`} onClick={handleButtonClick}>
                     Explore My Projects
                 </button>
             </div>
+
 
             {animationOn && <TerminalAnimation />}
         </div>

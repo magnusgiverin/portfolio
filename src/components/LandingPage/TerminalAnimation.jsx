@@ -90,22 +90,24 @@ const TerminalAnimation = () => {
 
     useEffect(() => {
         let dotInterval;
-
+    
         if (isRedirecting) {
             dotInterval = setInterval(() => {
                 setDisplayedText((prev) => prev + '.');
-                setDotCount((prev) => prev + 1);
-
-                if (dotCount === 3) {
-                    setDotCount(0);
-                    const redirectUrl = '/projects';
-                    router.push(redirectUrl);
-                }
+                setDotCount((prev) => {
+                    const newCount = prev + 1;
+                    if (newCount > 3) {
+                        clearInterval(dotInterval); // Stop the interval
+                        const redirectUrl = '/projects';
+                        router.push(redirectUrl);
+                    }
+                    return newCount;
+                });
             }, 600);
         }
-
+    
         return () => clearInterval(dotInterval);
-    }, [isRedirecting, dotCount]);
+    }, [isRedirecting]);
 
     return (
         <div className={styles.darkScreen}>
