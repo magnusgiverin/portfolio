@@ -2,6 +2,7 @@
 
 .projectsComponent {
     display: flex;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -16,8 +17,6 @@
     text-align: left;
     opacity: 0;
     letter-spacing: 7px;
-    margin-top: 150px;
-    margin-bottom: 150px;
     transform: translateX(20%); /* Moves title closer to the center */
 }
 
@@ -89,8 +88,6 @@
     .largeText {
         font-size: 3rem; /* Reduces font size for mobile */
         letter-spacing: 5px;
-        margin-top: 100px; /* Adjusts margins for smaller screens */
-        margin-bottom: 00px;
         transform: none; /* Centers title */
         text-align: center;
     }
@@ -110,8 +107,7 @@
     }
 
     .showMoreBtn {
-        margin-top: 0px;
-        margin-bottom: 20px;
+        margin-top: 40px;
         align-self: center; /* Centers the button */
     }
 }
