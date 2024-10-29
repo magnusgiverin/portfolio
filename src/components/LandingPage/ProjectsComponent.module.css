@@ -28,7 +28,7 @@
     margin-left: 80px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
     align-items: flex-start;
     transform: translateY(50px); /* Initial off-screen position */
 }
@@ -111,7 +111,6 @@
     .teaserTextContainer {
         margin-left: 60px;
         margin-right: 60px;
-        gap: 70px
     }
 
     .teaserText {
