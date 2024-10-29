@@ -1,15 +1,15 @@
-/* Original and updated CSS */
+/* ProjectsComponent.module.css */
 
 .projectsComponent {
     display: flex;
     min-height: 100vh;
-    align-items: flex-start; /* Left-align items */
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     color: rgb(230, 230, 230);
-    padding: 0 20px; /* Adjust padding */
-    gap: 20px; /* Reduce gap */
-    flex-direction: column; /* Stack vertically */
+    padding: 0 20px;
+    gap: 20px;
+    flex-direction: column;
 }
 
 .largeText {
@@ -20,11 +20,8 @@
     opacity: 0;
     letter-spacing: 5px;
     margin-bottom: 30px;
-    align-self: flex-start; /* Align to left */
-}
-
-.largeText.fadeIn {
-    animation: fadeIn 2s ease forwards;
+    align-self: flex-start;
+    transform: translateY(50px); /* Initial off-screen position */
 }
 
 .teaserTextContainer {
@@ -32,27 +29,18 @@
     display: flex;
     flex-direction: column;
     color: rgba(230, 230, 230);
-    gap: 20px; /* Gap between text sections */
-    align-items: flex-start; /* Left-align container */
-}
-
-.teaserText {
-    max-width: 90%; /* Fit within screen width */
-    text-align: left;
+    gap: 20px;
+    align-items: flex-start;
+    font-size: 1.3rem;
     opacity: 0;
-    font-size: 1.0rem;
-    line-height: 1.6;
-}
-
-.teaserTextContainer.fadeIn {
-    animation: fadeIn 2s ease forwards;
+    transform: translateY(50px); /* Initial off-screen position */
 }
 
 .invitation {
     font-weight: bold;
-    margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: rgba(253, 253, 253);
+    transform: translateY(50px); /* Initial off-screen position */
 }
 
 .showMoreBtn {
@@ -64,6 +52,7 @@
     cursor: pointer;
     width: max-content;
     transition: background-color 0.3s, color 0.3s;
+    transform: translateY(50px); /* Initial off-screen position */
 }
 
 .showMoreBtn:hover {
@@ -74,11 +63,39 @@
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Initial position (bottom) */
+        transform: translateY(50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Final position (in place) */
+        transform: translateY(0);
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1000px) {
+    .largeText {
+        font-size: 3.6rem;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+.invitation {
+    font-size: 1.0em;
+}
+
+    .teaserTextContainer {
+        margin-left: 60px;
+        margin-right: 60px;
+    font-size: 0.9em;
+
+    }
+
+    .showMoreBtn {
+        margin-bottom: 100px;
     }
 }
 
@@ -88,7 +105,6 @@
         letter-spacing: 2px;
         margin-left: 25px;
         margin-right: 25px;
-        margin-top: 100px;
     }
 
     .teaserTextContainer {
@@ -102,7 +118,6 @@
     
     .invitation {
         font-size: 1.0rem;
-
     }
 
     .showMoreBtn {
