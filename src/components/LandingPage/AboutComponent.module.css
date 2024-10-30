@@ -1,11 +1,3 @@
-@media (max-width: 640px) {
-    .header {
-        padding-top: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
 .aboutComponent {
     display: flex;
     flex-direction: column;
@@ -13,6 +5,7 @@
     justify-content: center;
     position: relative;
     color: rgb(184, 184, 184);
+    background-color: rgb(106, 106, 106);
 }
 
 .largeText {
@@ -44,5 +37,11 @@
     .largeText {
         font-size: 6rem;
         letter-spacing: 5px;
+    }
+
+    .header {
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }

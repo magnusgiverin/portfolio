@@ -25,6 +25,8 @@
   display: inline-block;
   opacity: 0;
   animation: flicker-animation 1s ease-in-out forwards;
+  text-align: center; /* Center text within span */
+  line-height: 1; /* Center text vertically within span */
 }
 
 /* Hidden state */
@@ -114,25 +116,24 @@
 
 @media (max-width: 640px) {
   .flickerText {
-    font-size: 80px;
-    margin-right: 6px;
+    font-size: calc(10vh + 10px); /* Adjusts based on viewport height */
     font-weight: 400;
     flex-direction: column-reverse;
-    gap: 0px;
-    white-space: normal;
     position: absolute;
     right: 0;
-    top: calc(50% - 30px);
-    /* Adjust centering considering navbar height */
-    padding-right: 30px;
-    transform: translateY(-50%);
+    margin-bottom: 60px;
+    padding-right: 15px;
+    height: 70vh;
   }
 
   .flickerText span {
     transform: rotate(270deg);
     display: block;
-    margin: -20px 0;
-    /* Adjust margin to bring letters closer */
+    width: 100%; /* Span takes full width on small screens */
+    height: 100%; /* Span takes full height */
+    align-items:end; /* Center content within each letter box */
+    display: flex; /* Make span flex container */
+    justify-content: right; /* Center horizontally */
   }
 
   /* Adjust centering based on available space above navbar */
@@ -144,7 +145,6 @@
     height: 100vh;
     transition: background-color 2s ease, background-image 2s ease;
     /* Add background animation on light up */
-    padding-bottom: 60px;
   }
 
   /* Media Query for Smaller Screens */
@@ -160,20 +160,15 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.7);
   pointer-events: none;
-  /* Prevent interaction */
   animation: particleAnimation infinite;
-  /* Keep animation infinite */
   z-index: 1;
-  /* Ensure particles are behind the main content */
 }
 
 .particleContainer {
   position: absolute;
   width: 100%;
   height: 100vh;
-  /* Confine particles to the height of the screen */
   overflow: hidden;
-  /* So it doesn't interfere with user interactions */
 }
 
 @keyframes particleAnimation {
@@ -188,12 +183,10 @@
 
   100% {
     transform: translate(100vw, 100vh);
-    /* Move particles diagonally */
     opacity: 0;
   }
 }
 
 .locked {
   pointer-events: none;
-  /* Prevent any pointer events */
 }

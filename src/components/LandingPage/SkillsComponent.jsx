@@ -23,7 +23,6 @@ const SkillsComponent = () => {
 
     return (
         <div className={`min-h-screen ${styles.skillsComponent}`}>
-           <PageHeader/>
             <div 
                 ref={largeTextRef} 
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}

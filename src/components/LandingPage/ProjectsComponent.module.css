@@ -1,5 +1,3 @@
-/* ProjectsComponent.module.css */
-
 .projectsComponent {
     display: flex;
     min-height: 100vh;
@@ -8,44 +6,100 @@
     position: relative;
     color: rgb(230, 230, 230);
     padding: 0 20px;
-    gap: 20px;
+    gap: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Left Column */
+.leftColumn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 450px;
+    margin-top: 150px;
+    position: sticky;
+    margin-left: 120px;
+    top: 0;
+    flex-direction: column; /* Allow stacking of child elements */
+}
+
+/* Pseudo-element for the horizontal line */
+.leftColumn::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjust this value to position the line */
+    left: 0;
+    right: 0; /* Make the line stretch to the edges */
+    height: 2px; /* Adjust the thickness of the line */
+    background-color: white; /* Set the line color */
+}
+
+/* Right Column */
+.rightColumn {
+    flex: 2;
+    margin-top: 100px;
+    margin-right: 300px;
+    margin-left: 100px;
     flex-direction: column;
 }
 
+/* Large text styling */
 .largeText {
-    margin-left: 80px;
     font-size: 7rem;
-    font-weight: bold;
+    font-weight: normal;
     text-align: left;
-    opacity: 0;
-    letter-spacing: 5px;
-    margin-bottom: 30px;
-    align-self: flex-start;
-    transform: translateY(50px); /* Initial off-screen position */
+    opacity: 1;
+    letter-spacing: 1px;
+    position: relative;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.letter {
+    display: inline-block;
+    opacity: 0;
+}
+
+.fadeInLetter {
+    animation: fadeInLetter 0.1s ease-out forwards;
+}
+
+@keyframes fadeInLetter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Teaser Text Container */
 .teaserTextContainer {
-    margin-left: 80px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 55px;
     align-items: flex-start;
-    transform: translateY(50px); /* Initial off-screen position */
+    transform: translateY(50px);
+    opacity: 1;
 }
 
+/* Invitation styling */
 .invitation {
-    font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: rgba(253, 253, 253);
-    opacity: 0; /* Start hidden */
+    opacity: 1;
 }
 
+/* Teaser text styling */
 .teaserText {
     font-size: 1.3rem;
-    opacity: 0; /* Start hidden */
+    opacity: 1;
     color: rgb(230, 230, 230);
 }
 
+/* Show More Button styling */
 .showMoreBtn {
     margin-top: 30px;
     padding: 6px 10px;
@@ -55,7 +109,7 @@
     cursor: pointer;
     width: max-content;
     transition: background-color 0.3s, color 0.3s;
-    opacity: 0; /* Start hidden */
+    opacity: 1;
 }
 
 .showMoreBtn:hover {
@@ -63,88 +117,76 @@
     color: black;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
+@media (max-width: 1600px) {
+    .rightColumn {
+        margin-right: 120px;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    .projectsComponent {
+        gap: 0px
     }
 }
 
-.fadeIn {
-    animation: fadeIn 0.5s ease-out forwards;
+@media (max-width: 1300px) {
+    .leftColumn {
+        margin-right: 0px;
+        min-width: 100px;
+    }
+
+    .largeText {
+        font-size: 5.1rem;
+    }
 }
 
-/* Delay classes for each child */
-.delay-1 {
-    animation-delay: 0.1s; /* 100ms delay */
-}
-
-.delay-2 {
-    animation-delay: 0.3s; /* 300ms delay */
-}
-
-.delay-3 {
-    animation-delay: 0.5s; /* 500ms delay */
-}
-
-.delay-btn {
-    animation-delay: 0.7s; /* 700ms delay */
-}
-
-/* Responsive styling for smaller screens */
+/* Responsive styling */
 @media (max-width: 1000px) {
+    .projectsComponent {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center content */
+    }
+
+    .leftColumn, .rightColumn {
+        margin: 0; /* Reset margins for centered layout */
+        width: 90%; /* Allow columns to take full width */
+        margin-left: 5%;
+        position: relative;
+    }
+
     .largeText {
         font-size: 3.6rem;
         margin-left: 60px;
         margin-right: 60px;
-        margin-top: 100px;
+        height: auto;
     }
 
-    .invitation {
-        font-size: 1.0em;
+    .invitation, .teaserText {
+        font-size: 0.9rem;
     }
-
-    .teaserTextContainer {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-
-    .teaserText {
-        font-size: 0.9em;
-    }
-
+    
     .showMoreBtn {
         margin-bottom: 100px;
+    }
+
+    .leftColumn::before {
+        opacity: 0;
+    }
+    
+    .teaserTextContainer {
+        gap: 40px;
+
     }
 }
 
 @media (max-width: 640px) {
     .largeText {
-        font-size: 2.1rem;
         letter-spacing: 2px;
         margin-left: 25px;
         margin-right: 25px;
         margin-bottom: 0px;
     }
-
-    .teaserTextContainer {
-        margin-left: 25px;
-        margin-right: 25px;
+    .invitation, .teaserText {
+        font-size: 0.9rem;
     }
-
-    .teaserText {
-        font-size: 0.9em; /* Adjust font size for smaller screens */
-        letter-spacing: 1px; /* Maintain letter spacing */
-    }
-
-    .invitation {
-        font-size: 1.0rem;
-    }
-
     .showMoreBtn {
         margin-bottom: 100px;
     }

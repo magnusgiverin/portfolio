@@ -1,70 +1,107 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ProjectsComponent.module.css';
-import PageHeader from '../PageHeader/PageHeader';
 import TerminalAnimation from './TerminalAnimation';
 
 const ProjectsComponent = () => {
     const largeTextRef = useRef(null);
     const teaserTextContainerRef = useRef(null);
     const [animationOn, setAnimationOn] = useState(false);
-    const [fadeIn, setFadeIn] = useState(false);
+    const [visibleLetterCount, setVisibleLetterCount] = useState(0);
+    const [isLargeTextVisible, setIsLargeTextVisible] = useState(false);
+    const text = "Projects";
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setFadeIn(true);
-                    observer.disconnect(); // Stop observing after the first trigger
+                    setIsLargeTextVisible(true);
+                } else {
+                    setIsLargeTextVisible(false);
                 }
             });
-        }, { threshold: 0.5 }); // Trigger when 100% of the component is in view
+        }, { threshold: 1 });
 
-        const currentRef = teaserTextContainerRef.current;
-
-        if (currentRef) {
-            observer.observe(currentRef);
+        if (largeTextRef.current) {
+            observer.observe(largeTextRef.current);
         }
 
         return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
+            if (largeTextRef.current) observer.unobserve(largeTextRef.current);
         };
     }, []);
 
+    useEffect(() => {
+        let interval;
+        let letterCount = visibleLetterCount; // Start from current visible count
+    
+        if (isLargeTextVisible) {
+            interval = setInterval(() => {
+                setVisibleLetterCount((prevCount) => {
+                    if (prevCount < text.length) {
+                        letterCount = prevCount + 1;
+                        return letterCount;
+                    } else {
+                        clearInterval(interval);
+                        return prevCount;
+                    }
+                });
+            }, 100);
+        } else {
+            interval = setInterval(() => {
+                setVisibleLetterCount((prevCount) => {
+                    if (prevCount > 0) {
+                        letterCount = prevCount - 1;
+                        return letterCount;
+                    } else {
+                        clearInterval(interval);
+                        return prevCount;
+                    }
+                });
+            }, 100);
+        }
+    
+        return () => clearInterval(interval);
+    }, [isLargeTextVisible, text.length]);
+    
     const handleButtonClick = () => {
         setAnimationOn(true);
     };
 
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
-            <PageHeader />
-            <div
-                ref={largeTextRef}
-                className={`${styles.largeText} ${fadeIn ? styles.fadeIn : ''}`}
-            >
-                {"Projects </>"}
+            <div className={styles.leftColumn}>
+                <div
+                    ref={largeTextRef}
+                    className={`${styles.largeText}`}
+                >
+                    {text.split("").map((letter, index) => (
+                        <span
+                            key={index}
+                            className={`${styles.letter} ${index < visibleLetterCount ? styles.fadeInLetter : ''}`}
+                        >
+                            {letter}
+                        </span>
+                    ))}
+                </div>
             </div>
 
-            <div
-                ref={teaserTextContainerRef}
-                className={styles.teaserTextContainer}
-            >
-                <p className={`${fadeIn ? styles['delay-1'] + ' ' + styles.fadeIn : ''} ${styles.teaserText}`}>
-                    Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.
-                </p>
-                <p className={`${fadeIn ? styles['delay-2'] + ' ' + styles.fadeIn : ''} ${styles.teaserText}`}>
-                    Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.
-                </p>
-                <p className={`${fadeIn ? styles['delay-3'] + ' ' + styles.fadeIn : ''} ${styles.invitation}`}>
-                    The journey awaits. Are you ready to dive in?
-                </p>
+            <div className={styles.rightColumn}>
+                <div ref={teaserTextContainerRef} className={`${styles.teaserTextContainer} ${styles.fadeIn}`}>
+                    <p className={styles.teaserText}>
+                        Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.
+                    </p>
+                    <p className={styles.teaserText}>
+                        Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.
+                    </p>
+                    <p className={styles.invitation}>
+                        The journey awaits. Are you ready to dive in?
+                    </p>
 
-                <button className={`${fadeIn ? styles['delay-btn'] + ' ' + styles.fadeIn : ''} ${styles.showMoreBtn}`} onClick={handleButtonClick}>
-                    Explore My Projects
-                </button>
+                    <button className={styles.showMoreBtn} onClick={handleButtonClick}>
+                        Explore My Projects
+                    </button>
+                </div>
             </div>
-
 
             {animationOn && <TerminalAnimation />}
         </div>

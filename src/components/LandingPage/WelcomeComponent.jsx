@@ -173,7 +173,6 @@ const WelcomeComponent = ({ scrollToRef }) => {
         ))}
       </div>
       <div className="z-10 absolute sm:bottom-20 md:bottom-35 gap-10 md:gap-0 flex flex-col sm:flex-row w-full justify-between pl-[5vw] pr-[30vw] sm:px-20">
-        {/* Text Box Sections */}
         <div className={`mr-10 xs:mr-0 lg:px-20 ${textBoxVisible ? styles.visible : styles.hidden} flex items-center`}>
           <div className={`h-[33px] sm:h-full w-[2px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
           <div className={`${textBoxVisible ? styles.waveFadeIn : ''}`}>

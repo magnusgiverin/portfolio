@@ -23,7 +23,6 @@ const AboutComponent = () => {
 
     return (
         <div className={`min-h-screen ${styles.aboutComponent} ${styles.lightUp}`}>
-           <PageHeader/>
             <div 
                 ref={largeTextRef} 
                 className={`${styles.largeText} ${fadeInText ? styles.fadeIn : ''}`}
