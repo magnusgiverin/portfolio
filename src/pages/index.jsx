@@ -17,9 +17,9 @@ export default function Home() {
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
-        // Scroll to the top of the page on refresh
-        window.scrollTo(0, 0);
-
+        // Smooth scroll to the top of the page on refresh
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    
         // Observer to control navigation visibility
         const navVisibilityObserver = new IntersectionObserver(
             (entries) => {
@@ -29,11 +29,11 @@ export default function Home() {
             },
             { threshold: 0.1 }
         );
-
+    
         if (welcomeComponentRef.current) {
             navVisibilityObserver.observe(welcomeComponentRef.current);
         }
-
+    
         return () => {
             if (welcomeComponentRef.current) {
                 navVisibilityObserver.unobserve(welcomeComponentRef.current);
