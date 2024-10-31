@@ -51,11 +51,11 @@ export default function Home() {
             <div ref={projectsComponentRef}>
                 <ProjectsComponent />
             </div>
-            <div ref={aboutComponentRef}>
-                <AboutComponent />
-            </div>
             <div ref={skillsComponentRef}>
                 <SkillsComponent />
+            </div>
+            <div ref={aboutComponentRef}>
+                <AboutComponent />
             </div>
             <div ref={careerComponentRef}>
                 <CareerComponent />

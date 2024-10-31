@@ -17,7 +17,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     min-width: 450px;
-    margin-top: 150px;
+    padding-top: 150px;
     position: sticky;
     margin-left: 120px;
     top: 0;
@@ -28,7 +28,7 @@
 .leftColumn::before {
     content: '';
     position: absolute;
-    top: -10px; /* Adjust this value to position the line */
+    top: 150px; /* Adjust this value to position the line */
     left: 0;
     right: 0; /* Make the line stretch to the edges */
     height: 2px; /* Adjust the thickness of the line */
@@ -147,6 +147,7 @@
 
     .leftColumn, .rightColumn {
         margin: 0; /* Reset margins for centered layout */
+        padding: 0;
         width: 90%; /* Allow columns to take full width */
         margin-left: 5%;
         position: relative;
@@ -154,7 +155,7 @@
 
     .largeText {
         font-size: 3.6rem;
-        margin-left: 60px;
+        margin-left: 0px;
         margin-right: 60px;
         height: auto;
     }
@@ -180,7 +181,6 @@
 @media (max-width: 640px) {
     .largeText {
         letter-spacing: 2px;
-        margin-left: 25px;
         margin-right: 25px;
         margin-bottom: 0px;
     }

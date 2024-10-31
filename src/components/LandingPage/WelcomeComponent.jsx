@@ -151,6 +151,21 @@ const WelcomeComponent = ({ scrollToRef }) => {
     }
   }
 
+  useEffect(() => {
+    // Function to set viewport height
+    const setViewportHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    // Set the height on component mount and resize
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener('resize', setViewportHeight);
+  }, []);
+
   return (
     <div
       className={`h-screen ${styles.welcomeComponent} ${backgroundLight ? styles.lightUp : ''} ${scrollLocked ? styles.locked : ''}`}
