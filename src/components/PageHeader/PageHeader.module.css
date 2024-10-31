@@ -56,4 +56,12 @@
     .header {
         font-size: 14px;
     }
+
+    .headerTop {
+        top: -10.5px; /* Move it 20px up */
+    }
+    
+    .headerBottom {
+        bottom: -10.5px; /* Move it 20px up */
+    }
 }

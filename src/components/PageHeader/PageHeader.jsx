@@ -34,7 +34,7 @@ const PageHeader = ({ position = 'top' }) => {
             className={`${styles.header} ${position === 'top' ? styles.headerTop : styles.headerBottom}`}
         >
             <div className={styles.line}></div> {/* Left line */}
-            <h1>{'{ MAGNUS }'}</h1>
+            <h1>{'MAGNUS'}</h1>
             <div className={styles.line}></div> {/* Right line */}
         </header>
     );
