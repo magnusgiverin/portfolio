@@ -5,7 +5,6 @@
     opacity: 1;
     transition: opacity 0.5s ease;
     display: flex;
-    z-index: 100;
 }
 
 .madeBy {
@@ -22,7 +21,7 @@
     flex-direction: row; /* Keep content in a row layout */
     width: 80%; /* Full width of the footer with margins */
     max-width: 2000px;
-    margin-top: 100px; /* Space for the navbar */
+    margin-top: 150px; /* Space for the navbar */
     margin-left: auto; /* Center the content */
     margin-right: auto; /* Center the content */
 }

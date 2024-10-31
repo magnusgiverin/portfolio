@@ -15,7 +15,7 @@ export default function Home() {
     const skillsComponentRef = useRef(null);
     const footerComponentRef = useRef(null);
 
-    const sections = [projectsComponentRef, skillsComponentRef, aboutComponentRef, careerComponentRef, footerComponentRef];
+    const sections = [aboutComponentRef, careerComponentRef, projectsComponentRef, skillsComponentRef, footerComponentRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function Home() {
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.8 }
         );
     
         // Observe the welcome component
@@ -79,17 +79,17 @@ export default function Home() {
             <div ref={welcomeComponentRef}>
                 <WelcomeComponent scrollToRef={projectsComponentRef} />
             </div>
-            <div ref={projectsComponentRef}>
-                <ProjectsComponent />
-            </div>
-            <div ref={skillsComponentRef}>
-                <SkillsComponent />
-            </div>
             <div ref={aboutComponentRef}>
                 <AboutComponent />
             </div>
             <div ref={careerComponentRef}>
                 <CareerComponent />
+            </div>
+            <div ref={projectsComponentRef}>
+                <ProjectsComponent />
+            </div>
+            <div ref={skillsComponentRef}>
+                <SkillsComponent />
             </div>
             <div ref={footerComponentRef}>
                 <Footer />
