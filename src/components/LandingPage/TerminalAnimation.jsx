@@ -96,7 +96,7 @@ const TerminalAnimation = () => {
                 setDisplayedText((prev) => prev + '.');
                 setDotCount((prev) => {
                     const newCount = prev + 1;
-                    if (newCount > 3) {
+                    if (newCount >= 3) {
                         clearInterval(dotInterval); // Stop the interval
                         const redirectUrl = '/projects';
                         router.push(redirectUrl);
