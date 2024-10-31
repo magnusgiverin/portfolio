@@ -108,16 +108,17 @@
     padding: 6px 10px;
     border: 2px solid;
     background-color: transparent;
-    color: rgba(253, 253, 253);
+    color: rgb(230, 230, 230);
     cursor: pointer;
     width: max-content;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s;
     opacity: 1;
 }
 
 .showMoreBtn:hover {
-    background-color: rgb(247, 247, 247);
-    color: black;
+    background-color: rgb(230, 230, 230);
+    color: rgb(63, 64, 69);
+    border-color: rgb(230, 230, 230);;
 }
 
 @media (max-width: 1600px) {

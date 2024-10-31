@@ -4,6 +4,7 @@
     align-items: flex-start;
     justify-content: center;
     position: relative;
+    background-color:#28292c;
     color: rgb(230, 230, 230);
     padding: 0 20px;
     gap: 80px;
@@ -110,13 +111,14 @@
     color: rgb(230, 230, 230);
     cursor: pointer;
     width: max-content;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s;
     opacity: 1;
 }
 
 .showMoreBtn:hover {
     background-color: rgb(230, 230, 230);
-    color: black;
+    color: #28292c;
+    border-color: rgb(230, 230, 230);;
 }
 
 @media (max-width: 1600px) {
