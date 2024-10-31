@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ProjectsComponent.module.css';
 import TerminalAnimation from './TerminalAnimation';
+import PageHeader from '../PageHeader/PageHeader';
 
 const ProjectsComponent = () => {
     const largeTextRef = useRef(null);
@@ -33,7 +34,7 @@ const ProjectsComponent = () => {
     useEffect(() => {
         let interval;
         let letterCount = visibleLetterCount; // Start from current visible count
-    
+
         if (isLargeTextVisible) {
             interval = setInterval(() => {
                 setVisibleLetterCount((prevCount) => {
@@ -59,16 +60,17 @@ const ProjectsComponent = () => {
                 });
             }, 100);
         }
-    
+
         return () => clearInterval(interval);
     }, [isLargeTextVisible, text.length]);
-    
+
     const handleButtonClick = () => {
         setAnimationOn(true);
     };
 
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
+            <PageHeader />
             <div className={styles.leftColumn}>
                 <div
                     ref={largeTextRef}
@@ -88,13 +90,16 @@ const ProjectsComponent = () => {
             <div className={styles.rightColumn}>
                 <div ref={teaserTextContainerRef} className={`${styles.teaserTextContainer} ${styles.fadeIn}`}>
                     <p className={styles.teaserText}>
-                        Crafted to push boundaries, built to solve real-world challenges, and designed with precision and purpose. Each project is a glimpse into advanced solutions and unconventional ideas, where complexity meets clarity.
+                        Each project is crafted to push boundaries, tackle real-world challenges, and deliver purposeful results. These are more than just code—each one represents a unique solution to a complex problem, where cutting-edge technology and creative vision come together to transform ideas into reality. My work showcases both the functionality and finesse needed to bring clarity to even the most intricate concepts.
                     </p>
                     <p className={styles.teaserText}>
-                        Discover the stories behind the code, the challenges that pushed the limits, and the passion for clean, impactful design.
+                        Dive into the stories behind the code, uncover the thought processes that solved pressing challenges, and explore how design and efficiency blend to form impactful results. Each project is a journey of innovation and skill, reflecting my dedication to clean, reliable, and powerful solutions that stand the test of time.
+                    </p>
+                    <p className={styles.teaserText}>
+                    The journey awaits—each project inviting you to explore the depth of creativity, logic, and technical skill. 
                     </p>
                     <p className={styles.invitation}>
-                        The journey awaits. Are you ready to dive in?
+                        Are you ready to dive in and see where it leads?
                     </p>
 
                     <button className={styles.showMoreBtn} onClick={handleButtonClick}>

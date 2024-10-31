@@ -32,7 +32,7 @@
     left: 0;
     right: 0; /* Make the line stretch to the edges */
     height: 2px; /* Adjust the thickness of the line */
-    background-color: white; /* Set the line color */
+    background-color: rgb(230, 230, 230);
 }
 
 /* Right Column */
@@ -41,6 +41,7 @@
     margin-top: 100px;
     margin-right: 300px;
     margin-left: 100px;
+    margin-bottom: 100px;
     flex-direction: column;
 }
 
@@ -87,8 +88,9 @@
 
 /* Invitation styling */
 .invitation {
-    font-size: 1.3rem;
-    color: rgba(253, 253, 253);
+    font-size: 1.9rem;
+    font-weight: bolder;
+    color: rgb(230, 230, 230);
     opacity: 1;
 }
 
@@ -103,9 +105,9 @@
 .showMoreBtn {
     margin-top: 30px;
     padding: 6px 10px;
-    border: 2px solid white;
+    border: 2px solid;
     background-color: transparent;
-    color: rgba(253, 253, 253);
+    color: rgb(230, 230, 230);
     cursor: pointer;
     width: max-content;
     transition: background-color 0.3s, color 0.3s;
@@ -113,7 +115,7 @@
 }
 
 .showMoreBtn:hover {
-    background-color: rgba(253, 253, 253);
+    background-color: rgb(230, 230, 230);
     color: black;
 }
 

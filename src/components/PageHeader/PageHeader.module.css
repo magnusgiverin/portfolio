@@ -1,25 +1,55 @@
+/* PageHeader.module.css */
+
 .header {
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     z-index: 50;
-    font-size: 17px;
     display: flex;
     align-items: center;
-    opacity: 0; /* Start hidden */
-    transition: transform 1s ease-out, opacity 0.4s ease-out; /* Smooth transition */
+    justify-content: center;
+    opacity: 0;
+    color: rgb(216, 216, 216);
+    transition: transform 1s ease-out, opacity 0.4s ease-out;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.headerTop {
+    top: -12px; /* Move it 20px up */
+}
+
+.headerBottom {
+    bottom: 12px;
 }
 
 .show {
-    opacity: 1; /* Fade in */
+    opacity: 1;
 }
 
 .line {
-    flex: 1; /* Allows the line to take up available space */
-    height: 1px; /* Thickness of the line */
-    background-color: #ccc; /* Color of the line */
-    margin: 0 10px; /* Space between the line and the text */
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* Split animation for text */
+.header h1 {
+    animation: split 1s ease forwards;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@keyframes split {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 @media (max-width: 640px) {

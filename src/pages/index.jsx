@@ -13,7 +13,7 @@ export default function Home() {
     const careerComponentRef = useRef(null);
     const skillsComponentRef = useRef(null);
 
-    const sections = [projectsComponentRef, aboutComponentRef, skillsComponentRef, careerComponentRef];
+    const sections = [projectsComponentRef, skillsComponentRef, aboutComponentRef, careerComponentRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
