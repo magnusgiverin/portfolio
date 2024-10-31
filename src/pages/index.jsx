@@ -22,53 +22,35 @@ export default function Home() {
         // Smooth scroll to the top of the page on refresh
         window.scrollTo({ top: 0, behavior: "smooth" });
     
-        // Observer to control navigation visibility
-        const navVisibilityObserver = new IntersectionObserver(
+        // Observer to control navigation visibility based on welcome and footer visibility
+        const visibilityObserver = new IntersectionObserver(
             (entries) => {
+                let isWelcomeInView = false;
+                let isFooterInView = false;
+    
                 entries.forEach((entry) => {
-                    // Hide the navbar when the welcome component is not in view
                     if (entry.target === welcomeComponentRef.current) {
-                        setShowNav(!entry.isIntersecting);
+                        isWelcomeInView = entry.isIntersecting;
+                    }
+                    if (entry.target === footerComponentRef.current) {
+                        isFooterInView = entry.isIntersecting;
                     }
                 });
+    
+                // Set showNav to false if either welcome or footer is in view, otherwise true
+                setShowNav(!(isWelcomeInView || isFooterInView));
             },
-            { threshold: 0.8 }
+            { threshold: 0.2 }
         );
     
-        // Observe the welcome component
-        if (welcomeComponentRef.current) {
-            navVisibilityObserver.observe(welcomeComponentRef.current);
-        }
-
-        // Observer for the footer section
-        const footerObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    // Hide the navbar when the footer is in view
-                    if (entry.isIntersecting) {
-                        setShowNav(false);
-                    } else {
-                        // Show navbar when footer is not in view
-                        setShowNav(!welcomeComponentRef.current || !welcomeComponentRef.current.isIntersecting);
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        // Observe the footer component
-        if (footerComponentRef.current) {
-            footerObserver.observe(footerComponentRef.current);
-        }
-
-        // Cleanup observers on unmount
+        // Observe the welcome and footer components
+        if (welcomeComponentRef.current) visibilityObserver.observe(welcomeComponentRef.current);
+        if (footerComponentRef.current) visibilityObserver.observe(footerComponentRef.current);
+    
+        // Cleanup observer on unmount
         return () => {
-            if (welcomeComponentRef.current) {
-                navVisibilityObserver.unobserve(welcomeComponentRef.current);
-            }
-            if (footerComponentRef.current) {
-                footerObserver.unobserve(footerComponentRef.current);
-            }
+            if (welcomeComponentRef.current) visibilityObserver.unobserve(welcomeComponentRef.current);
+            if (footerComponentRef.current) visibilityObserver.unobserve(footerComponentRef.current);
         };
     }, []);
 
