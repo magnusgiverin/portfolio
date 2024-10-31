@@ -77,7 +77,7 @@ export default function Home() {
             <LetterNav sections={sections} showNav={showNav} />
             {/* Page Sections */}
             <div ref={welcomeComponentRef}>
-                <WelcomeComponent scrollToRef={projectsComponentRef} />
+                <WelcomeComponent scrollToRef={aboutComponentRef} />
             </div>
             <div ref={aboutComponentRef}>
                 <AboutComponent />

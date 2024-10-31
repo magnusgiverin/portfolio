@@ -14,6 +14,14 @@ const navigationLinks = [
       ],
     },
     {
+      title: "Career",
+      path: "/career",
+      sublinks: [
+        { title: "Current Position", path: "/career#current-position" },
+        { title: "Past Experiences", path: "/career#past-experiences" },
+      ],
+    },
+    {
       title: "Projects",
       path: "/projects",
       sublinks: [
@@ -25,14 +33,6 @@ const navigationLinks = [
       title: "Skills",
       path: "/skills",
       sublinks: [],
-    },
-    {
-      title: "Career",
-      path: "/career",
-      sublinks: [
-        { title: "Current Position", path: "/career#current-position" },
-        { title: "Past Experiences", path: "/career#past-experiences" },
-      ],
     },
   ];
   

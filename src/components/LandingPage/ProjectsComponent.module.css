@@ -4,8 +4,8 @@
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    background-color:#28292c;
-    color: rgb(230, 230, 230);
+    color: rgb(255, 255, 255);
+    background-color: rgb(106, 106, 106);
     padding: 0 20px;
     gap: 80px;
     padding-top: 100px;
@@ -33,7 +33,7 @@
     left: 0;
     right: 0; /* Make the line stretch to the edges */
     height: 2px; /* Adjust the thickness of the line */
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
 }
 
 /* Right Column */
@@ -91,7 +91,7 @@
 .invitation {
     font-size: 1.9rem;
     font-weight: bolder;
-    color: rgb(230, 230, 230);
+    color: rgb(255, 255, 255);
     opacity: 1;
 }
 
@@ -99,7 +99,7 @@
 .teaserText {
     font-size: 1.3rem;
     opacity: 1;
-    color: rgb(230, 230, 230);
+    color: rgb(255, 255, 255);
 }
 
 /* Show More Button styling */
@@ -108,7 +108,7 @@
     padding: 6px 10px;
     border: 2px solid;
     background-color: transparent;
-    color: rgb(230, 230, 230);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     width: max-content;
     transition: 0.3s;
@@ -116,9 +116,9 @@
 }
 
 .showMoreBtn:hover {
-    background-color: rgb(230, 230, 230);
-    color: #28292c;
-    border-color: rgb(230, 230, 230);;
+    background-color: rgb(255, 255, 255);
+    color: rgb(106, 106, 106);
+    border-color: rgb(255, 255, 255);
 }
 
 @media (max-width: 1600px) {
