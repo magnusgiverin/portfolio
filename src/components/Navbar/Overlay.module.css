@@ -13,7 +13,6 @@
     overflow-y: auto; /* Allow scrolling if content exceeds viewport */
 }
 
-/* Overlay visible styling */
 .overlay-visible {
     opacity: 1;
     pointer-events: auto;
@@ -54,8 +53,6 @@
     opacity: 0; /* Start hidden */
     animation: flyInNav 0.2s forwards ease-in-out; /* Apply fly-in animation */
 }
-
-
 
 .sublinks {
     list-style: none;

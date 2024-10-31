@@ -108,6 +108,7 @@ const CareerComponent = () => {
                 </button>
             </div>
         </div>
+        <PageHeader position='bottom'/>
     </div>
     );
 };
