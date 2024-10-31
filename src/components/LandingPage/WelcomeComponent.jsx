@@ -192,7 +192,7 @@ const WelcomeComponent = ({ scrollToRef }) => {
           <div className={`h-[33px] sm:h-full w-[2px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
           <div className={`${textBoxVisible ? styles.waveFadeIn : ''}`}>
             <p className='text-sm sm:text-lg font-light'>
-              magnus andreas giverin.
+              Magnus Andreas Giverin.
             </p>
           </div>
         </div>
@@ -200,7 +200,7 @@ const WelcomeComponent = ({ scrollToRef }) => {
           <div className={`h-[43px] sm:h-full w-[2px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
           <div className={`${textBoxVisible ? styles.waveFadeIn : ''}`}>
             <p className='text-sm sm:text-lg font-light'>
-              scroll to learn more. enjoy.
+              Scroll to learn more. enjoy.
             </p>
           </div>
         </div>
