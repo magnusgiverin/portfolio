@@ -44,7 +44,7 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
         </div>
       </nav>
 
-      <Overlay visible={overlayVisible} />
+      <Overlay visible={overlayVisible} onClose={undefined} />
     </>
   );
 };

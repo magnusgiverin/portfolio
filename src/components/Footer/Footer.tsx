@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './Footer.module.css';
 import navigationLinks from '../../data/navigation';
 import { LuCornerDownRight } from "react-icons/lu";
-import { sendEmail } from '../Navbar/sendEmail';
-import PageHeader from '../PageHeader/PageHeader';
 
 const Footer = () => {
     const [senderName, setSenderName] = useState('');
@@ -11,10 +9,37 @@ const Footer = () => {
     const [message, setMessage] = useState('');
     const footerRef = useRef(null); // Ref for the footer element
     const [animationKey, setAnimationKey] = useState(0); // Key to reset animations
+    const [confirmationMessage, setConfirmationMessage] = useState(''); // New state for confirmation message
+
+    const sendEmail = async () => {
+        const response = await fetch('/api/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: message,
+                senderName: senderName,
+                senderEmail: senderEmail,
+            }),
+        });
+
+        if (response.ok) {
+            setConfirmationMessage('Your email has been sent successfully!'); // Success message
+            setSenderEmail('')
+            setSenderName('')
+            setMessage('')
+        } else {
+            setConfirmationMessage('There was an error sending your email. Please try again later.'); // Error message
+        }
+
+        // Clear the confirmation message after 5 seconds
+        setTimeout(() => setConfirmationMessage(''), 5000);
+    };
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        sendEmail(senderName, message, senderEmail);
+        sendEmail();
     };
 
     useEffect(() => {
@@ -72,8 +97,9 @@ const Footer = () => {
                         <div className={styles.profileContainer}>
                             <img src="magnus.JPG" alt="Magnus" className={styles.profilePic} />
                             <div className={styles.linksContainer}>
-                                <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
-                                <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
+                                <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
+                                <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
+                                <a href='/cv.pdf' target='_blank' className={styles.link}>CV</a>
                             </div>
                         </div>
                         <p className={styles.subtitle}>Get in touch:</p>
@@ -101,7 +127,9 @@ const Footer = () => {
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                             ></textarea>
-                            <button type="submit" className={styles.submitButton}>Send</button>
+                            {confirmationMessage ? <p className={styles.confirmationMessage}>{confirmationMessage}</p> :
+                                <button type="submit" className={styles.submitButton}>Send</button>
+                            }
                         </form>
                     </div>
                 </div>

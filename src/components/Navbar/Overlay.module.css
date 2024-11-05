@@ -168,28 +168,33 @@
     gap: 40px;                 /* Even spacing between links */
 }
 
-.socialLink {
+.link {
     font-weight: bold;          /* Make the links bold */
     opacity: 0;                /* Start hidden */
     animation: flyInSocialLinks 0.6s forwards ease-in-out; /* Animation applied */
 }
 
-.socialLink:hover {
+.link:hover {
     text-decoration: underline;      /* Remove underline from links */
 }
 
 /* Adding delays for each child social link */
-.socialLink:nth-child(1) {
+.link:nth-child(1) {
+    animation-delay: 0.2s; /* Delay for the second link */
+}
+.link:nth-child(2) {
     animation-delay: 0.4s; /* Delay for the first link */
 }
 
-.socialLink:nth-child(2) {
-    animation-delay: 0.2s; /* Delay for the second link */
-}
-
-.socialLink:nth-child(3) {
+.link:nth-child(3) {
     animation-delay: 0.6s; /* Delay for the third link */
 }
+
+.confirmationMessage {
+    color: rgb(234, 234, 234);
+    margin-top: 10px;
+    font-weight: bold;
+  }
 
 /* Fly-in animations */
 @keyframes flyInNav {
@@ -274,6 +279,10 @@
     }
 
     .submitButton {
+        margin-bottom: 100px;
+    }
+
+    .confirmationMessage {
         margin-bottom: 100px;
     }
 

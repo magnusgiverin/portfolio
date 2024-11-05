@@ -1,10 +1,11 @@
 // components/Layout.js
-import Navbar from './Navbar'; // Import the Navbar component
+
+import Navbar from "../Navbar/Navbar";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <Navbar visible={undefined} sendOverLayStatus={undefined} />
       <main>{children}</main>
     </>
   );

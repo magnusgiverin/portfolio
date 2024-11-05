@@ -25,8 +25,10 @@
   display: inline-block;
   opacity: 0;
   animation: flicker-animation 1s ease-in-out forwards;
-  text-align: center; /* Center text within span */
-  line-height: 1; /* Center text vertically within span */
+  text-align: center;
+  /* Center text within span */
+  line-height: 1;
+  /* Center text vertically within span */
 }
 
 /* Hidden state */
@@ -105,38 +107,49 @@
 @keyframes wave-fade-in {
   0% {
     opacity: 0;
-    clip-path: inset(0 100% 0 0); /* Start with text hidden from the left */
+    clip-path: inset(0 100% 0 0);
+    /* Start with text hidden from the left */
   }
 
   100% {
     opacity: 1;
-    clip-path: inset(0 0 0 0); /* Reveal the text fully */
+    clip-path: inset(0 0 0 0);
+    /* Reveal the text fully */
   }
 }
 
 @media (max-width: 640px) {
   .flickerText {
-    font-size: calc(9vh + 10px); /* Adjust font size based on viewport height */
+    font-size: calc(9vh + 10px);
+    /* Adjust font size based on viewport height */
     font-weight: 400;
     flex-direction: column-reverse;
     position: absolute;
-    top: calc(var(--vh, 1vh) * 50); /* Center to 50% of visible viewport */
+    top: calc(var(--vh, 1vh) * 50);
+    /* Center to 50% of visible viewport */
     right: 0;
     margin-right: 10px;
-    transform: translateY(-50%); /* Adjust to vertically center */
-    transition: top 0.5s ease, transform 0.5s ease; /* Smooth transition for centering */
-    padding-bottom: 60px; /* Ensure some padding from the bottom */
-}
-
+    transform: translateY(-50%);
+    /* Adjust to vertically center */
+    transition: top 0.5s ease, transform 0.5s ease;
+    /* Smooth transition for centering */
+    padding-bottom: 60px;
+    /* Ensure some padding from the bottom */
+  }
 
   .flickerText span {
     transform: rotate(270deg);
     display: block;
-    width: 100%; /* Span takes full width on small screens */
-    height: 100%; /* Span takes full height */
-    align-items: center; /* Center content within each letter box */
-    display: flex; /* Make span flex container */
-    justify-content: center; /* Center horizontally */
+    width: 100%;
+    /* Span takes full width on small screens */
+    height: 100%;
+    /* Span takes full height */
+    align-items: center;
+    /* Center content within each letter box */
+    display: flex;
+    /* Make span flex container */
+    justify-content: center;
+    /* Center horizontally */
   }
 
   /* Adjust centering based on available space above navbar */

@@ -1,15 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './ProjectsComponent.module.css';
-import TerminalAnimation from './TerminalAnimation';
+import styles from './AboutComponent.module.css';
 import PageHeader from '../PageHeader/PageHeader';
+import { useRouter } from 'next/navigation';
+import landingPageText from '../../data/text/landingPageText';
+import React from 'react';
 
-const ProjectsComponent = () => {
+const AboutComponent = () => {
     const largeTextRef = useRef(null);
     const teaserTextContainerRef = useRef(null);
-    const [animationOn, setAnimationOn] = useState(false);
     const [visibleLetterCount, setVisibleLetterCount] = useState(0);
     const [isLargeTextVisible, setIsLargeTextVisible] = useState(false);
-    const text = "Projects";
+    const { about } = landingPageText
+
+    const router = useRouter();
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -33,12 +36,12 @@ const ProjectsComponent = () => {
 
     useEffect(() => {
         let interval;
-        let letterCount = visibleLetterCount; // Start from current visible count
-
+        let letterCount = visibleLetterCount;
+    
         if (isLargeTextVisible) {
             interval = setInterval(() => {
                 setVisibleLetterCount((prevCount) => {
-                    if (prevCount < text.length) {
+                    if (prevCount < about.title.length) {
                         letterCount = prevCount + 1;
                         return letterCount;
                     } else {
@@ -60,23 +63,23 @@ const ProjectsComponent = () => {
                 });
             }, 100);
         }
-
+    
         return () => clearInterval(interval);
-    }, [isLargeTextVisible, text.length]);
-
+    }, [isLargeTextVisible, about.title.length]);
+    
     const handleButtonClick = () => {
-        setAnimationOn(true);
+        void router.push(about.redirect)
     };
 
     return (
-        <div className={`min-h-screen ${styles.projectsComponent}`}>
-            <PageHeader />
+        <div className={`min-h-screen ${styles.aboutComponent}`}>
+            <PageHeader/>
             <div className={styles.leftColumn}>
                 <div
                     ref={largeTextRef}
                     className={`${styles.largeText}`}
                 >
-                    {text.split("").map((letter, index) => (
+                    {about.title.split("").map((letter, index) => (
                         <span
                             key={index}
                             className={`${styles.letter} ${index < visibleLetterCount ? styles.fadeInLetter : ''}`}
@@ -86,31 +89,26 @@ const ProjectsComponent = () => {
                     ))}
                 </div>
             </div>
-
+        
             <div className={styles.rightColumn}>
                 <div ref={teaserTextContainerRef} className={`${styles.teaserTextContainer} ${styles.fadeIn}`}>
-                    <p className={styles.teaserText}>
-                        Each project is crafted to push boundaries, tackle real-world challenges, and deliver purposeful results. These are more than just code—each one represents a unique solution to a complex problem, where cutting-edge technology and creative vision come together to transform ideas into reality. My work showcases both the functionality and finesse needed to bring clarity to even the most intricate concepts.
+                    {about.teaser.map((teaserText, index) => (
+                    <p className={styles.teaserText} key={index}>
+                        {teaserText}
                     </p>
-                    <p className={styles.teaserText}>
-                        Dive into the stories behind the code, uncover the thought processes that solved pressing challenges, and explore how design and efficiency blend to form impactful results. Each project is a journey of innovation and skill, reflecting my dedication to clean, reliable, and powerful solutions that stand the test of time.
+                    ))}
+                    {about.invitation.map((invitationText, index) => (
+                    <p className={styles.invitation} key={index}>
+                        {invitationText}
                     </p>
-                    <p className={styles.teaserText}>
-                    The journey awaits—each project inviting you to explore the depth of creativity, logic, and technical skill. 
-                    </p>
-                    <p className={styles.invitation}>
-                        Are you ready to dive in and see where it leads?
-                    </p>
-
+                    ))}
                     <button className={styles.showMoreBtn} onClick={handleButtonClick}>
-                        Explore My Projects
+                        {about.buttonText}
                     </button>
                 </div>
             </div>
-
-            {animationOn && <TerminalAnimation />}
         </div>
     );
 };
 
-export default ProjectsComponent;
+export default AboutComponent;

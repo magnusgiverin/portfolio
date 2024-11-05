@@ -1,16 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './AboutComponent.module.css';
-import PageHeader from '../PageHeader/PageHeader';
-import { useRouter } from 'next/navigation';
+import styles from './AboutIntro.module.css';
+import landingPageText from '../../data/text/landingPageText';
+import Navbar from '../Navbar/Navbar';
+import React from 'react';
 
-const AboutComponent = () => {
+const AboutIntro = () => {
     const largeTextRef = useRef(null);
     const teaserTextContainerRef = useRef(null);
     const [visibleLetterCount, setVisibleLetterCount] = useState(0);
     const [isLargeTextVisible, setIsLargeTextVisible] = useState(false);
-    
-    const text = "About";
-    const router = useRouter();
+    const { about } = landingPageText
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -39,7 +38,7 @@ const AboutComponent = () => {
         if (isLargeTextVisible) {
             interval = setInterval(() => {
                 setVisibleLetterCount((prevCount) => {
-                    if (prevCount < text.length) {
+                    if (prevCount < about.title.length) {
                         letterCount = prevCount + 1;
                         return letterCount;
                     } else {
@@ -63,21 +62,17 @@ const AboutComponent = () => {
         }
     
         return () => clearInterval(interval);
-    }, [isLargeTextVisible, text.length]);
+    }, [isLargeTextVisible, about.title.length]);
     
-    const handleButtonClick = () => {
-        void router.push("/about")
-    };
-
     return (
-        <div className={`min-h-screen ${styles.aboutComponent}`}>
-            <PageHeader/>
+        <div className={`min-h-screen ${styles.aboutInfo}`}>
+            <Navbar visible={undefined} sendOverLayStatus={undefined}/>
             <div className={styles.leftColumn}>
                 <div
                     ref={largeTextRef}
                     className={`${styles.largeText}`}
                 >
-                    {text.split("").map((letter, index) => (
+                    {about.title.split("").map((letter, index) => (
                         <span
                             key={index}
                             className={`${styles.letter} ${index < visibleLetterCount ? styles.fadeInLetter : ''}`}
@@ -90,26 +85,20 @@ const AboutComponent = () => {
         
             <div className={styles.rightColumn}>
                 <div ref={teaserTextContainerRef} className={`${styles.teaserTextContainer} ${styles.fadeIn}`}>
-                    <p className={styles.teaserText}>
-                        Hello! I'm a 21-year-old based in Trondheim, Norway. With a passion for technology and problem-solving, my journey in development began with a fascination for how things work and evolved into a career in building solutions that make a difference.
+                    {about.teaser.map((teaserText, index) => (
+                    <p className={styles.teaserText} key={index}>
+                        {teaserText}
                     </p>
-                    <p className={styles.teaserText}>
-                        Growing up, I was captivated by both creative and technical pursuits. This dual interest led me to pursue web development, where I get to blend the logical and imaginative aspects of design and coding. My background in software development has given me a strong foundation in full-stack technology, and my curiosity drives me to continually learn and improve.
+                    ))}
+                    {about.invitation.map((invitationText, index) => (
+                    <p className={styles.invitation} key={index}>
+                        {invitationText}
                     </p>
-                    <p className={styles.teaserText}>
-                        Outside of work, I’m a collaborative person who values teamwork, whether it’s in professional settings or during personal projects. I enjoy spending my free time exploring new tech trends, reading, or enjoying Norway's beautiful landscapes.
-                    </p>
-                    <p className={styles.invitation}>
-                        Want to know more? Dive into my story and get to know the person behind the code.
-                    </p>
-
-                    <button className={styles.showMoreBtn} onClick={handleButtonClick}>
-                        Learn More About Me
-                    </button>
+                    ))}
                 </div>
             </div>
         </div>
     );
 };
 
-export default AboutComponent;
+export default AboutIntro;

@@ -43,7 +43,7 @@
     font-family: 'Courier Prime', monospace;
     font-size: 1.2rem;
     line-height: 1.4;
-    margin: 0; /* Remove margin */
+    margin: 10px; /* Remove margin */
     padding: 0; /* Remove padding */
     white-space: pre-wrap; /* Ensure preformatted text wraps properly */
 }
@@ -63,6 +63,6 @@
 @media (max-width: 640px) {
     .consoleOutput {
         font-size: 0.8rem;
-        margin: 5px;
+        margin: 2px;
     }
 }
