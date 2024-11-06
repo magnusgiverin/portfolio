@@ -100,7 +100,7 @@ const Overlay = ({ visible, onClose }) => {
             <div className={styles.linksContainer}>
               <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
               <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
-              <a href='/cv.pdf' target='_blank' className={styles.link}>CV</a>
+              <a href='/CV.pdf' target='_blank' className={styles.link}>CV</a>
             </div>
           </div>
           <p className={styles.subtitle}>Get in touch:</p>
