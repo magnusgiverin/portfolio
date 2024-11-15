@@ -97,7 +97,7 @@ const AboutComponent = () => {
                         {teaserText}
                     </p>
                     ))}
-                    {about.invitation.map((invitationText, index) => (
+                    {about.invitation?.map((invitationText, index) => (
                     <p className={styles.invitation} key={index}>
                         {invitationText}
                     </p>

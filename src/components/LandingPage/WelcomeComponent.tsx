@@ -190,17 +190,18 @@ const WelcomeComponent = ({ scrollToRef }) => {
       </div>
       <div className="z-10 absolute sm:bottom-20 md:bottom-35 gap-10 md:gap-0 flex flex-col sm:flex-row w-full justify-between pl-[5vw] pr-[30vw] sm:px-20">
         <div className={`mr-10 xs:mr-0 lg:px-20 ${textBoxVisible ? styles.visible : styles.hidden} flex items-center`}>
-          <div className={`h-[33px] sm:h-full w-[2px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
+          <div className={`h-[33px] sm:h-full w-[4px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
           <div className={`${textBoxVisible ? styles.waveFadeIn : ''}`}>
-            <p className='text-sm sm:text-lg font-light'>
+            <p className='text-md sm:text-xl font-light'>
               Magnus Andreas Giverin.
             </p>
           </div>
         </div>
         <div className={`mr-10 xs:mr-0 lg:px-20 ${textBoxVisible ? styles.visible : styles.hidden} flex items-center`}>
-          <div className={`h-[43px] sm:h-full w-[2px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}></div>
+          <div className={`h-[43px] sm:h-full w-[4px] bg-white mr-4 ${textBoxVisible ? styles.waveFadeIn : ''}`}
+          ></div>
           <div className={`${textBoxVisible ? styles.waveFadeIn : ''}`}>
-            <p className='text-sm sm:text-lg font-light'>
+            <p className='text-md sm:text-xl font-light'>
               Scroll to learn more. enjoy.
             </p>
           </div>

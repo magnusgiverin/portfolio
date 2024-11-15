@@ -12,11 +12,10 @@
 /* Flicker Text Styling with responsive font size */
 .flickerText {
   font-size: 16.5vw;
-  max-width: 90vw;
+  max-width: 100vw;
   color: #fff;
   gap: 2vw;
   display: flex;
-  justify-content: center;
   white-space: nowrap;
 }
 
@@ -26,7 +25,7 @@
   opacity: 0;
   animation: flicker-animation 1s ease-in-out forwards;
   text-align: center;
-  /* Center text within span */
+  /* Center text within span */  
   line-height: 1;
   /* Center text vertically within span */
 }
@@ -162,19 +161,13 @@
     /* Add background animation on light up */
     height: 100vh;
   }
-
-  /* Media Query for Smaller Screens */
-  .particle {
-    background: rgba(255, 255, 255, 0.5);
-    /* Slightly transparent for smaller screens */
-  }
 }
 
 /* Particle Effect */
 .particle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.889);
   pointer-events: none;
   animation: particleAnimation infinite;
   z-index: 1;

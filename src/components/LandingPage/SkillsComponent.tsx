@@ -97,7 +97,7 @@ const SkillsComponent = () => {
                         {teaserText}
                     </p>
                     ))}
-                    {skills.invitation.map((invitationText, index) => (
+                    {skills.invitation?.map((invitationText, index) => (
                     <p className={styles.invitation} key={index}>
                         {invitationText}
                     </p>

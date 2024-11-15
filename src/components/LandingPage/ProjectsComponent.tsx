@@ -96,7 +96,7 @@ const ProjectsComponent = () => {
                             {teaserText}
                         </p>
                     ))}
-                    {projects.invitation.map((invitationText, index) => (
+                    {projects.invitation?.map((invitationText, index) => (
                         <p className={styles.invitation} key={index}>
                             {invitationText}
                         </p>

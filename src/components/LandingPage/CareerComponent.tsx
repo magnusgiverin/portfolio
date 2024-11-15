@@ -97,7 +97,7 @@ const CareerComponent = () => {
                         {teaserText}
                     </p>
                     ))}
-                    {career.invitation.map((invitationText, index) => (
+                    {career.invitation?.map((invitationText, index) => (
                     <p className={styles.invitation} key={index}>
                         {invitationText}
                     </p>

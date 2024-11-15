@@ -15,7 +15,6 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid white; /* Changed to border-top for downward arrow */
-    opacity: 0.6; /* Adjust opacity as needed */
 }
 
 .scrollArrow.visible {
