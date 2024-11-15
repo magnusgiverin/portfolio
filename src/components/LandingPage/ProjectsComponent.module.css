@@ -5,7 +5,7 @@
     justify-content: center;
     position: relative;
     color: rgb(255, 255, 255);
-    background-color: rgb(106, 106, 106);
+    background-color:#28292c;
     padding: 0 20px;
     gap: 80px;
     padding-top: 100px;
@@ -17,7 +17,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    min-width: 450px;
+    min-width: 500px;
     padding-top: 150px;
     position: sticky;
     margin-left: 120px;
@@ -32,7 +32,7 @@
     top: 150px; /* Adjust this value to position the line */
     left: 0;
     right: 0; /* Make the line stretch to the edges */
-    height: 2px; /* Adjust the thickness of the line */
+    height: 4px; /* Adjust the thickness of the line */
     background-color: rgb(255, 255, 255);
 }
 
@@ -48,11 +48,10 @@
 
 /* Large text styling */
 .largeText {
-    font-size: 7rem;
-    font-weight: normal;
+    font-size: 8rem;
     text-align: left;
     opacity: 1;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     position: relative;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }

@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     height: 100%; /* Fill the full height of the viewport */
-    background-color: #2d2e34;
+    background-color: #68686c;
     opacity: 1;
     transition: opacity 0.5s ease;
     display: flex;
@@ -9,10 +9,11 @@
 
 .madeBy {
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: bolder;
     padding-bottom: 20px;
-    background-color: #2d2e34;
+    background-color: #68686c;
 }
 
 .footerContent {
