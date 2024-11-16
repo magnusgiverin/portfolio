@@ -4,7 +4,10 @@ import AboutIntro from '../components/AboutPage/AboutIntro';
 
 const AboutPage = () => {
     return (
-        <AboutIntro/>
+        <div>
+            <h1>About</h1>
+            {/* Page content */}
+        </div>
     );
 };
 
