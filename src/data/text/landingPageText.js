@@ -28,10 +28,10 @@ const landingPageText = {
                 description: "My experience spans multiple industries, including technology, education, and administration. I have gained insight into how technology can transform organizations and have been a driving force in making this possible."
             },
             {
-                title: "5+",
-                subtitle: "Innovation projects",
-                description: "Over the years, I have been involved in several projects, ranging from the development of web applications to leading innovation initiatives that have transformed work processes. These experiences have challenged me to grow both as a leader and a developer."
-            },
+                title: "9+",
+                subtitle: "Years Abroad",
+                description: "British-Norwegian dual national with 9 years abroad in Mexico, Sudan, the UK, and Indonesia. Fluent in Norwegian, English, and Spanish. Passionate about problem-solving, teamwork, and applying knowledge to drive innovation and societal impact."
+            }
         ],
         ctaLink: {
             text: "Read more about my passions",
@@ -50,7 +50,7 @@ const landingPageText = {
                 title: "My Journey and Future Goals",
                 description: "From a young age, I was captivated by technology, which sparked my interest in IT. Over the years, I've gained valuable experience through education and hands-on projects. Reflecting on my journey, I've grown both personally and professionally, and I'm now focused on using my skills to drive impactful solutions that foster efficiency and collaboration across industries.",
                 ctaLink: {
-                    text: "Explore my journey",
+                    text: "Explore my personal journey",
                     url: "/about#education"
                 }
             }
@@ -84,8 +84,8 @@ const landingPageText = {
                 company: "Orbit NTNU",
                 description: "Led a team of 6 in developing a new intranet service and connected it to the new IT ground system.",
                 dates: {
-                    from: "2023",
-                    to: "Present"
+                    from: "August 2023",
+                    to: "February 2024"
                 },
                 location: "Trondheim, Norway"
             },
@@ -95,7 +95,7 @@ const landingPageText = {
                 description: "Refactored client-side logic and developed new APIs for the 'pension agreements' page on the KLP website.",
                 dates: {
                     from: "June 2023",
-                    to: "February 2024"
+                    to: "August 2023"
                 },
                 location: "Trondheim, Norway"
             },
