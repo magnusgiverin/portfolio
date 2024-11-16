@@ -23,7 +23,7 @@
     flex-direction: row; /* Keep content in a row layout */
     width: 80%; /* Full width of the footer with margins */
     max-width: 2000px;
-    margin-top: 157px; /* Space for the navbar */
+    margin-top: 159px; /* Space for the navbar */
     margin-left: auto; /* Center the content */
     margin-right: auto; /* Center the content */
 }
@@ -251,13 +251,20 @@
     }
 }
 
-@media (max-width: 900px) {
-    .footerContent {
-        width: 90%; /* Adjust width for smaller screens */
+@media (max-width: 1100px) {
+    .profilePic {
+        width: 130px;
+        height: 130px;
     }
 
     .linksContainer {
         gap: 30px;                 /* Even spacing between links */
+    }
+}
+
+@media (max-width: 900px) {
+    .overlayContent {
+        width: 90%; /* Adjust width for smaller screens */
     }
 }
 

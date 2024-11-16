@@ -255,13 +255,20 @@
     }
 }
 
-@media (max-width: 900px) {
-    .overlayContent {
-        width: 90%; /* Adjust width for smaller screens */
+@media (max-width: 1100px) {
+    .profilePic {
+        width: 130px;
+        height: 130px;
     }
 
     .linksContainer {
         gap: 30px;                 /* Even spacing between links */
+    }
+}
+
+@media (max-width: 900px) {
+    .overlayContent {
+        width: 90%; /* Adjust width for smaller screens */
     }
 }
 
