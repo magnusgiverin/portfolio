@@ -19,11 +19,11 @@ const SkillsComponent = () => {
             </tr>
           </thead>
           <tbody>
-            {Object.entries(skills).map(([category, { skills, description }]) => (
+            {Object.entries(skills).map(([category, { title, skills, description }]) => (
               <tr key={category}>
                 <td className={styles.categoryCell}>
                   <div className={styles.categoryName}>
-                    {category.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                    {title.toUpperCase()}
                   </div>
                   <p className={styles.categoryDescription}>{description}</p>
                 </td>
