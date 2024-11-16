@@ -31,7 +31,7 @@
 }
 
 .projectBox {
-    padding: 40px;
+    padding: 30px;
     height: 100%;
     position: relative;
     display: flex;
@@ -46,6 +46,7 @@
     color: white;
     margin-bottom: 10px;
 }
+
 .projectHeader {
     display: flex;
     justify-content: space-between; /* Space between the project type and links */
@@ -78,14 +79,12 @@
     font-size: 1rem;
     color: #bbb;
     margin-top: 40px;
-    margin-bottom: 40px;
     line-height: 1.6;
     flex-grow: 1;
 }
 
 .ctaLink {
-    position: relative;
-    bottom: 20px;
+    margin-top: 2rem;
 }
 
 .ctaLinkText {

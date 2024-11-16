@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './Footer.module.css';
 import navigationLinks from '../../data/navigation';
 import { LuCornerDownRight } from "react-icons/lu";
+import PageHeader from '../PageHeader/PageHeader';
 
 const Footer = () => {
     const [senderName, setSenderName] = useState('');

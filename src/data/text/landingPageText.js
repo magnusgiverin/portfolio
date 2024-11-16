@@ -130,13 +130,17 @@ const landingPageText = {
             "title": "My Personal Projects",
             "description": "I am always exploring new ideas and taking on personal projects to challenge myself. These projects allow me to experiment with different technologies and concepts, and I enjoy sharing my work with others. Below are some of the projects I’ve been working on."
         },
+        ctaLink: {
+            text: "Explore my projects",
+            url: "/projects"
+        },
         projects: [
             {
                 name: "Portfolio Website",
                 description: "A personal website designed to showcase my skills, projects, and career journey beyond my CV. This portfolio highlights my work, offering an interactive way for visitors to explore the technologies I work with and the projects I’ve developed. Built with a modern stack including React, Next.js, CSS, and hosted on Vercel, it offers smooth navigation, animations, and a responsive design.",
                 github: "https://github.com/magnusgiverin/portfolio",
                 ctaLink: {
-                    text: "Explore my work",
+                    text: "Read more about Portfolio",
                     url: "/projects"
                 },
                 type: "Personal project"
@@ -147,7 +151,7 @@ const landingPageText = {
                 github: "https://github.com/magnusgiverin/bymuseet",
                 website: "https://bymuseet.com",
                 ctaLink: {
-                    text: "Read more about Bymuseet",
+                    text: "Learn more about Bymuseet",
                     url: "/projects#bymuseet"
                 },
                 type: "Personal project"
@@ -158,7 +162,7 @@ const landingPageText = {
                 github: "https://github.com/magnusgiverin/timeplaner",
                 website: "https://timeplaner.net",
                 ctaLink: {
-                    text: "Read more about Timeplaner",
+                    text: "Read about Timeplaner",
                     url: "/projects#timeplaner"
                 },
                 type: "Personal project"
