@@ -1,196 +1,86 @@
+/* CareerComponent.module.css */
 .careerComponent {
-    display: flex;
-    min-height: 100vh;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    color: rgb(247, 247, 247);
-    background-color:#28292c;
-    padding: 0 20px;
-    gap: 80px;
     padding-top: 100px;
     padding-bottom: 100px;
-}
-
-/* Left Column */
-.leftColumn {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-width: 500px;
-    padding-top: 150px;
-    position: sticky;
-    margin-left: 120px;
-    top: 0;
-    flex-direction: column; /* Allow stacking of child elements */
-}
-
-/* Pseudo-element for the horizontal line */
-.leftColumn::before {
-    content: '';
-    position: absolute;
-    top: 150px; /* Adjust this value to position the line */
-    left: 0;
-    right: 0; /* Make the line stretch to the edges */
-    height: 4px; /* Adjust the thickness of the line */
-    background-color: rgb(247, 247, 247);
-}
-
-/* Right Column */
-.rightColumn {
-    flex: 2;
-    margin-top: 100px;
-    margin-right: 300px;
-    margin-left: 100px;
-    margin-bottom: 100px;
-    flex-direction: column;
-}
-
-/* Large text styling */
-.largeText {
-    font-size: 8rem;
-    text-align: left;
-    opacity: 1;
-    letter-spacing: 2px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
     position: relative;
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.letter {
-    display: inline-block;
-    opacity: 0;
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
 }
 
-.fadeInLetter {
-    animation: fadeInLetter 0.1s ease-out forwards;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
-@keyframes fadeInLetter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.position {
+    padding: 2rem;
+    border-radius: 8px;
+    color: white;
 }
 
-/* Teaser Text Container */
-.teaserTextContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 55px;
-    align-items: flex-start;
-    transform: translateY(50px);
-    opacity: 1;
+.number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FB923C;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
-/* Invitation styling */
-.invitation {
-    font-size: 1.9rem;
-    font-weight: bolder;
-    color: rgb(247, 247, 247);
-    opacity: 1;
+.positionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-/* Teaser text styling */
-.teaserText {
-    font-size: 1.3rem;
-    opacity: 1;
-    color: rgb(247, 247, 247);
+.dates {
+    font-size: 1rem;
+    color: #D1D5DB;
+    margin-bottom: 1rem;
 }
 
-/* Show More Button styling */
-.showMoreBtn {
-    margin-top: 30px;
-    padding: 6px 10px;
-    border: 2px solid;
-    background-color: transparent;
-    color: rgb(230, 230, 230);
-    cursor: pointer;
-    width: max-content;
-    transition: 0.3s;
-    opacity: 1;
+.description {
+    font-size: 1.125rem;
+    color: #9CA3AF;
 }
 
-.showMoreBtn:hover {
-    background-color: rgb(230, 230, 230);
-    color: rgb(63, 64, 69);
-    border-color: rgb(230, 230, 230);;
+
+.ctaLink {
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
-@media (max-width: 1600px) {
-    .rightColumn {
-        margin-right: 120px;
-    }
+.ctaLinkText {
+    font-size: 1.125rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
 
-    .careerComponent {
-        gap: 0px
+@media (max-width: 1500px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 1300px) {
-    .leftColumn {
-        margin-right: 0px;
-        min-width: 100px;
-    }
-
-    .largeText {
-        font-size: 5.1rem;
-    }
-}
-
-/* Responsive styling */
 @media (max-width: 1000px) {
-    .careerComponent {
-        flex-direction: column; /* Stack columns vertically */
-        align-items: center; /* Center content */
-    }
-
-    .leftColumn, .rightColumn {
-        margin: 0; /* Reset margins for centered layout */
-        padding: 0;
-        width: 90%; /* Allow columns to take full width */
-        margin-left: 5%;
-        position: relative;
-    }
-
-    .largeText {
-        font-size: 3.6rem;
-        margin-left: 0px;
-        margin-right: 60px;
-        height: auto;
-    }
-
-    .invitation, .teaserText {
-        font-size: 0.9rem;
-    }
-    
-    .showMoreBtn {
-        margin-bottom: 100px;
-    }
-
-    .leftColumn::before {
-        opacity: 0;
-    }
-    
-    .teaserTextContainer {
-        gap: 40px;
-
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 640px) {
-    .largeText {
-        letter-spacing: 2px;
-        margin-right: 25px;
-        margin-bottom: 0px;
-    }
-    .invitation, .teaserText {
-        font-size: 0.9rem;
-    }
-    .showMoreBtn {
-        margin-bottom: 100px;
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

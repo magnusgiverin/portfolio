@@ -1,194 +1,193 @@
+/* AboutComponent.module.css */
 .aboutComponent {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    background-color:#28292c;
-    color: rgb(230, 230, 230);
-    padding: 0 20px;
-    gap: 80px;
     padding-top: 100px;
     padding-bottom: 100px;
-}
-
-/* Left Column */
-.leftColumn {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-width: 500px;
-    padding-top: 150px;
-    position: sticky;
-    margin-left: 120px;
-    top: 0;
-    flex-direction: column; /* Allow stacking of child elements */
-}
-
-/* Pseudo-element for the horizontal line */
-.leftColumn::before {
-    content: '';
-    position: absolute;
-    top: 150px; /* Adjust this value to position the line */
-    left: 0;
-    right: 0; /* Make the line stretch to the edges */
-    height: 4px; /* Adjust the thickness of the line */
-    background-color: rgb(230, 230, 230);
-}
-
-/* Right Column */
-.rightColumn {
-    flex: 2;
-    margin-top: 100px;
-    margin-right: 300px;
-    margin-left: 100px;
-    margin-bottom: 100px;
-    flex-direction: column;
-}
-
-/* Large text styling */
-.largeText {
-    font-size: 8rem;
-    text-align: left;
-    opacity: 1;
-    letter-spacing: 2px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-height: 100vh;
     position: relative;
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.letter {
-    display: inline-block;
-    opacity: 0;
+.maxWidth {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.fadeInLetter {
-    animation: fadeInLetter 0.1s ease-out forwards;
+.header {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
 }
 
-@keyframes fadeInLetter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-/* Teaser Text Container */
-.teaserTextContainer {
+.column {
     display: flex;
     flex-direction: column;
-    gap: 55px;
-    align-items: flex-start;
-    transform: translateY(50px);
-    opacity: 1;
 }
 
-/* Invitation styling */
-.invitation {
-    font-size: 1.9rem;
-    font-weight: bolder;
-    color: rgb(230, 230, 230);
-    opacity: 1;
+.columnHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-/* Teaser text styling */
-.teaserText {
-    font-size: 1.3rem;
-    opacity: 1;
-    color: rgb(230, 230, 230);
+.line {
+    width: 0.25rem;
+    height: 3rem;
+    background-color: #FB923C;
 }
 
-/* Show More Button styling */
-.showMoreBtn {
-    margin-top: 30px;
-    padding: 6px 10px;
-    border: 2px solid;
-    background-color: transparent;
-    color: rgb(230, 230, 230);
-    cursor: pointer;
-    width: max-content;
-    transition: 0.3s;
-    opacity: 1;
+.columnTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
 }
 
-.showMoreBtn:hover {
-    background-color: rgb(230, 230, 230);
-    color: #28292c;
-    border-color: rgb(230, 230, 230);;
+.columnSubtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #D1D5DB;
+    margin-top: 0.5rem;
 }
 
-@media (max-width: 1600px) {
-    .rightColumn {
-        margin-right: 120px;
-    }
+.columnDescription {
+    color: #9CA3AF;
+    margin-top: 0.5rem;
+}
 
-    .aboutComponent {
-        gap: 0px
+.ctaLink {
+    margin-top: 2rem;
+}
+
+.ctaLinkText {
+    font-size: 1.125rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
+
+.flexContainer {
+    display: flex;
+    gap: 3.125rem;
+    margin-top: 5rem;
+}
+
+.flexItem {
+    width: 50%;
+    background-color: #313131;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flexItemTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.flexItemDescription {
+    color: #D1D5DB;
+    margin-top: 1rem;
+}
+
+.svgIcon {
+    height: 8rem;
+    width: 8rem;
+    color: white;
+}
+
+.ctaLinkFlex {
+    margin-top: 2rem;
+}
+
+.ctaLinkFlexText {
+    font-size: 1.125rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 1400px) {
+    .maxWidth {
+        margin-left: 40px;
+        margin-right: 40px;
     }
 }
 
-@media (max-width: 1300px) {
-    .leftColumn {
-        margin-right: 0px;
-        min-width: 100px;
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr; /* Stack columns vertically */
     }
 
-    .largeText {
-        font-size: 5.1rem;
+    .flexContainer {
+        gap: 2rem;
+    }
+
+    .flexItem {
+        width: 100%; /* Make flex items full width on smaller screens */
+        height: auto; /* Allow flex items to adjust height */
     }
 }
 
-/* Responsive styling */
-@media (max-width: 1000px) {
-    .aboutComponent {
-        flex-direction: column; /* Stack columns vertically */
-        align-items: center; /* Center content */
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5rem; /* Smaller header size on smaller screens */
     }
 
-    .leftColumn, .rightColumn {
-        margin: 0; /* Reset margins for centered layout */
-        padding: 0;
-        width: 90%; /* Allow columns to take full width */
-        margin-left: 5%;
-        position: relative;
+    .columnTitle {
+        font-size: 2rem; /* Smaller title font size for columns */
     }
 
-    .largeText {
-        font-size: 3.6rem;
-        margin-left: 0px;
-        margin-right: 60px;
-        height: auto;
+    .columnSubtitle {
+        font-size: 1rem; /* Smaller subtitle for columns */
     }
 
-    .invitation, .teaserText {
-        font-size: 0.9rem;
-    }
- 
-    .showMoreBtn {
-        margin-bottom: 100px;
+    .columnDescription {
+        font-size: 0.875rem; /* Smaller description font size */
     }
 
-    .leftColumn::before {
-        opacity: 0;
+    .ctaLinkText {
+        font-size: 1rem; /* Smaller CTA text */
     }
-    
-    .teaserTextContainer {
-        gap: 40px;
+
+    .flexItemTitle {
+        font-size: 1.25rem; /* Smaller title for flex items */
+    }
+
+    .flexItemDescription {
+        font-size: 0.875rem; /* Smaller description text */
+    }
+
+    .svgIcon {
+        height: 6rem; /* Smaller SVG icon */
+        width: 6rem;
+    }
+
+    .ctaLinkFlexText {
+        font-size: 1rem; /* Smaller CTA flex text */
+    }
+
+    .flexContainer {
+        flex-direction: column; /* Stack flex items vertically */
     }
 }
 
 @media (max-width: 640px) {
-    .largeText {
-        letter-spacing: 2px;
-        margin-right: 25px;
-        margin-bottom: 0px;
-    }
-    .invitation, .teaserText {
-        font-size: 0.9rem;
-    }
-    .showMoreBtn {
-        margin-bottom: 100px;
+    .maxWidth {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

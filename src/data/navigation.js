@@ -22,17 +22,17 @@ const navigationLinks = [
       ],
     },
     {
+      title: "Skills",
+      path: "/skills",
+      sublinks: [],
+    },
+    {
       title: "Projects",
       path: "/projects",
       sublinks: [
         { title: "Web Development", path: "/projects#web-development" },
         { title: "Machine Learning", path: "/projects#machine-learning" },
       ],
-    },
-    {
-      title: "Skills",
-      path: "/skills",
-      sublinks: [],
     },
   ];
   

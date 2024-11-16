@@ -1,70 +1,15 @@
-import { useState, useRef, useEffect } from 'react';
-import styles from './ProjectsComponent.module.css';
+import React, { useState } from 'react';
 import TerminalAnimation from './TerminalAnimation';
+import styles from './ProjectsComponent.module.css';
 import PageHeader from '../PageHeader/PageHeader';
 import landingPageText from '../../data/text/landingPageText';
-import React from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const ProjectsComponent = () => {
-    const largeTextRef = useRef(null);
-    const teaserTextContainerRef = useRef(null);
     const [animationOn, setAnimationOn] = useState(false);
-    const [visibleLetterCount, setVisibleLetterCount] = useState(0);
-    const [isLargeTextVisible, setIsLargeTextVisible] = useState(false);
-    const { projects } = landingPageText
 
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setIsLargeTextVisible(true);
-                } else {
-                    setIsLargeTextVisible(false);
-                }
-            });
-        }, { threshold: 1 });
-
-        if (largeTextRef.current) {
-            observer.observe(largeTextRef.current);
-        }
-
-        return () => {
-            if (largeTextRef.current) observer.unobserve(largeTextRef.current);
-        };
-    }, []);
-
-    useEffect(() => {
-        let interval;
-        let letterCount = visibleLetterCount; // Start from current visible count
-
-        if (isLargeTextVisible) {
-            interval = setInterval(() => {
-                setVisibleLetterCount((prevCount) => {
-                    if (prevCount < projects.title.length) {
-                        letterCount = prevCount + 1;
-                        return letterCount;
-                    } else {
-                        clearInterval(interval);
-                        return prevCount;
-                    }
-                });
-            }, 100);
-        } else {
-            interval = setInterval(() => {
-                setVisibleLetterCount((prevCount) => {
-                    if (prevCount > 0) {
-                        letterCount = prevCount - 1;
-                        return letterCount;
-                    } else {
-                        clearInterval(interval);
-                        return prevCount;
-                    }
-                });
-            }, 100);
-        }
-
-        return () => clearInterval(interval);
-    }, [isLargeTextVisible, projects.title.length]);
+    const { projects } = landingPageText;
 
     const handleButtonClick = () => {
         setAnimationOn(true);
@@ -73,39 +18,66 @@ const ProjectsComponent = () => {
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
             <PageHeader />
-            <div className={styles.leftColumn}>
-                <div
-                    ref={largeTextRef}
-                    className={`${styles.largeText}`}
-                >
-                    {projects.title.split("").map((letter, index) => (
-                        <span
-                            key={index}
-                            className={`${styles.letter} ${index < visibleLetterCount ? styles.fadeInLetter : ''}`}
-                        >
-                            {letter}
-                        </span>
-                    ))}
-                </div>
+
+            {/* Personal projects explanation */}
+            <div className={styles.personalProjectsText}>
+                <h2 className={styles.personalProjectsTitle}>{projects.personalProjects.title}</h2>
+                <p className={styles.personalProjectsDescription}>
+                    {projects.personalProjects.description}
+                </p>
             </div>
 
-            <div className={styles.rightColumn}>
-                <div ref={teaserTextContainerRef} className={`${styles.teaserTextContainer} ${styles.fadeIn}`}>
-                    {projects.teaser.map((teaserText, index) => (
-                        <p className={styles.teaserText} key={index}>
-                            {teaserText}
-                        </p>
-                    ))}
-                    {projects.invitation?.map((invitationText, index) => (
-                        <p className={styles.invitation} key={index}>
-                            {invitationText}
-                        </p>
-                    ))}
-                    <button className={styles.showMoreBtn} onClick={handleButtonClick}>
-                        {projects.buttonText}
-                    </button>
-                </div>
+            {/* Project Boxes */}
+            <div className={styles.projectsList}>
+                {projects.projects.map((project, index) => (
+                    <div key={index} className={styles.projectBox}>
+                        <h3 className={styles.projectTitle}>{project.name}</h3>
+<div className={styles.projectHeader}>
+    <p className={styles.projectSubText}>
+        {project.type}
+    </p>
+    <div className={styles.projectLinks}>
+        {project.github && (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.githubLink}>
+                <FaGithub />
+            </a>
+        )}
+        {project.website && (
+            <a href={project.website} target="_blank" rel="noopener noreferrer" className={styles.websiteLink}>
+                <FiExternalLink />
+            </a>
+        )}
+    </div>
+</div>
+<p className={styles.projectDescription}>{project.description}</p>
+
+                        {/* Terminal Animation CTA */}
+                        <div className={styles.ctaLink}>
+                            <a href={project.ctaLink.url} className="group flex items-center space-x-1">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+                                <span className={styles.ctaLinkText}>
+                                    {project.ctaLink.text}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                ))}
             </div>
+
+            {/* Terminal animation */}
             {animationOn && <TerminalAnimation />}
         </div>
     );

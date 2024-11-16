@@ -6,6 +6,7 @@ import AboutComponent from '../components/LandingPage/AboutComponent';
 import CareerComponent from '../components/LandingPage/CareerComponent';
 import SkillsComponent from '../components/LandingPage/SkillsComponent';
 import Footer from '../components/Footer/Footer';
+import TimelineComponent from '../components/LandingPage/TimelineComponent';
 
 export default function Home() {
     const welcomeComponentRef = useRef(null);
@@ -15,7 +16,7 @@ export default function Home() {
     const skillsComponentRef = useRef(null);
     const footerComponentRef = useRef(null);
 
-    const sections = [aboutComponentRef, careerComponentRef, projectsComponentRef, skillsComponentRef, footerComponentRef];
+    const sections = [aboutComponentRef, careerComponentRef, skillsComponentRef, projectsComponentRef, footerComponentRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -67,11 +68,11 @@ export default function Home() {
             <div ref={careerComponentRef}>
                 <CareerComponent />
             </div>
-            <div ref={projectsComponentRef}>
-                <ProjectsComponent />
-            </div>
             <div ref={skillsComponentRef}>
                 <SkillsComponent />
+            </div>
+            <div ref={projectsComponentRef}>
+                <ProjectsComponent />
             </div>
             <div ref={footerComponentRef}>
                 <Footer />

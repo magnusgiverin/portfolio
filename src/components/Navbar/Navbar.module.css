@@ -5,7 +5,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 20px;
-    width: 80vw;
+    width: 90vw;
     transform: translateX(-50%) translateY(-30px); /* Center horizontally and slide upwards initially */
     left: 50%; /* Center horizontally */
     background: rgba(255, 255, 255, 0.024); /* Slightly opaque white for glass effect */

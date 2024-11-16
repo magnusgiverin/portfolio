@@ -15,28 +15,36 @@ const LetterNav = ({ sections, showNav }) => {
     useEffect(() => {
         if (!hasCheckedNav) return; // Prevent observer setup until showNav is checked
 
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = sections.findIndex((ref) => ref.current === entry.target);
-                        if (index !== activeSection) {
-                            setActiveSection(index);
-                        }
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
+        const handleScroll = () => {
+            let nearestSection = null;
+            let maxTopPosition = -Infinity;
+            const margin = 10; // Margin to consider when right below a section
 
-        sections.forEach((ref) => {
-            if (ref.current) sectionObserver.observe(ref.current);
-        });
-
-        return () => {
+            // Iterate over sections and find the nearest one above the viewport
             sections.forEach((ref) => {
-                if (ref.current) sectionObserver.unobserve(ref.current);
+                if (ref.current) {
+                    const rect = ref.current.getBoundingClientRect();
+                    const sectionTop = rect.top;
+
+                    // Only consider sections that are above the viewport or within the margin
+                    if (sectionTop <= margin && sectionTop > maxTopPosition) {
+                        maxTopPosition = sectionTop;
+                        nearestSection = sections.findIndex((sectionRef) => sectionRef.current === ref.current);
+                    }
+                }
             });
+
+            if (nearestSection !== null && nearestSection !== activeSection) {
+                setActiveSection(nearestSection);
+            }
+        };
+
+        // Set up scroll listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up scroll listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
         };
     }, [sections, activeSection, hasCheckedNav]);
 
