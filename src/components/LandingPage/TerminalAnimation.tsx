@@ -31,8 +31,8 @@ const TerminalAnimation = () => {
     const followUpCommand = 'cd projects';
 
     const lines = consoleOutput.split('\n');
-    const typingDelay = 10;
-    const newlineDelay = 400;
+    const typingDelay = 8;
+    const newlineDelay = 300;
 
     useEffect(() => {
         let typingTimeout;
