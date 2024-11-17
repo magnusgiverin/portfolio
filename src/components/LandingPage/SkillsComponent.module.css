@@ -5,6 +5,7 @@
     padding-right: 10%;
     margin: 0 auto;
     position: relative;
+    min-height: 100vh;
 }
 
 .skillsTitle {
