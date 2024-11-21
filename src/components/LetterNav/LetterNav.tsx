@@ -71,8 +71,6 @@ const LetterNav = ({ sections, showNav }) => {
                     onClick={() => {
                         if (sections[index].current) {
                             sections[index].current.scrollIntoView({ behavior: 'smooth' });
-                            setActiveSection(index); // Update active section when clicked
-                            sessionStorage.setItem('activeSection', index.toString()); // Store the activeSection in sessionStorage
                         }
                     }}
                 >
