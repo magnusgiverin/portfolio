@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './TimelineComponent.module.css';
 import aboutPageText from '../../resources/text/aboutPageText';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
@@ -8,6 +8,7 @@ import PageHeader from '../PageHeader/PageHeader';
 const TimelineComponent = () => {
   const { timeline } = aboutPageText;
   const timelineRefs = useRef([]); // Array to hold references to timeline elements
+  const [visible, setVisible] = useState<boolean>();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,6 +37,10 @@ const TimelineComponent = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+      setVisible(window.innerWidth < 1170);
+    }, []);
+
   return (
     <section id="timeline" className={styles.container}>
       <PageHeader text='ABOUT'/>
@@ -62,6 +67,8 @@ const TimelineComponent = () => {
             ref={(el) => (timelineRefs.current[index] = el)} // Assign reference
             icon={<span className="material-icons" style={{ fontSize: '2rem' }}>{event.icon}</span>} // Apply fontSize directly here
             position={event.position} // Randomly choose 'left' or 'right'
+            visible={ visible }
+
             >
             <h3 className={styles['timeline-title']}>{event.title}</h3>
             <h4 className={styles['timeline-subtitle']}>{event.year}</h4>
