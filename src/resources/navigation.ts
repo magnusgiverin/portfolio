@@ -6,16 +6,16 @@ const navigationLinks = [
       },
     {
       title: "About",
-      path: "/about",
+      path: "/about#",
       sublinks: [
-        { title: "Timeline", path: "/about#history" },
+        { title: "Timeline", path: "/about#timeline" },
         { title: "Education", path: "/about#education" },
         { title: "Passions", path: "/about#passions" },
       ],
     },
     {
       title: "Career",
-      path: "/career",
+      path: "/career#",
       sublinks: [
         { title: "Current Position", path: "/career#current-position" },
         { title: "Past Experiences", path: "/career#past-experiences" },
@@ -23,12 +23,12 @@ const navigationLinks = [
     },
     {
       title: "Skills",
-      path: "/skills",
+      path: "/skills#",
       sublinks: [],
     },
     {
       title: "Projects",
-      path: "/projects",
+      path: "/projects#",
       sublinks: [
         { title: "Web Development", path: "/projects#web-development" },
         { title: "Machine Learning", path: "/projects#machine-learning" },

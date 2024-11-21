@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 import { LuAlignJustify, LuX } from "react-icons/lu";
 import Overlay from './Overlay';
+import { useRouter } from 'next/router';
 
 const Navbar = ({ visible, sendOverLayStatus }) => {
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(false); // State to control navbar visibility
+
+  const router = useRouter();
 
   // Effect to manage navbar visibility based on the prop
   useEffect(() => {
@@ -29,6 +32,10 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
     });
   };
 
+  useEffect(() => {
+    setOverlayVisible(false);
+  }, [router]
+)
   return (
     <>
       <nav className={`${styles.navbar} ${navbarVisible ? styles.visible : styles.hidden} ${overlayVisible && styles.overlay} flex items-center justify-between`}>
@@ -44,7 +51,7 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
         </div>
       </nav>
 
-      <Overlay visible={overlayVisible} onClose={undefined} />
+      <Overlay visible={overlayVisible} />
     </>
   );
 };

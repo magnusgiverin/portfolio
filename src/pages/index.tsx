@@ -6,7 +6,7 @@ import AboutComponent from '../components/LandingPage/AboutComponent';
 import CareerComponent from '../components/LandingPage/CareerComponent';
 import SkillsComponent from '../components/LandingPage/SkillsComponent';
 import Footer from '../components/Footer/Footer';
-import TimelineComponent from '../components/LandingPage/TimelineComponent';
+import TimelineComponent from '../components/AboutPage/TimelineComponent';
 
 export default function Home() {
     const welcomeComponentRef = useRef(null);
@@ -20,9 +20,6 @@ export default function Home() {
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
-        // Smooth scroll to the top of the page on refresh
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    
         // Observer to control navigation visibility based on welcome and footer visibility
         const visibilityObserver = new IntersectionObserver(
             (entries) => {

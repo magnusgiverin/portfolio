@@ -15,10 +15,16 @@ const LetterNav = ({ sections, showNav }) => {
     useEffect(() => {
         if (!hasCheckedNav) return; // Prevent observer setup until showNav is checked
 
+        // Check for the stored activeSection in sessionStorage when the component is mounted
+        const storedActiveSection = sessionStorage.getItem('activeSection');
+        if (storedActiveSection) {
+            setActiveSection(Number(storedActiveSection)); // Set the stored value if available
+        }
+
         const handleScroll = () => {
             let nearestSection = null;
             let maxTopPosition = -Infinity;
-            const margin = 10; // Margin to consider when right below a section
+            const margin = 500; // Margin to consider when right below a section
 
             // Iterate over sections and find the nearest one above the viewport
             sections.forEach((ref) => {
@@ -36,6 +42,7 @@ const LetterNav = ({ sections, showNav }) => {
 
             if (nearestSection !== null && nearestSection !== activeSection) {
                 setActiveSection(nearestSection);
+                sessionStorage.setItem('activeSection', nearestSection.toString()); // Store the updated activeSection in sessionStorage
             }
         };
 
@@ -64,6 +71,8 @@ const LetterNav = ({ sections, showNav }) => {
                     onClick={() => {
                         if (sections[index].current) {
                             sections[index].current.scrollIntoView({ behavior: 'smooth' });
+                            setActiveSection(index); // Update active section when clicked
+                            sessionStorage.setItem('activeSection', index.toString()); // Store the activeSection in sessionStorage
                         }
                     }}
                 >

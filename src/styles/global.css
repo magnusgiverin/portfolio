@@ -1,4 +1,5 @@
 /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -25,14 +26,3 @@ html, body {
 body {
   min-height: 100vh; /* This ensures the body occupies at least the full viewport height */
 }
-
-:root {
-  --accent-color-green-dark: #003135;
-  --accent-color-green-light: #024950;
-  --accent-color-blue-dark: #0FA4AF;
-  --accent-color-blue-light: #AFDDE5;
-  --accent-color-rust: #964734;
-}
-
-/*   background-color:#242424;
- */

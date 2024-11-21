@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './PageHeader.module.css';
 
-const PageHeader = ({ position = 'top' }) => {
+const PageHeader = ({ position = 'top', text = 'MAGNUS' }) => {
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const PageHeader = ({ position = 'top' }) => {
             className={`${styles.header} ${position === 'top' ? styles.headerTop : styles.headerBottom}`}
         >
             <div className={styles.line}></div> {/* Left line */}
-            <h1>{'MAGNUS'}</h1>
+            <h1>{text}</h1> {/* Dynamic text */}
             <div className={styles.line}></div> {/* Right line */}
         </header>
     );

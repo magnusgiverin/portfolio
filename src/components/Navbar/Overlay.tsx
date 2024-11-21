@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Overlay.module.css';
-import navigationLinks from '../../data/navigation';
-import { LuCornerDownRight } from "react-icons/lu";
+import navigationLinks from '../../resources/navigation';
+import { useRouter } from 'next/router';
 
-const Overlay = ({ visible, onClose }) => {
+const Overlay = ({ visible }) => {
   const [animationKey, setAnimationKey] = useState(0); // Key to reset animations
   const [senderName, setSenderName] = useState('');
   const [senderEmail, setSenderEmail] = useState('');
   const [message, setMessage] = useState('');
   const [zIndex, setZIndex] = useState(0);
   const [confirmationMessage, setConfirmationMessage] = useState(''); // New state for confirmation message
+
+  const router = useRouter();
 
   const sendEmail = async () => {
     const response = await fetch('/api/send', {
@@ -52,7 +54,7 @@ const Overlay = ({ visible, onClose }) => {
       const timer = setTimeout(() => {
         setZIndex(0); // Reset zIndex after a delay
       }, 400); // Match the duration of the opacity transition
-
+      
       return () => clearTimeout(timer);
     }
   }, [visible]);
@@ -63,10 +65,27 @@ const Overlay = ({ visible, onClose }) => {
     sendEmail();
   };
 
+  const handleRedirect = (url: string) => {
+    // Extract the base URL and hash fragment (if any)
+    const [baseUrl, hash] = url.split('#');
+    // Delay the routing until the scroll to the top completes
+    setTimeout(() => {
+      // Navigate to the base URL first (to ensure the page is loaded)
+      router.push(baseUrl).then(() => {
+        if (hash) {
+          // Scroll to the specific section after navigation
+          const targetElement = document.getElementById(hash);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    }, 500); // Adjust timeout to match the scroll-to-top duration
+  };
+
   return (
     <div
       className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
-      onClick={onClose}
       style={{ zIndex: zIndex }} // Set z-index conditionally
     >
       <div className={styles.overlayContent} key={animationKey} onClick={(e) => e.stopPropagation()}>
@@ -75,14 +94,14 @@ const Overlay = ({ visible, onClose }) => {
           <ul className={styles.navLinks}>
             {navigationLinks.map((link) => (
               <li key={link.title}>
-                <a className="hover:text-white" href={link.path}>{link.title}</a>
+                <button className="hover:text-white" onClick={() => handleRedirect(link.path)}>{link.title}</button>
                 {link.sublinks.length > 0 && (
                   <ul className={styles.sublinks}>
                     {link.sublinks.map((sublink) => (
                       <li key={sublink.title}>
                         <span className='flex flex-row items-center gap-2'>
-                          <LuCornerDownRight />
-                          <a className="hover:text-white" href={sublink.path}>{sublink.title}</a>
+                        <span className="material-icons text-4xl">subdirectory_arrow_right</span>
+                        <button className="hover:text-white" onClick={() => handleRedirect(sublink.path)}>{sublink.title}</button>
                         </span>
                       </li>
                     ))}

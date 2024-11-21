@@ -2,14 +2,37 @@ import React, { useState } from 'react';
 import TerminalAnimation from './TerminalAnimation';
 import styles from './ProjectsComponent.module.css';
 import PageHeader from '../PageHeader/PageHeader';
-import landingPageText from '../../data/text/landingPageText';
+import landingPageText from '../../resources/text/landingPageText';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 const ProjectsComponent = () => {
     const [animationOn, setAnimationOn] = useState(false);
 
     const { projects } = landingPageText;
+
+    const router = useRouter();
+
+    const handleRedirect = (url: string) => {
+        // Extract the base URL and hash fragment (if any)
+        const [baseUrl, hash] = url.split('#');
+
+        // Delay the routing until the scroll to the top completes
+        setTimeout(() => {
+            // Navigate to the base URL first (to ensure the page is loaded)
+            router.push(baseUrl).then(() => {
+                if (hash) {
+                    console.log(hash)
+                    // Scroll to the specific section after navigation
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }, 500); // Adjust timeout to match the scroll-to-top duration
+    };
 
     const handleButtonClick = () => {
         setAnimationOn(true);
@@ -29,31 +52,25 @@ const ProjectsComponent = () => {
 
             <div className={styles.ctaLink}>
                 <button onClick={handleButtonClick} className="group flex items-center space-x-1">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+                    <span
+                        className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
                     >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                    </svg>
+                        east
+                    </span>
                     <span className={styles.ctaLinkText}>
                         {projects.ctaLink.text}
                     </span>
                 </button>
             </div>
-            
+
             {/* Project Boxes */}
             <div className={styles.projectsList}>
                 {projects.projects.map((project, index) => (
                     <div key={index} className={styles.projectBox}>
-                        <h3 className={styles.projectTitle}>{project.name}</h3>
+                        <div className={styles.columnHeader}>
+                            <div className={styles.line}></div>
+                            <h3 className={styles.projectTitle}>{project.name}</h3>
+                        </div>
                         <div className={styles.projectHeader}>
                             <p className={styles.projectSubText}>
                                 {project.type}
@@ -75,30 +92,21 @@ const ProjectsComponent = () => {
 
                         {/* Terminal Animation CTA */}
                         <div className={styles.ctaLink}>
-                            <a href={project.ctaLink.url} className="group flex items-center space-x-1">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                            <button onClick={() => handleRedirect(project.ctaLink.url)} className="group flex items-center space-x-1">
+                                <span
+                                    className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                    />
-                                </svg>
+                                    east
+                                </span>
                                 <span className={styles.ctaLinkText}>
                                     {project.ctaLink.text}
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 ))}
             </div>
-            <PageHeader position='bottom'/>
+            <PageHeader position='bottom' />
 
             {/* Terminal animation */}
             {animationOn && <TerminalAnimation />}

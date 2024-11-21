@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Footer.module.css';
-import navigationLinks from '../../data/navigation';
 import { LuCornerDownRight } from "react-icons/lu";
 import PageHeader from '../PageHeader/PageHeader';
+import navigationLinks from '../../resources/navigation';
 
 const Footer = () => {
     const [senderName, setSenderName] = useState('');
@@ -81,8 +81,8 @@ const Footer = () => {
                                             {link.sublinks.map((sublink) => (
                                                 <li key={sublink.title}>
                                                     <span className='flex flex-row items-center gap-2'>
-                                                        <LuCornerDownRight />
-                                                        <a className="hover:text-white" href={sublink.path}>{sublink.title}</a>
+                                                    <span className="material-icons text-4xl">subdirectory_arrow_right</span>
+                                                    <a className="hover:text-white" href={sublink.path}>{sublink.title}</a>
                                                     </span>
                                                 </li>
                                             ))}

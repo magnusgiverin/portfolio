@@ -1,10 +1,8 @@
-/* AboutComponent.module.css */
-.aboutComponent {
+.generalAboutComponent {
     padding-top: 100px;
-    padding-bottom: 100px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    min-height: 100vh;
+    padding-bottom: 100px;
     position: relative;
 }
 
@@ -63,26 +61,24 @@
     margin-top: 0.5rem;
 }
 
-.ctaLink {
-    margin-top: 2rem;
-}
-
-.ctaLinkIcon {
-    color: #FB923C; /* Ensures the icon is orange */
-  }
-
-.ctaLinkText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
 .flexContainer {
     display: flex;
     gap: 3.125rem;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
     margin-top: 5rem;
+}
+
+.flexContainer > * {
+    flex: 1 1 calc(50% - 1.5625rem); /* Ensures each item takes up 50% of the row width minus half the gap */
+    /* Adjusting width of each item to be half of the container minus the gap */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+}
+
+.flexItemTitleContainer {
+    display: flex; /* Ensure flexbox is applied */
+    flex-direction: row; /* Set direction to row */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add space between items */
 }
 
 .flexItem {
@@ -121,6 +117,16 @@
     text-decoration: underline;
     text-decoration-color: #FB923C;
     text-underline-offset: 0.25rem;
+}
+
+.hoverAnimate {
+    color: #FB923C; /* Base color */
+    cursor: pointer; /* Show pointer on hover */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation */
+}
+
+.hoverAnimate:hover {
+    transform: translate(5px, 5px); /* Move to the bottom-right */
 }
 
 /* Media Queries for Responsive Design */

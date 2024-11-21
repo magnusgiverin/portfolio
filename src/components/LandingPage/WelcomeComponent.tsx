@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './WelcomeComponent.module.css';
 import Navbar from '../Navbar/Navbar';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';

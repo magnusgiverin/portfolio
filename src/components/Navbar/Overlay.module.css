@@ -56,7 +56,7 @@
 
 .sublinks {
     list-style: none;
-    padding-left: 20px; /* Indent for sublinks */
+    padding-left: 30px; /* Indent for sublinks */
     margin: 0; /* Reset margin for sublinks */
 }
 
@@ -67,22 +67,22 @@
     animation: flyInSublink 0.2s forwards ease-in-out; /* Apply fly-in animation */
 }
 
-.navLinks > li:nth-child(1) { animation-delay: 0.1s; } /* Stagger effect */
+.navLinks > li:nth-child(1) { animation-delay: 0.05s; } /* Stagger effect */
 
-.navLinks > li:nth-child(2) { animation-delay: 0.2s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(1) { animation-delay: 0.3s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(2) { animation-delay: 0.4s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(3) { animation-delay: 0.5s; }
+.navLinks > li:nth-child(2) { animation-delay: 0.1s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(1) { animation-delay: 0.15s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(2) { animation-delay: 0.2s; }
+.navLinks > li:nth-child(2) .sublinks li:nth-child(3) { animation-delay: 0.25s; }
 
-.navLinks > li:nth-child(3) { animation-delay: 0.6s; }
-.navLinks > li:nth-child(3) .sublinks li:nth-child(1) { animation-delay: 0.7s; } 
-.navLinks > li:nth-child(3) .sublinks li:nth-child(2) { animation-delay: 0.8s; }
+.navLinks > li:nth-child(3) { animation-delay: 0.3s; }
+.navLinks > li:nth-child(3) .sublinks li:nth-child(1) { animation-delay: 0.35s; } 
+.navLinks > li:nth-child(3) .sublinks li:nth-child(2) { animation-delay: 0.4s; }
 
-.navLinks > li:nth-child(4) { animation-delay: 0.9s; }
+.navLinks > li:nth-child(4) { animation-delay: 0.45s; }
 
-.navLinks > li:nth-child(5) { animation-delay: 1.0s; }
-.navLinks > li:nth-child(5) .sublinks li:nth-child(1) { animation-delay: 1.1s; }
-.navLinks > li:nth-child(5) .sublinks li:nth-child(2) { animation-delay: 1.2s; } 
+.navLinks > li:nth-child(5) { animation-delay: 0.5s; }
+.navLinks > li:nth-child(5) .sublinks li:nth-child(1) { animation-delay: 0.55s; }
+.navLinks > li:nth-child(5) .sublinks li:nth-child(2) { animation-delay: 0.6s; } 
 
 .sublinks li a {
     color: rgb(189, 189, 189); /* Default color for sublinks */

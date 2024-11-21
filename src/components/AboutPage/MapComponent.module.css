@@ -1,0 +1,23 @@
+.annotationText {
+    font-size: 12px;
+    fill: #ffffff;
+}
+
+.annotationSubText {
+    font-size: 10px;
+    fill: #aaaaaa;
+    margin-top: 5px;
+}
+
+.mapComponent {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media (max-width: 1000px) {
+    .mapComponent {
+        display: none;
+        /* Hides the map component on smaller screens */
+    }
+}

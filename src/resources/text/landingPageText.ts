@@ -1,7 +1,5 @@
 'use client';
 
-import { title } from "process";
-
 const getAge = () => {
     const today = new Date();
     const birthday = new Date(2003, 4, 30);
@@ -18,9 +16,9 @@ const landingPageText = {
         header: "About me",
         columns: [
             {
-                title: "21",
+                title: getAge(),
                 subtitle: "Years old",
-                description: "I am 21 years old, and in this short time, I have had the opportunity to work on several exciting projects. I am proud of what I have achieved so far and look forward to growing further both professionally and personally."
+                description: "I am " + getAge() + " years old, and in this short time, I have had the opportunity to work on several exciting projects. I am proud of what I have achieved so far and look forward to growing further both professionally and personally."
             },
             {
                 title: "3",
@@ -34,8 +32,8 @@ const landingPageText = {
             }
         ],
         ctaLink: {
-            text: "Read more about my passions",
-            url: "/about#passions"
+            text: "View my timeline",
+            url: "/about#timeline"
         },
         sections: [
             {
@@ -43,14 +41,14 @@ const landingPageText = {
                 description: "I am a technology-driven leader with a strong background in IT development and process improvement. I am passionate about how technology can improve work processes, and I have had the privilege of working across various sectors to deliver innovative solutions.",
                 ctaLink: {
                     text: "Read more about me",
-                    url: "/about#timeline"
+                    url: "/about#"
                 },
             },
             {
                 title: "My Journey and Future Goals",
                 description: "From a young age, I was captivated by technology, which sparked my interest in IT. Over the years, I've gained valuable experience through education and hands-on projects. Reflecting on my journey, I've grown both personally and professionally, and I'm now focused on using my skills to drive impactful solutions that foster efficiency and collaboration across industries.",
                 ctaLink: {
-                    text: "Explore my personal journey",
+                    text: "Explore my education",
                     url: "/about#education"
                 }
             }
@@ -180,41 +178,47 @@ const landingPageText = {
         ]
     },
     skills: {
-        programmingLanguages: {
-            title: "Programming Languages",
-            skills: ['Assembly (x86)', 'C', 'C++', 'Java', 'JavaScript', 'Kafka', 'Kotlin', 'Oz', 'Python', 'TypeScript'],
-            description: 'Languages I have used for software development, ranging from low-level to high-level programming.'
-          },
-          webTechnologies: {
-            title: "Web Technologies",
-            skills: ['CSS', 'HTML', 'React', 'Next', 'Node', 'Tailwind', 'TRPC', 'Vercel'],
-            description: 'Web technologies and frameworks I use for building modern, interactive, and responsive websites.'
-          },
-          databaseSystems: {
-            title: "Database Systems",
-            skills: ['Azure SQL', 'FireBase', 'MySql', 'Prisma', 'SQLite'],
-            description: 'Databases I have worked with to store, manage, and query data for applications.'
-          },
-          cloudTechnologies: {
-            title: "Cloud Technologies",
-            skills: ['Azure', 'Jenkins'],
-            description: 'Cloud platforms and CI/CD tools for deploying and automating cloud-based applications.'
-          },
-          devOpsVersionControl: {
-            title: "DevOps & Version Control",
-            skills: ['Git', 'Gitea', 'GitHub', 'GitLab', 'Jira'],
-            description: 'Version control systems and DevOps tools for managing source code and project tracking.'
-          },
-          specializedArea: {
-            title: "Specialised Areas",
-            skills: ['Frontend tools - HTML', 'React', 'Next', 'Node', 'Tailwind/CSS', 'Typescript'],
-            description: 'Specialized tools and frameworks I use for frontend web development.'
-          },
-          mathStatisticalTools: {
-            title: "Maths & Statistics Tools",
-            skills: ['PandaDF', 'MatPlotLib', 'NumPy'],
-            description: 'Tools for working with data, performing statistical analysis, and visualizing results.'
-          }
+        table: {
+            programmingLanguages: {
+                title: "Programming Languages",
+                skills: ['Assembly (x86)', 'C', 'C++', 'Java', 'JavaScript', 'Kafka', 'Kotlin', 'Oz', 'Python', 'TypeScript'],
+                description: 'Languages I have used for software development, ranging from low-level to high-level programming.'
+              },
+              webTechnologies: {
+                title: "Web Technologies",
+                skills: ['CSS', 'HTML', 'React', 'Next', 'Node', 'Tailwind', 'TRPC', 'Vercel'],
+                description: 'Web technologies and frameworks I use for building modern, interactive, and responsive websites.'
+              },
+              databaseSystems: {
+                title: "Database Systems",
+                skills: ['Azure SQL', 'FireBase', 'MySql', 'Prisma', 'SQLite'],
+                description: 'Databases I have worked with to store, manage, and query data for applications.'
+              },
+              cloudTechnologies: {
+                title: "Cloud Technologies",
+                skills: ['Azure', 'Jenkins'],
+                description: 'Cloud platforms and CI/CD tools for deploying and automating cloud-based applications.'
+              },
+              devOpsVersionControl: {
+                title: "DevOps & Version Control",
+                skills: ['Git', 'Gitea', 'GitHub', 'GitLab', 'Jira'],
+                description: 'Version control systems and DevOps tools for managing source code and project tracking.'
+              },
+              specializedArea: {
+                title: "Specialised Areas",
+                skills: ['Frontend tools - HTML', 'React', 'Next', 'Node', 'Tailwind/CSS', 'Typescript'],
+                description: 'Specialized tools and frameworks I use for frontend web development.'
+              },
+              mathStatisticalTools: {
+                title: "Maths & Statistics Tools",
+                skills: ['PandaDF', 'MatPlotLib', 'NumPy'],
+                description: 'Tools for working with data, performing statistical analysis, and visualizing results.'
+              },
+            },
+          ctaLink: {
+            text: "Learn more about my skills",
+            url: "/skills"
+        },
     }
 }
 

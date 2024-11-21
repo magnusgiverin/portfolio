@@ -1,0 +1,93 @@
+.introContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    overflow: hidden;
+}
+
+.fullScreen {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.mainText {
+    font-size: 12vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffffe8;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start below */
+    animation: fadeInFromBelow 1.2s ease-out forwards; /* Animate in */
+}
+
+@keyframes fadeInFromBelow {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subsections {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subsection {
+    display: flex;
+    align-items: center;
+    opacity: 0; /* Start invisible */
+    transform: translateX(10px); /* Start to the left */
+    animation: slideInFromLeft 1s ease-out forwards; /* Animate in */
+    animation-delay: 0.5s; /* Delay to create a staggered effect */
+}
+
+.subText {
+    font-size: 1.2rem;
+    color: #bbb;
+    text-align: left;
+}
+
+.colorBar {
+    width: 5px;
+    height: 100%;
+    margin-right: 1rem;
+    border-radius: 2px;
+    background-color: #FB923C; /* Ensure visibility */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.subsection:nth-child(1) {
+    animation-delay: 0.5s; /* Adjust delay for staggered effect */
+}
+
+.subsection:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.subsection:nth-child(3) {
+    animation-delay: 0.9s;
+}

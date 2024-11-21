@@ -1,14 +1,36 @@
 import React from 'react';
 import styles from './CareerComponent.module.css';
-import landingPageText from '../../data/text/landingPageText';
+import landingPageText from '../../resources/text/landingPageText';
 import PageHeader from '../PageHeader/PageHeader';
+import { useRouter } from 'next/router';
 
 const CareerComponent = () => {
     const { career } = landingPageText
 
+    const router = useRouter();
+
+    const handleRedirect = (url: string) => {
+        // Extract the base URL and hash fragment (if any)
+        const [baseUrl, hash] = url.split('#');
+
+        // Delay the routing until the scroll to the top completes
+        setTimeout(() => {
+            // Navigate to the base URL first (to ensure the page is loaded)
+            router.push(baseUrl).then(() => {
+                if (hash) {
+                    // Scroll to the specific section after navigation
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }, 500); // Adjust timeout to match the scroll-to-top duration
+    };
+
     return (
         <div className={`min-h-screen ${styles.careerComponent}`}>
-            <PageHeader/>
+            <PageHeader />
             <h2 className={styles.title}>{career.title}</h2>
             <div className={styles.grid}>
                 {career.positions.map((position, index) => (
@@ -24,29 +46,20 @@ const CareerComponent = () => {
                 ))}
             </div>
             <div className={styles.ctaLink}>
-                    <a
-                        href={career.ctaLink.url}
-                        className="group flex items-center space-x-1"
+                <button
+                    onClick={() => handleRedirect(career.ctaLink.url)}
+                    className="group flex items-center space-x-1"
+                >
+                    <span
+                        className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
-                        <span className={styles.ctaLinkText}>
-                            {career.ctaLink.text}
-                        </span>
-                    </a>
-                </div>
+                        east
+                    </span>
+                    <span className={styles.ctaLinkText}>
+                        {career.ctaLink.text}
+                    </span>
+                </button>
+            </div>
         </div>
     );
 };

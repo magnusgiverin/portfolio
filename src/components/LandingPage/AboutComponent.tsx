@@ -1,10 +1,31 @@
+import { useRouter } from 'next/router';
 import React from 'react';
-import landingPageText from '../../data/text/landingPageText';
 import styles from './AboutComponent.module.css';
+import landingPageText from '../../resources/text/landingPageText';
 
 const AboutComponent = () => {
-    const { about } = landingPageText
-        
+    const { about } = landingPageText;
+    const router = useRouter();
+
+    const handleRedirect = (url: string) => {
+        // Extract the base URL and hash fragment (if any)
+        const [baseUrl, hash] = url.split('#');
+
+        // Delay the routing until the scroll to the top completes
+        setTimeout(() => {
+            // Navigate to the base URL first (to ensure the page is loaded)
+            router.push(baseUrl).then(() => {
+                if (hash) {
+                    // Scroll to the specific section after navigation
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }, 500); // Adjust timeout to match the scroll-to-top duration
+    };
+
     return (
         <section className={styles.aboutComponent}>
             <div className={styles.maxWidth}>
@@ -27,28 +48,20 @@ const AboutComponent = () => {
 
                 {/* CTA Link */}
                 <div className={styles.ctaLink}>
-                    <a
-                        href={about.ctaLink.url}
+                    <button
+                        onClick={() => handleRedirect(about.ctaLink.url)} // Wrap in a function
                         className="group flex items-center space-x-1"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                        <span
+                            className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
+                            east
+                        </span>
+
                         <span className={styles.ctaLinkText}>
                             {about.ctaLink.text}
                         </span>
-                    </a>
+                    </button>
                 </div>
 
                 {/* Sections */}
@@ -57,33 +70,26 @@ const AboutComponent = () => {
                         <div key={index} className={styles.flexItem}>
                             <div>
                                 <h2 className={styles.flexItemTitle}>{section.title}</h2>
-                                <p className={styles.flexItemDescription}>{section.description}</p>
+                                <p className={styles.flexItemDescription}>
+                                    {section.description}
+                                </p>
                             </div>
 
                             <div className="flex flex-col mt-6">
                                 <div className={styles.ctaLinkFlex}>
-                                    <a
-                                        href={section.ctaLink.url}
+                                    <button
+                                        onClick={() => handleRedirect(section.ctaLink.url)}
                                         className="group flex items-center space-x-1"
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-6 w-6 text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition:smooth transition-all duration-300 ease-out"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
+                                        <span
+                                            className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
                                         >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                            />
-                                        </svg>
+                                            east
+                                        </span>
                                         <span className={styles.ctaLinkFlexText}>
                                             {section.ctaLink.text}
                                         </span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

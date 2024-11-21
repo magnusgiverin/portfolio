@@ -1,12 +1,15 @@
 /* ScrollArrow.module.css */
 .scrollArrow {
-    position: absolute;
-    bottom: 20px;
+    position: absolute; /* Ensure it stays in the same place when scrolling */
+    bottom: 20px; /* 20px above the bottom edge */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset to perfectly center */
     opacity: 0; /* Start invisible */
-    transform: translateX(-50%);
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade-in */
-    animation: bounce 5s infinite; /* Keep the same speed but increase duration for less frequency */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+    animation: bounce 5s infinite; /* Bounce animation */
+    display: flex; /* Center content inside if needed */
     justify-content: center;
+    align-items: center;
 }
 
 .arrow {
@@ -14,29 +17,21 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 15px solid white; /* Changed to border-top for downward arrow */
+    border-top: 15px solid white; /* Downward arrow */
 }
 
 .scrollArrow.visible {
-    opacity: 1; /* Fully visible when the class is added */
+    opacity: 1; /* Fully visible when this class is added dynamically */
 }
 
 /* Bounce animation */
 @keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
-
     40% {
-        transform: translateY(-10px);
-        /* Adjust height of the bounce */
+        transform: translateY(-10px); /* Adjust height of the bounce */
     }
-
     60% {
         transform: translateY(-5px);
     }
@@ -44,6 +39,6 @@
 
 @media (max-width: 640px) {
     .scrollArrow {
-        display: none;
+        display: none; /* Hide arrow on small screens */
     }
 }
