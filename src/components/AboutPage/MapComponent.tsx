@@ -205,7 +205,7 @@ const MapComponent = () => {
             </text>
           </Annotation>
         </g>
-        
+
         {/* Trondheim */}
         <g onClick={() => handleScroll("trondheim-section")} style={{ cursor: "pointer" }}>
           <Annotation

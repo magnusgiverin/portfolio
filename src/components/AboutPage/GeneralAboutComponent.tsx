@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 import styles from './GeneralAboutComponent.module.css';
 import aboutPageText from '../../resources/text/aboutPageText';

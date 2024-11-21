@@ -8,42 +8,14 @@ import Image from 'next/image';
 
 const TimelineComponent = () => {
   const { timeline } = aboutPageText;
-  const timelineRefs = useRef([]); // Array to hold references to timeline elements
   const [visible, setVisible] = useState<boolean>();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const element = entry.target;
-
-          if (entry.isIntersecting) {
-            element.classList.add(styles['vertical-timeline-element-content--animate-in']);
-            element.classList.remove(styles['vertical-timeline-element-content--animate-out']);
-          } else {
-            element.classList.remove(styles['vertical-timeline-element-content--animate-in']);
-            element.classList.add(styles['vertical-timeline-element-content--animate-out']);
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
-    );
-
-    // Observe all timeline elements
-    timelineRefs.current.forEach((ref) => observer.observe(ref));
-
-    // Cleanup observer on unmount
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     setVisible(window.innerWidth < 1170);
   }, []);
 
   return (
-    <section id="timeline" className={styles.container}>
+    <section id="timeline" className={styles.timelineContainer}>
       <PageHeader text='ABOUT' />
       <div className={styles.titleSection}>
         <h2 className={styles.timelineTitle}>{timeline.title}</h2>
@@ -65,7 +37,6 @@ const TimelineComponent = () => {
             }}
             id={event.section}
             key={event.section}
-            ref={(el) => (timelineRefs.current[index] = el)} // Assign reference
             icon={<span className="material-icons" style={{ fontSize: '2rem' }}>{event.icon}</span>} // Apply fontSize directly here
             position={event.position} // Randomly choose 'left' or 'right'
             visible={visible}
