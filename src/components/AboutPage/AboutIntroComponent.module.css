@@ -1,13 +1,12 @@
 .introContainer {
     position: relative;
     width: 100vw;
-    height: 100vh; /* Fallback for full height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #1e1e1e;
     overflow: hidden;
-    transition: height 0.3s ease, padding-top 0.3s ease; /* Smooth transition for height and padding */
 }
 
 .fullScreen {
@@ -17,8 +16,6 @@
     align-items: flex-end;
     justify-content: flex-start;
     padding: 2rem;
-    margin-bottom: env(safe-area-inset-bottom); /* Prevent overlap with browser UI */
-    transition: margin-bottom 0.3s ease; /* Smooth transition for spacing */
 }
 
 .mainText {
@@ -29,8 +26,6 @@
     opacity: 0; /* Start invisible */
     transform: translateY(50px); /* Start below */
     animation: fadeInFromBelow 1.2s ease-out forwards; /* Animate in */
-    margin-top: auto; /* Dynamically adjust with flex */
-    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for size and position */
 }
 
 @keyframes fadeInFromBelow {
@@ -98,11 +93,19 @@
 }
 
 @media (max-width: 640px) {
-    .introContainer {
-        padding-bottom: 60px;
+    .subsection {
+        display: none;
       }
 
-      .mainText {
+      .fullScreen {
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        padding: 0; /* Remove extra padding */
+    }
+
+    .mainText {
         font-size: 20vw;
+        text-align: center; /* Center text horizontally */
+        transform: none; /* Reset transform for simplicity */
     }
 }

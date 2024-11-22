@@ -1,28 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './AboutIntroComponent.module.css';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
 import Navbar from '../Navbar/Navbar';
 
 const AboutIntroComponent = ({ scrollToRef }) => {
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const updateHeight = () => setViewportHeight(window.innerHeight);
-    window.addEventListener('resize', updateHeight);
-
-    // Initial adjustment
-    updateHeight();
-
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
-
   return (
-    <div
-      id=""
-      className={styles.introContainer}
-      style={{ height: `${viewportHeight}px` }} // Adjust height dynamically
-    >
-      <Navbar visible sendOverLayStatus={undefined} />
+    <div id={''} className={styles.introContainer}>
+    <Navbar visible sendOverLayStatus={undefined}/>
       <div className={styles.fullScreen}>
         <h1 className={styles.mainText}>ABOUT</h1>
       </div>
@@ -32,7 +16,7 @@ const AboutIntroComponent = ({ scrollToRef }) => {
           <p className={styles.subText}>Discover my journey, values, and experiences.</p>
         </div>
       </div>
-      <ScrollArrow scrollToRef={scrollToRef} />
+      <ScrollArrow scrollToRef={scrollToRef}/>
     </div>
   );
 };

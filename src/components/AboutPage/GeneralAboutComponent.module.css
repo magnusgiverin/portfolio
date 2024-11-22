@@ -227,13 +227,15 @@
 
     .flexContainer {
         flex-direction: column;
+
         /* Stack flex items vertically */
     }
 }
 
 @media (max-width: 640px) {
     .maxWidth {
-        margin-left: 20px;
-        margin-right: 20px;
+        max-width: 90rem;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
