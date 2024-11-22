@@ -1,51 +1,70 @@
 /* Timeline container */
 .timelineContainer {
-  padding: 20px;
   color: #ffffff; /* Default text color */
-  padding-top: 130px;
-  position: relative;
+  padding-top: 20px; /* Adjust spacing from the top */
+  justify-items: center;
+  position: relative; /* Keeps the container within the normal document flow */
+  min-height: 100vh; /* Ensures it covers the viewport height */
+  width: 100%; /* Ensures it spans the full width */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding in dimensions */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .timeline-title {
-    font-size: 2rem; /* Adjust font size as needed */
-    font-weight: 700; /* Bold weight */
-    color: #ffffff;
-    margin-bottom: 10px; /* Add space below the title */
-  }
-  
-  .timeline-subtitle {
-    font-size: 1.25rem; /* Adjust font size */
-    font-weight: 600; /* Bold weight for subtitle */
-    color: #FB923C; /* Grey for the subtitle */
-    margin-bottom: 15px; /* Add space below the subtitle */
-  }
-  
-  .timeline-text {
-    font-size: 1rem; /* Standard text size */
-    font-weight: 400; /* Regular weight */
-    color: #aaaaaa; /* Lighter grey for body text */
-    line-height: 1.6; /* Line height for better readability */
-  }
+  font-size: 2rem;
+  /* Adjust font size as needed */
+  font-weight: 700;
+  /* Bold weight */
+  color: #ffffff;
+  margin-bottom: 10px;
+  /* Add space below the title */
+}
+
+.timeline-subtitle {
+  font-size: 1.25rem;
+  /* Adjust font size */
+  font-weight: 600;
+  /* Bold weight for subtitle */
+  color: #FB923C;
+  /* Grey for the subtitle */
+  margin-bottom: 15px;
+  /* Add space below the subtitle */
+}
+
+.timeline-text {
+  font-size: 1rem;
+  /* Standard text size */
+  font-weight: 400;
+  /* Regular weight */
+  color: #aaaaaa;
+  /* Lighter grey for body text */
+  line-height: 1.6;
+  /* Line height for better readability */
+}
 
 .titleSection {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  text-align: center;
+  margin-bottom: 30px;
+}
 
 .timelineTitle {
-font-size: 2.5rem; /* Adjust size as needed */
-font-weight: bold;
-color: #ffffff;
+  font-size: 2.5rem;
+  /* Adjust size as needed */
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .timelineSubtitle {
-font-size: 1.25rem;
-color: #aaaaaa;
-margin-top: 10px;
+  font-size: 1.25rem;
+  color: #aaaaaa;
+  margin-top: 10px;
 }
 
 @media (max-width: 1000px) {
-    .timelineContainer {
-       padding-bottom: 100px;
-    }
+  .timelineContainer {
+    padding-bottom: 100px;
+  }
 }

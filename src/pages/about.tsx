@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import AboutIntroComponent from "../components/AboutPage/AboutIntroComponent";
 import EducationComponent from "../components/AboutPage/EducationComponent";
-import PassionsComponent from "../components/AboutPage/PassionsComponent";
 import TimelineComponent from "../components/AboutPage/TimelineComponent";
 import Footer from "../components/Footer/Footer";
 import GeneralAbouComponent from "../components/AboutPage/GeneralAboutComponent";
@@ -21,7 +20,6 @@ const AboutPage = () => {
             <TimelineComponent />
             <MapComponent/>
             <EducationComponent />
-            <PassionsComponent />
             <Footer />
         </>
     );

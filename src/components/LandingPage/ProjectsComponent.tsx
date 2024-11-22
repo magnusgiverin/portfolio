@@ -40,7 +40,7 @@ const ProjectsComponent = () => {
 
     return (
         <div className={`min-h-screen ${styles.projectsComponent}`}>
-            <PageHeader />
+            <PageHeader text='HOME'/>
 
             {/* Personal projects explanation */}
             <div className={styles.personalProjectsText}>
@@ -106,7 +106,7 @@ const ProjectsComponent = () => {
                     </div>
                 ))}
             </div>
-            <PageHeader position='bottom' />
+            <PageHeader position='bottom' text='HOME' />
 
             {/* Terminal animation */}
             {animationOn && <TerminalAnimation />}

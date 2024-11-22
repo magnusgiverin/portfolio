@@ -10,7 +10,6 @@ const navigationLinks = [
       sublinks: [
         { title: "Timeline", path: "/about#timeline" },
         { title: "Education", path: "/about#education" },
-        { title: "Passions", path: "/about#passions" },
       ],
     },
     {
@@ -30,8 +29,9 @@ const navigationLinks = [
       title: "Projects",
       path: "/projects#",
       sublinks: [
-        { title: "Web Development", path: "/projects#web-development" },
-        { title: "Machine Learning", path: "/projects#machine-learning" },
+        { title: "Freelance Work", path: "/projects#freelance" },
+        { title: "Personal Projects", path: "/projects#personal" },
+        { title: "School Projects", path: "/projects#school" },
       ],
     },
   ];

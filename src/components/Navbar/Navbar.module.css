@@ -1,65 +1,134 @@
 .navbar {
-    position: fixed; /* Default: Set position to absolute */
-    top: 15px; /* Align it to the top of the screen by default */
+    position: fixed;
+    /* Default: Set position to absolute */
+    top: 15px;
+    /* Align it to the top of the screen by default */
     height: 60px;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 20px;
+    padding-right: 20px;
     width: 90vw;
-    transform: translateX(-50%) translateY(-30px); /* Center horizontally and slide upwards initially */
-    left: 50%; /* Center horizontally */
-    background: rgba(255, 255, 255, 0.024); /* Slightly opaque white for glass effect */
-    backdrop-filter: blur(1px); /* Add backdrop blur for glass effect */
-    transition: background-color 0.1s ease-in-out, opacity 0.7s ease, transform 0.7s ease; /* Transitions for smooth fade-in */
-    z-index: 100; /* Ensure it's on top of other content */
-    color: #fff; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    opacity: 0; /* Initially hidden */
+    transform: translateX(-50%) translateY(-30px);
+    /* Center horizontally and slide upwards initially */
+    left: 50%;
+    /* Center horizontally */
+    background: rgba(255, 255, 255, 0.024);
+    /* Slightly opaque white for glass effect */
+    backdrop-filter: blur(1px);
+    /* Add backdrop blur for glass effect */
+    transition: background-color 0.1s ease-in-out, opacity 0.7s ease, transform 0.7s ease;
+    /* Transitions for smooth fade-in */
+    z-index: 100;
+    /* Ensure it's on top of other content */
+    color: #fff;
+    /* Text color */
+    border-radius: 10px;
+    /* Rounded corners */
+    opacity: 0;
+    /* Initially hidden */
 }
 
 /* Show navbar when visible */
 .visible {
-    opacity: 1; /* Fully visible */
-    transform: translateX(-50%) translateY(0); /* Centered horizontally, no vertical translation */
+    opacity: 1;
+    /* Fully visible */
+    transform: translateX(-50%) translateY(0);
+    /* Centered horizontally, no vertical translation */
 }
 
 .hidden {
-    opacity: 0; /* Hidden when not visible */
-    transform: translateX(-50%) translateY(-30px); /* Slide upwards when hidden */
+    opacity: 0;
+    /* Hidden when not visible */
+    transform: translateX(-50%) translateY(-30px);
+    /* Slide upwards when hidden */
 }
 
 .overlay {
-    background: rgba(255, 255, 255, 0); /* Slightly opaque white for glass effect */
+    background: rgba(255, 255, 255, 0);
+    /* Slightly opaque white for glass effect */
 }
+
+.ctaLinkText {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
+
+.ctaLinkIcon {
+    font-size: 1.5rem; /* Ensure proper icon size */
+    color: #FB923C
+}
+
+.group {
+    display: flex;
+    flex-direction: row; /* Align children in a row */
+    align-items: center; /* Vertically center both the icon and the text */
+}
+
+.currentLocation {
+    display: flex;
+    align-items: center;
+    color: #bbb;
+}
+
+.currentLocationBar {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: white;
+    margin-right: 16px;
+    border-radius: 2px;
+}
+
 
 @media (max-width: 900px) {
     .navbar {
         width: 95vw;
-}
+    }
 }
 
 /* Media query for smaller screens (phones) */
 @media (max-width: 640px) {
     .navbar {
-        position: fixed; /* Change position to fixed */
-        bottom: 0; /* Align it to the bottom of the screen */
-        top: auto; /* Remove top alignment */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%) translateY(30px); /* Center horizontally and slide upwards when hidden */
-        padding-top: 30px; /* Reduce padding for mobile view */
-        padding-bottom: 30px; /* Reduce padding for mobile view */
-        width: 100vw; /* Make navbar full width on mobile */
-        border-radius: 0px; /* Remove rounded corners on mobile */
-        backdrop-filter: blur(10px); /* Add backdrop blur for glass effect */
+        position: fixed;
+        /* Change position to fixed */
+        bottom: 0;
+        /* Align it to the bottom of the screen */
+        top: auto;
+        /* Remove top alignment */
+        left: 50%;
+        /* Center horizontally */
+        transform: translateX(-50%) translateY(30px);
+        /* Center horizontally and slide upwards when hidden */
+        padding-top: 30px;
+        /* Reduce padding for mobile view */
+        padding-bottom: 30px;
+        /* Reduce padding for mobile view */
+        width: 100vw;
+        /* Make navbar full width on mobile */
+        border-radius: 0px;
+        /* Remove rounded corners on mobile */
+        backdrop-filter: blur(10px);
+        /* Add backdrop blur for glass effect */
     }
 
     .visible {
-        opacity: 1; /* Fully visible */
-        transform: translateX(-50%) translateY(0); /* Centered horizontally, no vertical translation */
+        opacity: 1;
+        /* Fully visible */
+        transform: translateX(-50%) translateY(0);
+        /* Centered horizontally, no vertical translation */
     }
-    
+
     .hidden {
-        opacity: 0; /* Hidden when not visible */
-        transform: translateX(-50%) translateY(30px); /* Slide upwards when hidden */
+        opacity: 0;
+        /* Hidden when not visible */
+        transform: translateX(-50%) translateY(30px);
+        /* Slide upwards when hidden */
+    }
+
+    .currentLocation {
+display: none;
     }
 }

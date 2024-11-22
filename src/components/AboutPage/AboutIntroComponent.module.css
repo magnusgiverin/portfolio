@@ -91,3 +91,13 @@
 .subsection:nth-child(3) {
     animation-delay: 0.9s;
 }
+
+@media (max-width: 640px) {
+    .introContainer {
+        padding-bottom: 60px;
+      }
+
+      .mainText {
+        font-size: 20vw;
+    }
+}

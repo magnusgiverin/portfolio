@@ -56,7 +56,7 @@ const MapComponent = () => {
         </Geographies>
 
         {/* Oslo */}
-        <g onClick={() => handleScroll("oslo-section")} style={{ cursor: "pointer" }}>
+        <g onClick={() => handleScroll("oslo-section-1")} style={{ cursor: "pointer" }}>
           <Annotation
             subject={[10.7522, 59.9139]}
             dx={77}

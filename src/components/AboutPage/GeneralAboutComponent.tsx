@@ -47,17 +47,34 @@ const GeneralAbouComponent = () => {
                                     <h2 className={styles.flexItemTitle}>{section.title}</h2>
                                     {section.link && (
                                         <button
-                                        onClick={() => handleScroll(section.link)}
-                                        className={`material-icons ${styles.hoverAnimate}`}
-                                    >
-                                        south_east
-                                    </button>
+                                            onClick={() => handleScroll(section.link)}
+                                            className={`material-icons ${styles.hoverAnimate}`}
+                                        >
+                                            south_east
+                                        </button>
                                     )}
                                 </div>
                                 <p className={styles.flexItemDescription}>
                                     {section.description}
                                 </p>
                             </div>
+                            {section.externalLinks && (
+                                <div className={styles.externalLinksContainer}>
+                                    {section.externalLinks.map((extLink, extIndex) => (
+                                        <a
+                                            key={extIndex}
+                                            href={extLink.linkTo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.externalLink}
+                                        >
+                                            <span className={`material-icons ${styles.icon}`}>
+                                                <extLink.icon className={styles.icon} /> {/* Render the icon */}
+                                            </span>
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

@@ -1,4 +1,5 @@
 "use client";
+import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 const getAge = () => {
   const today = new Date();
@@ -41,12 +42,28 @@ const aboutPageText = {
         title: "Who is Magnus?",
         description:
           "I am a technology-driven leader with a strong background in IT development and process improvement. Passionate about leveraging technology to streamline work processes, I have had the privilege of contributing to innovative solutions across various sectors.",
-      },
+        externalLinks: [
+          {
+            text: "GitHub",
+            linkTo: "https://github.com/magnusgiverin",
+            icon: FaGithub
+          },
+          {
+            text: "LinkedIn",
+            linkTo: "https://www.linkedin.com/in/magnusgiverin",
+            icon: FaLinkedin,
+          },
+          {
+            text: "CV",
+            linkTo: "/CV.pdf",
+            icon: FaFileAlt,
+          },
+        ]
+        },
       {
         title: "What Drives Me",
         description:
           "At the core of everything I do is a passion for technology, innovation, and meaningful impact. I’m committed to creating solutions that not only drive efficiency but also empower people to work smarter and connect better. This section delves deeper into the values I stand for, the causes that inspire me, and the principles guiding my professional journey.",
-        link: "/about#passions",
       },
       {
         title: "Living Abroad: A World of Perspectives",
@@ -64,7 +81,7 @@ const aboutPageText = {
   },
   timeline: {
     title: "My timeline",
-    intro: " A journey through significant moments and milestones.",
+    intro: " A journey through significant moments.",
     events: [
       {
         year: "2003 - 2005",
@@ -88,7 +105,7 @@ const aboutPageText = {
         year: "2007 - 2009",
         title: "OSLO",
         text: "I began my education in Oslo, where I had my first real experience with snow and the cold. The winters were enchanting, and I embraced the new lifestyle. It was here that I first encountered the Norwegian language and culture. Although I initially struggled with my accent, I gradually adjusted and grew to appreciate the country as home.",
-        section: "oslo-section",
+        section: "oslo-section-1",
         icon: "toys",
         position: "right",
         image: "/images/oslo_1.jpg",
@@ -106,7 +123,7 @@ const aboutPageText = {
         year: "2011 - 2017",
         title: "OSLO",
         text: "Returning to Oslo after several years abroad was a bit of a cultural adjustment. Having lost some of my language skills, I felt like an outsider at first, but over time I adapted. Secondary school marked a significant turning point, where I made lasting friendships and began to reconnect with my Norwegian heritage. It was here that I learned the true meaning of belonging and community.",
-        section: "oslo-section",
+        section: "oslo-section-2",
         icon: "ac_unit",
         position: "left",
         image: "/images/oslo_2.jpg",
@@ -132,25 +149,34 @@ const aboutPageText = {
     ],
   },
   education: {
-    about: "ABOUT",
-    ntnu: {
-      heading: "NTNU",
-      degree: "Masters in Engineering, Computer Science",
-      details: [
-        "Specialisation: Algorithms and Computers",
-        "Interests: Machine learning, cognitive architectures, and AI",
-      ],
-      image: "ntnu"
-    },
-    greengates: {
-      heading: "Greengates International School",
-      degree: "Secondary Education",
-      details: [
-        "IB score: 40", 
-        "HL subjects: Chemistry, Economics, Physics"
-      ],
-      image: "greengates"
-    },
+    title: "Education",
+    description: "I completed my secondary school in Mexico (IGCSE and IB), and later persued a Master of Science (MsC.) in Computer Engineering (MTDT) at NTNU in Trondheim, Norway.",
+    educations: [
+      {
+        heading: "NTNU",
+        year: "2021 - 2026",
+        degree: "MsC. Computer Science (MTDT)",
+        details: [
+          "Specialisation: Algorithms and Computers",
+          "Interests: Machine learning, cognitive architectures, and AI",
+        ],
+        image: "/images/ntnu.jpg",
+        url: "https://www.ntnu.no/",
+        location: "Trondheim, Norway"
+      },
+      {
+        heading: "Greengates International School",
+        year: "2017 - 2021",
+        degree: "Secondary Education",
+        details: [
+          "IB score: 40", 
+          "HL subjects: Chemistry, Economics, Physics"
+        ],
+        image: "/images/greengates.jpg",
+        url: "https://www.greengates.edu.mx/",
+        location: "Mexico City, Mexico"
+      },
+    ],
   },
 };
 

@@ -30,7 +30,7 @@ const SkillsComponent = () => {
 
     return (
         <div className={styles.skillsContainer}>
-            <PageHeader />
+            <PageHeader text='HOME' />
             <h2 className={styles.skillsTitle}>Skills</h2>
             <div className={styles.skillsTableWrapper}>
                 <table className={styles.skillsTable}>

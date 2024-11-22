@@ -54,7 +54,7 @@ const Overlay = ({ visible }) => {
       const timer = setTimeout(() => {
         setZIndex(0); // Reset zIndex after a delay
       }, 400); // Match the duration of the opacity transition
-      
+
       return () => clearTimeout(timer);
     }
   }, [visible]);
@@ -83,6 +83,8 @@ const Overlay = ({ visible }) => {
     }, 500); // Adjust timeout to match the scroll-to-top duration
   };
 
+  const location = router.pathname;
+
   return (
     <div
       className={`${styles.overlay} ${visible ? styles['overlay-visible'] : ''}`}
@@ -94,14 +96,31 @@ const Overlay = ({ visible }) => {
           <ul className={styles.navLinks}>
             {navigationLinks.map((link) => (
               <li key={link.title}>
-                <button className="hover:text-white" onClick={() => handleRedirect(link.path)}>{link.title}</button>
+                <button
+                  className={`${styles.navButton} ${location === link.path.split("#")[0] ? styles.activeLink : 'hover:text-white'
+                    }`}
+                  onClick={() => {
+                    if (location !== link.path) handleRedirect(link.path);
+                  }}
+                  disabled={location === link.path} // Disable button for active link
+                >
+                  {link.title}
+                </button>
                 {link.sublinks.length > 0 && (
                   <ul className={styles.sublinks}>
                     {link.sublinks.map((sublink) => (
                       <li key={sublink.title}>
-                        <span className='flex flex-row items-center gap-2'>
-                        <span className="material-icons text-4xl">subdirectory_arrow_right</span>
-                        <button className="hover:text-white" onClick={() => handleRedirect(sublink.path)}>{sublink.title}</button>
+                        <span className="flex flex-row items-center gap-2">
+                          <span className="material-icons text-4xl">subdirectory_arrow_right</span>
+                          <button
+                            className={`${styles.navButton} ${'hover:text-white'}`}
+                            onClick={() => {
+                              if (location !== sublink.path) handleRedirect(sublink.path);
+                            }}
+                            disabled={location === sublink.path} // Disable button for active sublink
+                          >
+                            {sublink.title}
+                          </button>
                         </span>
                       </li>
                     ))}
@@ -131,6 +150,7 @@ const Overlay = ({ visible }) => {
               className={styles.inputField}
               value={senderName}
               onChange={(e) => setSenderName(e.target.value)}
+              id='name'
             />
             <input
               type="email"
@@ -139,6 +159,7 @@ const Overlay = ({ visible }) => {
               className={styles.inputField}
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
+              id='email'
             />
             <textarea
               placeholder="Your Message"
@@ -146,6 +167,7 @@ const Overlay = ({ visible }) => {
               className={styles.textareaField}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              id='message'
             ></textarea>
             {confirmationMessage ? <p className={styles.confirmationMessage}>{confirmationMessage}</p> :
               <button type="submit" className={styles.submitButton}>Send</button>

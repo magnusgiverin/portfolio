@@ -30,7 +30,7 @@ const CareerComponent = () => {
 
     return (
         <div className={`min-h-screen ${styles.careerComponent}`}>
-            <PageHeader />
+            <PageHeader text='HOME' />
             <h2 className={styles.title}>{career.title}</h2>
             <div className={styles.grid}>
                 {career.positions.map((position, index) => (

@@ -152,7 +152,7 @@ const landingPageText = {
                     text: "Learn more about Bymuseet",
                     url: "/projects#bymuseet"
                 },
-                type: "Personal project"
+                type: "Freelance work"
             },
             {
                 name: "Timeplaner.net",
@@ -173,7 +173,7 @@ const landingPageText = {
                     text: "Learn more about CalOne",
                     url: "/projects#calone"
                 },
-                type: "Collaborative Project"
+                type: "Collaborative project"
             }
         ]
     },

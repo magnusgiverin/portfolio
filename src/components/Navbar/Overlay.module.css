@@ -4,13 +4,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Fill the full height of the viewport */
+    height: 100%;
+    /* Fill the full height of the viewport */
     background-color: #18181b;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
     display: flex;
-    overflow-y: auto; /* Allow scrolling if content exceeds viewport */
+    overflow-y: auto;
+    /* Allow scrolling if content exceeds viewport */
 }
 
 .overlay-visible {
@@ -23,12 +25,17 @@
     gap: 30px;
     display: flex;
     height: max-content;
-    flex-direction: row; /* Keep content in a row layout */
-    width: 80%; /* Full width of the overlay with margins */
+    flex-direction: row;
+    /* Keep content in a row layout */
+    width: 80%;
+    /* Full width of the overlay with margins */
     max-width: 2000px;
-    margin-top: 100px; /* Space for the navbar */
-    margin-left: auto; /* Center the content */
-    margin-right: auto; /* Center the content */
+    margin-top: 100px;
+    /* Space for the navbar */
+    margin-left: auto;
+    /* Center the content */
+    margin-right: auto;
+    /* Center the content */
 }
 
 /* Navigation section styling */
@@ -42,50 +49,101 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 2.5rem; /* Large font size for navigation */
+    font-size: 2.5rem;
+    /* Large font size for navigation */
     color: rgb(189, 189, 189);
 }
 
-.navLinks > li {
+.navLinks>li {
     margin: 1.5rem 0;
     cursor: pointer;
-    position: relative; /* Allow positioning of sublinks */
-    opacity: 0; /* Start hidden */
-    animation: flyInNav 0.2s forwards ease-in-out; /* Apply fly-in animation */
+    position: relative;
+    /* Allow positioning of sublinks */
+    opacity: 0;
+    /* Start hidden */
+    animation: flyInNav 0.2s forwards ease-in-out;
+    /* Apply fly-in animation */
 }
 
 .sublinks {
     list-style: none;
-    padding-left: 30px; /* Indent for sublinks */
-    margin: 0; /* Reset margin for sublinks */
+    padding-left: 30px;
+    /* Indent for sublinks */
+    margin: 0;
+    /* Reset margin for sublinks */
 }
 
 .sublinks li {
-    margin: 0.5rem 0; /* Smaller margin for sublinks */
-    font-size: 1.8rem; /* Adjust size for sublinks */
-    opacity: 0; /* Start hidden */
-    animation: flyInSublink 0.2s forwards ease-in-out; /* Apply fly-in animation */
+    margin: 0.5rem 0;
+    /* Smaller margin for sublinks */
+    font-size: 1.8rem;
+    /* Adjust size for sublinks */
+    opacity: 0;
+    /* Start hidden */
+    animation: flyInSublink 0.2s forwards ease-in-out;
+    /* Apply fly-in animation */
 }
 
-.navLinks > li:nth-child(1) { animation-delay: 0.05s; } /* Stagger effect */
+.activeLink {
+    color: #FB923C;
+    /* Orange color for active link */
+    cursor: default;
+    /* Disable pointer for the active link */
+}
 
-.navLinks > li:nth-child(2) { animation-delay: 0.1s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(1) { animation-delay: 0.15s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(2) { animation-delay: 0.2s; }
-.navLinks > li:nth-child(2) .sublinks li:nth-child(3) { animation-delay: 0.25s; }
+.navLinks>li:nth-child(1) {
+    animation-delay: 0.05s;
+}
 
-.navLinks > li:nth-child(3) { animation-delay: 0.3s; }
-.navLinks > li:nth-child(3) .sublinks li:nth-child(1) { animation-delay: 0.35s; } 
-.navLinks > li:nth-child(3) .sublinks li:nth-child(2) { animation-delay: 0.4s; }
+/* Stagger effect */
 
-.navLinks > li:nth-child(4) { animation-delay: 0.45s; }
+.navLinks>li:nth-child(2) {
+    animation-delay: 0.1s;
+}
 
-.navLinks > li:nth-child(5) { animation-delay: 0.5s; }
-.navLinks > li:nth-child(5) .sublinks li:nth-child(1) { animation-delay: 0.55s; }
-.navLinks > li:nth-child(5) .sublinks li:nth-child(2) { animation-delay: 0.6s; } 
+.navLinks>li:nth-child(2) .sublinks li:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.navLinks>li:nth-child(2) .sublinks li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.navLinks>li:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.navLinks>li:nth-child(3) .sublinks li:nth-child(1) {
+    animation-delay: 0.30s;
+}
+
+.navLinks>li:nth-child(3) .sublinks li:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.navLinks>li:nth-child(4) {
+    animation-delay: 0.40s;
+}
+
+.navLinks>li:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.navLinks>li:nth-child(5) .sublinks li:nth-child(1) {
+    animation-delay: 0.50s;
+}
+
+.navLinks>li:nth-child(5) .sublinks li:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.navLinks>li:nth-child(5) .sublinks li:nth-child(4) {
+    animation-delay: 0.60s;
+}
 
 .sublinks li a {
-    color: rgb(189, 189, 189); /* Default color for sublinks */
+    color: rgb(189, 189, 189);
+    /* Default color for sublinks */
 }
 
 /* Contact section styling */
@@ -98,12 +156,14 @@
     text-align: right;
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular profile picture */
+    border-radius: 50%;
+    /* Circular profile picture */
     margin: 10px 0;
 }
 
 .mainTitle {
-    border-top: 1px solid #fff; /* Dividing line */
+    border-top: 1px solid #fff;
+    /* Dividing line */
     padding-top: 25px;
     color: #ffffff;
     font-size: 0.9rem;
@@ -113,9 +173,10 @@
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     opacity: 0;
-    color:#FB923C;
+    color: #FB923C;
     animation: slideInContact 0.5s forwards ease-in-out;
-    animation-delay: 0.2s; /* Delay for contact section */
+    animation-delay: 0.2s;
+    /* Delay for contact section */
 }
 
 /* Contact form styling */
@@ -126,7 +187,8 @@
     animation: flyInContact 0.5s forwards ease-in-out;
 }
 
-.inputField, .textareaField {
+.inputField,
+.textareaField {
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 5px;
@@ -139,7 +201,8 @@
     height: 170px;
 }
 
-.inputField::placeholder, .textareaField::placeholder {
+.inputField::placeholder,
+.textareaField::placeholder {
     color: #ccc;
 }
 
@@ -158,51 +221,67 @@
 }
 
 .profileContainer {
-    display: flex;              /* Use flexbox for alignment */
-    align-items: center;       /* Center vertically */
-    margin: 20px 0;           /* Adjust spacing if needed */
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Center vertically */
+    margin: 20px 0;
+    /* Adjust spacing if needed */
 }
 
 .linksContainer {
-    display: flex;              /* Use flexbox for the links */
-    margin-left: 40px;         /* Space between the profile picture and links */
-    gap: 40px;                 /* Even spacing between links */
+    display: flex;
+    /* Use flexbox for the links */
+    margin-left: 40px;
+    /* Space between the profile picture and links */
+    gap: 40px;
+    /* Even spacing between links */
 }
 
 .link {
-    font-weight: bold;          /* Make the links bold */
-    opacity: 0;                /* Start hidden */
-    animation: flyInSocialLinks 0.6s forwards ease-in-out; /* Animation applied */
+    font-weight: bold;
+    /* Make the links bold */
+    opacity: 0;
+    /* Start hidden */
+    animation: flyInSocialLinks 0.6s forwards ease-in-out;
+    /* Animation applied */
 }
 
 .link:hover {
-    text-decoration: underline;      /* Remove underline from links */
+    text-decoration: underline;
+    /* Remove underline from links */
 }
 
 /* Adding delays for each child social link */
 .link:nth-child(1) {
-    animation-delay: 0.2s; /* Delay for the second link */
+    animation-delay: 0.2s;
+    /* Delay for the second link */
 }
+
 .link:nth-child(2) {
-    animation-delay: 0.4s; /* Delay for the first link */
+    animation-delay: 0.4s;
+    /* Delay for the first link */
 }
 
 .link:nth-child(3) {
-    animation-delay: 0.6s; /* Delay for the third link */
+    animation-delay: 0.6s;
+    /* Delay for the third link */
 }
 
 .confirmationMessage {
     color: rgb(234, 234, 234);
     margin-top: 10px;
     font-weight: bold;
-  }
+}
 
 /* Fly-in animations */
 @keyframes flyInNav {
     from {
         opacity: 0;
-        transform: translateY(5px); /* Start from below */
+        transform: translateY(5px);
+        /* Start from below */
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -212,8 +291,10 @@
 @keyframes flyInSublink {
     from {
         opacity: 0;
-        transform: translateY(5px); /* Start from below */
+        transform: translateY(5px);
+        /* Start from below */
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -226,6 +307,7 @@
         opacity: 0;
         transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -237,6 +319,7 @@
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -247,8 +330,10 @@
 @keyframes flyInContact {
     from {
         opacity: 0;
-        transform: translateY(40px); /* Start from below */
+        transform: translateY(40px);
+        /* Start from below */
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -262,28 +347,33 @@
     }
 
     .linksContainer {
-        gap: 30px;                 /* Even spacing between links */
+        gap: 30px;
+        /* Even spacing between links */
     }
 }
 
 @media (max-width: 900px) {
     .overlayContent {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%;
+        /* Adjust width for smaller screens */
     }
 }
 
 @media (max-width: 800px) {
     .overlay {
-        flex-direction: column; /* Change to column layout on small screens */
-        pointer-events: auto; 
+        flex-direction: column;
+        /* Change to column layout on small screens */
+        pointer-events: auto;
         padding-top: 80px;
     }
 
     .overlayContent {
         padding-top: 20px;
         margin-top: 0px;
-        flex-direction: column; /* Stack sections vertically on small screens */
-        width: 90%; /* Adjust width for smaller screens */
+        flex-direction: column;
+        /* Stack sections vertically on small screens */
+        width: 90%;
+        /* Adjust width for smaller screens */
     }
 
     .submitButton {
@@ -308,24 +398,27 @@
     }
 
     .navLinks {
-        font-size: 2.3rem; /* Adjust font size for smaller screens */
+        font-size: 2.3rem;
+        /* Adjust font size for smaller screens */
     }
 
     .sublinks {
-        padding-left: 5px; 
+        padding-left: 5px;
     }
 
     .sublinks li {
         font-size: 1.7rem;
     }
 
-    .inputField, .textareaField {
+    .inputField,
+    .textareaField {
         font-size: 0.9rem;
     }
 
     .mainTitle {
         border-top: 0px;
-        border-bottom: 1px solid #fff; /* Dividing line */
+        border-bottom: 1px solid #fff;
+        /* Dividing line */
         padding-top: 10px;
         padding-bottom: 10px;
         margin-bottom: 25px;
@@ -334,6 +427,7 @@
     }
 
     .linksContainer {
-        gap: 20px;                 /* Even spacing between links */
+        gap: 20px;
+        /* Even spacing between links */
     }
 }

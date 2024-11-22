@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Footer.module.css';
-import { LuCornerDownRight } from "react-icons/lu";
-import PageHeader from '../PageHeader/PageHeader';
 import navigationLinks from '../../resources/navigation';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
     const [senderName, setSenderName] = useState('');
@@ -11,6 +10,8 @@ const Footer = () => {
     const footerRef = useRef(null); // Ref for the footer element
     const [animationKey, setAnimationKey] = useState(0); // Key to reset animations
     const [confirmationMessage, setConfirmationMessage] = useState(''); // New state for confirmation message
+
+    const router = useRouter();
 
     const sendEmail = async () => {
         const response = await fetch('/api/send', {
@@ -63,6 +64,26 @@ const Footer = () => {
         };
     }, []);
 
+    const handleRedirect = (url: string) => {
+        // Extract the base URL and hash fragment (if any)
+        const [baseUrl, hash] = url.split('#');
+        // Delay the routing until the scroll to the top completes
+        setTimeout(() => {
+            // Navigate to the base URL first (to ensure the page is loaded)
+            router.push(baseUrl).then(() => {
+                if (hash) {
+                    // Scroll to the specific section after navigation
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }, 500); // Adjust timeout to match the scroll-to-top duration
+    };
+
+    const location = router.pathname;
+
     return (
         <>
             <div
@@ -75,14 +96,31 @@ const Footer = () => {
                         <ul className={styles.navLinks}>
                             {navigationLinks.map((link) => (
                                 <li key={link.title}>
-                                    <a className="hover:text-white" href={link.path}>{link.title}</a>
+                                    <button
+                                        className={`${styles.navButton} ${location === link.path.split("#")[0] ? styles.activeLink : 'hover:text-white'
+                                            }`}
+                                        onClick={() => {
+                                            if (location !== link.path) handleRedirect(link.path);
+                                        }}
+                                        disabled={location === link.path} // Disable button for active link
+                                    >
+                                        {link.title}
+                                    </button>
                                     {link.sublinks.length > 0 && (
                                         <ul className={styles.sublinks}>
                                             {link.sublinks.map((sublink) => (
                                                 <li key={sublink.title}>
-                                                    <span className='flex flex-row items-center gap-2'>
-                                                    <span className="material-icons text-4xl">subdirectory_arrow_right</span>
-                                                    <a className="hover:text-white" href={sublink.path}>{sublink.title}</a>
+                                                    <span className="flex flex-row items-center gap-2">
+                                                        <span className="material-icons text-4xl">subdirectory_arrow_right</span>
+                                                        <button
+                                                            className={`${styles.navButton} ${'hover:text-white'}`}
+                                                            onClick={() => {
+                                                                if (location !== sublink.path) handleRedirect(sublink.path);
+                                                            }}
+                                                            disabled={location === sublink.path} // Disable button for active sublink
+                                                        >
+                                                            {sublink.title}
+                                                        </button>
                                                     </span>
                                                 </li>
                                             ))}
@@ -112,6 +150,7 @@ const Footer = () => {
                                 className={styles.inputField}
                                 value={senderName}
                                 onChange={(e) => setSenderName(e.target.value)}
+                                id='name'
                             />
                             <input
                                 type="email"
@@ -120,6 +159,7 @@ const Footer = () => {
                                 className={styles.inputField}
                                 value={senderEmail}
                                 onChange={(e) => setSenderEmail(e.target.value)}
+                                id='email'
                             />
                             <textarea
                                 placeholder="Your Message"
@@ -127,6 +167,7 @@ const Footer = () => {
                                 className={styles.textareaField}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
+                                id='message'
                             ></textarea>
                             {confirmationMessage ? <p className={styles.confirmationMessage}>{confirmationMessage}</p> :
                                 <button type="submit" className={styles.submitButton}>Send</button>

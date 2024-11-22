@@ -1,43 +1,197 @@
-/* EducationComponent.module.css */
-.educationContainer {
-  padding-top: 100px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-bottom: 100px;
+.educationComponent {
+  padding: 100px 2.5rem;
   position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.introText {
+  width: 90%;
+  max-width: 1200px;
+  text-align: left;
+  margin-bottom: 70px;
+  padding-left: 5%;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.introTitle {
+  color: #FB923C; /* Orange color for icons */
+  font-size: 2rem;
+}
+
+.introDescription {
+  color: #d2d2d2; /* Orange color for icons */
+  font-size: 1.3rem;
+}
+
+.flexContainer {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Stacked layout */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* Smaller cards */
+  gap: 5vw;
+  width: 100%;
+}
+
+.flexItem {
+  background-color: #313131;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure image fits within card bounds */
+}
+
+.imageContainer {
+  width: 100%; /* Full width of the card */
+  height: 400px; /* Set a fixed height to prevent scaling */
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.educationImage {
+  width: 100%; /* Ensure the image takes full width of the container */
+  height: 100%; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image covers the space without stretching */
+}
+
+.link, .location {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.link .icon, .location .icon {
+  color: #FB923C; /* Orange color for icons */
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.list {
+  padding-left: 24px; /* Adds padding for better alignment */
+  list-style-type: disc; /* Adds bullet points */
+  color: #d1d5db; /* Optional: Light color for the text */
+  padding-bottom: 20px;
+}
+
+.listItem {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #d1d5db;
+  margin-bottom: 8px;
+}
+
+.flexItemTitleContainer {
+  margin-bottom: 20px;
+}
+
+.flexItemTitle {
+  font-size: clamp(1.8rem, 5vw, 2.0rem); /* Adjusted for better scaling */
+  font-weight: 600;
+  color: #FB923C;
+  margin-bottom: 10px; /* Added margin for better spacing */
+  text-transform: capitalize; /* Improved appearance */
+}
+
+.flexItemYear {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Responsively adjusted */
+  font-weight: 600;
+  color: #a7a7a8;
+}
+
+.flexItemDescription {
+  color: #e3e5e7;
+  font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive font size */
+  font-weight: bolder;
+  margin: 1rem 0;
+}
+
+.educationDetails {
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking */
+  gap: 2px; /* Reduced gap between location and link */
+}
+
+.link a, .location a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
+
+@media (max-width: 1120px) {
+  .flexContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 1024px) {
+  .introText {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  
+  .flexContainer {
+    gap: 1rem;
   }
 
-  .section {
-    margin-bottom: 30px;
+  .flexItemTitle {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
   }
-  
-  .heading {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #FB923C; /* Accent color for headings */
+
+  .flexItemYear {
+    font-size: 1rem;
   }
-  
-  .text {
-    font-size: 18px;
-    color: #e0e0e0; /* Soft white for text */
-    margin-bottom: 10px;
+
+  /* Ensure no content overflows on very small screens */
+  .introText {
+    padding-left: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  
-  .list {
-    list-style-type: none;
-    padding-left: 0;
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust grid for smaller screens */
   }
-  
-  .listItem {
-    font-size: 18px;
-    color: #d1d5db; /* Lighter grey for list items */
-    margin-bottom: 8px;
+
+  .introDescription {
+    font-size: 1rem;
   }
-  
-  .image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 8px;
+
+  .imageContainer {
+    height: 200px; /* Set a fixed height to prevent scaling */
+  }
+}
+
+@media (max-width: 480px) {
+  .educationComponent {
+    padding: 50px 15px;
+  }
+
+  .flexItemTitle {
+    font-size: 1.3rem; /* Slightly smaller font on very small screens */
+  }
+
+  .introText {
+    padding-left: 5px; /* Ensure no left padding overflow */
+  }
 }
