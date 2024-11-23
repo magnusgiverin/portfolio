@@ -1,0 +1,138 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Default to column on small screens */
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    width: 100%; /* Ensure the container takes up full width */
+    box-sizing: border-box; /* To avoid padding overflow */
+}
+
+.maxWidth {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.introduction,
+.cvOverview,
+.opportunities {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #b1b1b1;
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.imageContainer {
+    width: 60%; /* Default to 60% width on larger screens */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profileImage {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    max-width: 100%; /* Allow the image to grow and shrink with container */
+}
+
+.linksSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.ctaLinkIcon {
+    color: #FB923C;
+}
+
+.ctaLinkText {
+    font-size: 1.125rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+}
+
+/* Responsive Layout for medium screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack content vertically on medium screens */
+        justify-content: flex-start;
+        padding-left: 50px;
+        padding-right: 50px;
+        gap: 2rem; /* Reduce gap on medium screens */
+    }
+
+    .textContainer,
+    .imageContainer {
+        width: 100%; /* Both text and image take up 100% width on medium screens */
+        align-self: flex-start;
+    }
+}
+
+/* Responsive Layout for larger screens (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        flex-direction: row; /* Arrange text and image side by side on larger screens */
+        justify-content: flex-start;
+        gap: 3rem; /* Increase gap between elements */
+    }
+
+    .textContainer,
+    .imageContainer {
+        max-width: 50%; /* Both text and image take up 50% width each */
+        align-self: flex-start;
+    }
+}
+
+/* Responsive Layout for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        gap: 3rem; /* Further reduce gap on small screens */
+    }
+
+    .title {
+        font-size: 1.75rem; /* Reduce font size for small screens */
+    }
+}
+
+/* Responsive Layout for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Further reduce font size */
+    }
+
+    .textContainer,
+    .imageContainer {
+        width: 100%; /* Stack both elements at 100% width */
+    }
+
+    .profileImage {
+        max-width: 400px; /* Limit max width of the image */
+    }
+}

@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+import IntroPage from '../components/General/IntroPage';
+import CareerComponent from '../components/CareerPage/CareerComponent';
+import Footer from '../components/General/Footer';
 
 const CareerPage = () => {
-    const [slideIn, setSlideIn] = useState(false);
-
-    useEffect(() => {
-        setSlideIn(true); // Trigger slide-in when component mounts
-    }, []);
+    const careerComponentRef = useRef(null);
 
     return (
-        <div>
-            <h1>Career</h1>
-            {/* Page content */}
-        </div>
+        <>
+            <IntroPage
+                scrollToRef={careerComponentRef}
+                mainText={"CAREER"}
+                subText={"Learn about my professional experiences so far"}
+            />
+            <div ref={careerComponentRef}>
+                <CareerComponent />
+            </div>
+            <Footer />
+        </>
     );
 };
 

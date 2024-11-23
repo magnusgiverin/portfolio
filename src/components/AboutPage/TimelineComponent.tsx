@@ -3,7 +3,7 @@ import styles from './TimelineComponent.module.css';
 import aboutPageText from '../../resources/text/aboutPageText';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../General/PageHeader';
 import Image from 'next/image';
 
 const TimelineComponent = () => {

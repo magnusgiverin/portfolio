@@ -16,7 +16,7 @@ const navigationLinks = [
       title: "Career",
       path: "/career#",
       sublinks: [
-        { title: "Current Position", path: "/career#current-position" },
+        { title: "Current Position", path: "/career#current-positions" },
         { title: "Past Experiences", path: "/career#past-experiences" },
       ],
     },

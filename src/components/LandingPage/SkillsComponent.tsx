@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SkillsComponent.module.css';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../General/PageHeader';
 import landingPageText from '../../resources/text/landingPageText';
 import { useRouter } from 'next/router';
 

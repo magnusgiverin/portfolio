@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CareerComponent.module.css';
 import landingPageText from '../../resources/text/landingPageText';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../General/PageHeader';
 import { useRouter } from 'next/router';
 
 const CareerComponent = () => {
@@ -29,7 +29,7 @@ const CareerComponent = () => {
     };
 
     return (
-        <div className={`min-h-screen ${styles.careerComponent}`}>
+        <div id={"career"} className={`min-h-screen ${styles.careerComponent}`}>
             <PageHeader text='HOME' />
             <h2 className={styles.title}>{career.title}</h2>
             <div className={styles.grid}>

@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import styles from './AboutComponent.module.css';
 import landingPageText from '../../resources/text/landingPageText';
+import PageHeader from '../General/PageHeader';
 
 const AboutComponent = () => {
     const { about } = landingPageText;
@@ -28,6 +29,7 @@ const AboutComponent = () => {
 
     return (
         <section className={styles.aboutComponent}>
+            <PageHeader text='HOME' />
             <div className={styles.maxWidth}>
                 {/* Header Section */}
                 <h2 className={styles.header}>{about.header}</h2>

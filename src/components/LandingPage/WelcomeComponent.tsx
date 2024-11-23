@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './WelcomeComponent.module.css';
-import Navbar from '../Navbar/Navbar';
-import ScrollArrow from '../ScrollArrow/ScrollArrow';
+import Navbar from '../General/Navbar';
+import ScrollArrow from '../General/ScrollArrow';
 import React from 'react';
 
 const WelcomeComponent = ({ scrollToRef }) => {

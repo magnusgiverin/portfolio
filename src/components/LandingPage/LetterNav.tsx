@@ -55,7 +55,7 @@ const LetterNav = ({ sections, showNav }) => {
         };
     }, [sections, activeSection, hasCheckedNav]);
 
-    const letters = ['A', 'B', 'C', 'D'];
+    const letters = ['A', 'B', 'C', 'D', "E"];
 
     // Only render the nav if hasCheckedNav is true
     if (!hasCheckedNav) {

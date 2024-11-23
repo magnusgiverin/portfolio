@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TerminalAnimation from './TerminalAnimation';
 import styles from './ProjectsComponent.module.css';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../General/PageHeader';
 import landingPageText from '../../resources/text/landingPageText';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
@@ -39,7 +39,7 @@ const ProjectsComponent = () => {
     };
 
     return (
-        <div className={`min-h-screen ${styles.projectsComponent}`}>
+        <div id={"projects"} className={`min-h-screen ${styles.projectsComponent}`}>
             <PageHeader text='HOME'/>
 
             {/* Personal projects explanation */}

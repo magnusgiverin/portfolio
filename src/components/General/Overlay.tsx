@@ -134,7 +134,7 @@ const Overlay = ({ visible }) => {
         <div className={styles.contactSection}>
           <h1 className={styles.mainTitle}>Contact Me</h1>
           <div className={styles.profileContainer}> {/* New container for profile picture and links */}
-            <img src="magnus.JPG" alt="Magnus" className={styles.profilePic} />
+            <img src="me/magnus.JPG" alt="Magnus" className={styles.profilePic} />
             <div className={styles.linksContainer}>
               <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
               <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>

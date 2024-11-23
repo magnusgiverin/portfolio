@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './EducationComponent.module.css';
-import PageHeader from '../PageHeader/PageHeader';
+import PageHeader from '../General/PageHeader';
 import aboutPageText from '../../resources/text/aboutPageText';
 import Image from 'next/image';
 
@@ -24,7 +24,7 @@ const EducationComponent = () => {
         <div className={styles.grid}>
           {education.educations.map((ed, index) => (
             <div key={index} className={styles.flexItem}>
-              <div>
+              <>
                 {/* Education Image */}
                 <div className={styles.flexItemTitleContainer}>
                   <h2 className={styles.flexItemTitle}>{ed.heading}</h2>
@@ -60,7 +60,7 @@ const EducationComponent = () => {
                     <a href={ed.url} target="_blank" rel="noopener noreferrer">{ed.url}</a>
                   </div>
                 )}
-              </div>
+              </>
             </div>
           ))}
         </div>

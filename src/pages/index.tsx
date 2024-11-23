@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
-import LetterNav from '../components/LetterNav/LetterNav';
+import LetterNav from '../components/LandingPage/LetterNav';
 import WelcomeComponent from '../components/LandingPage/WelcomeComponent';
 import ProjectsComponent from '../components/LandingPage/ProjectsComponent';
 import AboutComponent from '../components/LandingPage/AboutComponent';
 import CareerComponent from '../components/LandingPage/CareerComponent';
 import SkillsComponent from '../components/LandingPage/SkillsComponent';
-import Footer from '../components/Footer/Footer';
-import TimelineComponent from '../components/AboutPage/TimelineComponent';
+import InformationComponent from '../components/LandingPage/InformationComponent';
+import Footer from '../components/General/Footer';
 
 export default function Home() {
     const welcomeComponentRef = useRef(null);
@@ -15,8 +15,9 @@ export default function Home() {
     const careerComponentRef = useRef(null);
     const skillsComponentRef = useRef(null);
     const footerComponentRef = useRef(null);
+    const informationComponentRef = useRef(null);
 
-    const sections = [aboutComponentRef, careerComponentRef, skillsComponentRef, projectsComponentRef, footerComponentRef];
+    const sections = [informationComponentRef, aboutComponentRef, careerComponentRef, skillsComponentRef, projectsComponentRef, footerComponentRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -57,7 +58,10 @@ export default function Home() {
             <LetterNav sections={sections} showNav={showNav} />
             {/* Page Sections */}
             <div ref={welcomeComponentRef}>
-                <WelcomeComponent scrollToRef={aboutComponentRef} />
+                <WelcomeComponent scrollToRef={informationComponentRef} />
+            </div>
+            <div ref={informationComponentRef}>
+                <InformationComponent />
             </div>
             <div ref={aboutComponentRef}>
                 <AboutComponent />

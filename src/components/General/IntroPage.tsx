@@ -1,19 +1,19 @@
 import React from 'react';
-import styles from './AboutIntroComponent.module.css';
-import ScrollArrow from '../ScrollArrow/ScrollArrow';
-import Navbar from '../Navbar/Navbar';
+import styles from './IntroPage.module.css';
+import ScrollArrow from '../General/ScrollArrow';
+import Navbar from '../General/Navbar';
 
-const AboutIntroComponent = ({ scrollToRef }) => {
+const IntroPage = ({ scrollToRef, mainText, subText }) => {
   return (
     <div id={''} className={styles.introContainer}>
     <Navbar visible sendOverLayStatus={undefined}/>
       <div className={styles.fullScreen}>
-        <h1 className={styles.mainText}>ABOUT</h1>
+        <h1 className={styles.mainText}>{mainText}</h1>
       </div>
       <div className={styles.subsections}>
         <div className={styles.subsection}>
           <span className={styles.colorBar}></span>
-          <p className={styles.subText}>Discover my journey, values, and experiences.</p>
+          <p className={styles.subText}>{subText}</p>
         </div>
       </div>
       <ScrollArrow scrollToRef={scrollToRef}/>
@@ -21,4 +21,4 @@ const AboutIntroComponent = ({ scrollToRef }) => {
   );
 };
 
-export default AboutIntroComponent;
+export default IntroPage;
