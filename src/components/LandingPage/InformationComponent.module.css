@@ -50,6 +50,13 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caption {
+    color: #e4e4e4;
 }
 
 .profileImage {

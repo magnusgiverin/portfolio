@@ -70,6 +70,7 @@ const InformationComponent = () => {
                     alt="Magnus Giverin"
                     className={styles.profileImage}
                 />
+                <span className={styles.caption}>{"- Photo from my summer internship at Telenor in 2024"}</span>
             </div>
 
             {/* Links Section */}
