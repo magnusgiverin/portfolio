@@ -3,7 +3,7 @@
     flex-direction: column; /* Default to column on small screens */
     gap: 4rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
@@ -46,11 +46,10 @@
 }
 
 .imageContainer {
-    width: 60%; /* Default to 60% width on larger screens */
+    width: 40%; /* Default to 60% width on larger screens */
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
+    justify-content: right;
+    align-items: flex-end;
     flex-direction: column;
     gap: 10px;
 }
@@ -92,7 +91,7 @@
         justify-content: flex-start;
         padding-left: 50px;
         padding-right: 50px;
-        gap: 2rem; /* Reduce gap on medium screens */
+        gap: 3rem; /* Reduce gap on medium screens */
     }
 
     .textContainer,
@@ -106,21 +105,23 @@
 @media (min-width: 1400px) {
     .container {
         flex-direction: row; /* Arrange text and image side by side on larger screens */
-        justify-content: flex-start;
-        gap: 3rem; /* Increase gap between elements */
+        justify-content: space-between; /* Maximize space between the text and image */
+        gap: 5rem; /* Increase gap between elements */
     }
 
-    .textContainer,
+    .textContainer {
+        max-width: 50%; /* Text takes up 50% of the container */
+    }
+
     .imageContainer {
-        max-width: 50%; /* Both text and image take up 50% width each */
-        align-self: flex-start;
+        max-width: 45%; /* Image takes up 45% of the container */
     }
 }
 
 /* Responsive Layout for small screens (max-width: 768px) */
 @media (max-width: 768px) {
     .container {
-        gap: 3rem; /* Further reduce gap on small screens */
+        gap: 2rem; /* Further reduce gap on small screens */
     }
 
     .title {
