@@ -88,7 +88,7 @@ const AboutComponent = () => {
                                         >
                                             east
                                         </span>
-                                        <span className={styles.ctaLinkFlexText}>
+                                        <span className={styles.ctaLinkText}>
                                             {section.ctaLink.text}
                                         </span>
                                     </button>

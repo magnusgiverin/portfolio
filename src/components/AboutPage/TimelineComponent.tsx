@@ -24,7 +24,7 @@ const TimelineComponent = () => {
       <VerticalTimeline
         lineColor={'#FB923C'}
       >
-        {timeline.events.map((event, index) => (
+        {timeline.events.map((event, _) => (
           <VerticalTimelineElement
             contentStyle={{ background: '#313131' }}
             contentArrowStyle={{ borderRight: '7px solid #313131' }}

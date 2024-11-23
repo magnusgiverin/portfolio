@@ -25,7 +25,7 @@ const landingPageText = {
         links: [
             {
                 text: "Read my CV",
-                url: "/CV.pdf",
+                url: "/documents/CV.pdf",
             },
           {
             text: "Career journey summarised",

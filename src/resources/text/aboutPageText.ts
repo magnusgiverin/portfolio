@@ -55,7 +55,7 @@ const aboutPageText = {
           },
           {
             text: "CV",
-            linkTo: "/CV.pdf",
+            linkTo: "/documents/CV.pdf",
             icon: FaFileAlt,
           },
         ]

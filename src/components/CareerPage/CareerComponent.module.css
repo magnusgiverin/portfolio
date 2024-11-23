@@ -1,63 +1,36 @@
-.introContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    color: white;
-    position: relative;
-    padding-bottom: 150px;
-  }
-  
-  .sectionTitle h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: bold;
+.careerContainer {
+    color: #ffffff;
     padding-top: 120px;
-  }
-
-  .careerContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    width: 90%;
-    max-width: 1200px;
-  }
-  
-  .careerItem {
-    display: flex;
-    flex-direction: row;
-    background-color: #313131;
-    gap: 2rem;
-    padding: 40px;
-  }
-
-  .number {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #FB923C;
-    text-align: left;
-}
-  .imageContainer {
-    flex: 1;
-    max-width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .companyImage {
+    padding-bottom: 120px;
+    min-height: 100vh;
     width: 100%;
-    height: auto;
-    max-width: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
   }
   
-  .infoContainer {
-    flex: 2;
+  .detailsList {
+    gap: 5px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    list-style-type: disc; /* Adds bullet points */
+    margin-top: 20px; /* Adjust the top margin to your desired spacing */
+    margin-bottom: 20px; /* Adjust the top margin to your desired spacing */
+    padding-left: 20px; /* Adds padding to the left to indent the bullet points */
+  }
+  
+  .detailsItem {
+    color: #dbdbdb; /* Set text color for list items */
+    font-size: 1rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for better spacing between list items */
+  }
+
+  .titleSection {
+    text-align: center;
+    margin-bottom: 30px;
   }
   
   .careerTitle {
@@ -66,80 +39,116 @@
     color: #ffffff;
   }
   
-  .companyName {
-    font-size: 1.5rem;
-    font-weight: normal;
-    color: #f1f1f1;
-  }
-  
-  .dates {
+  .careerSubtitle {
     font-size: 1.25rem;
-    color: #9e9e9e;
+    color: #aaaaaa;
+    margin-top: 10px;
   }
   
-  .description {
-    font-size: 1.125rem;
-    color: #e0e0e0;
+  .timelineTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .timelineSubtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #FB923C;
+    margin-bottom: 15px;
+  }
+
+  .timelineContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;  /* Ensures the content spans full width */
+  }
+  
+  .textContainer {
+    display: flex;
+    flex-direction: column;  /* Stack title and subtitle vertically */
+    align-items: flex-start; /* Align text to the left */
+  }
+  
+  .timelineImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;  /* Space between text and image */
+  }
+  
+  .timelineText {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #aaaaaa;
     line-height: 1.6;
   }
   
-  .detailsList {
-    margin-top: 20px;
-    padding-left: 20px;
-  }
-  
-  .detailItem {
-    margin-bottom: 10px;
-    list-style-type: disc;
-  }
-
-
-.link, .location {
+  .timelineSeparator {
     display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    font-size: 1.3rem;
+    align-items: center; /* Center align content */
+    justify-content: center; /* Center align content horizontally */
+    position: relative; /* Allows positioning of the text and line */
+    margin: 2rem 0; /* Adds spacing above and below the separator */
+    background-color:#28292c;
   }
   
-  .link .icon, .location .icon {
-    color: #FB923C; /* Orange color for icons */
-    margin-right: 8px;
-    font-size: 1.3rem;
+  .timelineSeparator span {
+    color: #ffffff; /* White text color */
+    font-size: 1.25rem;
+    background-color:#28292c;
+    font-weight: bold;
+    z-index: 1; /* Ensure the text is on top of the line */
+    padding-top: 1.5rem; /* Add padding around the text */
+    padding-bottom: 1.5rem; /* Add padding around the text */
+    padding-left: 1rem; /* Add padding around the text */
+    padding-right: 1rem; /* Add padding around the text */
+  }
+  
+  .timelineSeparator::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically aligns the line with the text */
+    width: 150%; /* Spans the entire width */
+    height: 2px; /* Thickness of the line */
+    background-color: #ffffff; /* White line */
+    z-index: 0; /* Ensure the line is behind the text */
+  }
+  
+  .timelineDates {
+    display: flex; /* Ensure the parent element behaves like a flex container */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Optional: Align content horizontally */
+    color: #dbdbdb !important;
+    font-size: 1.5rem !important;
+    margin-top: 5px; /* Reset default margin if necessary */
+    line-height: 0; /* Optional: Adjust line height for better appearance */
   }
 
+.ctaLinkIcon {
+    color: #FB923C; /* Ensures the icon is orange */
+  }
 
-.link a, .location a {
+.ctaLinkText {
+    font-size: 1.125rem;
     color: white;
+    margin-left: 5px;
     text-decoration: underline;
     text-decoration-color: #FB923C;
     text-underline-offset: 0.25rem;
 }
 
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .careerItem {
-      flex-direction: column;
-      gap: 1.5rem;
+@media (max-width: 1170px) {
+    .timelineDates {
+        margin-top: 20px;
     }
-  
-    .imageContainer {
-        display: none;
-      }
-  
-    .careerTitle {
-      font-size: 1.5rem;
-    }
-  
-    .companyName {
-      font-size: 1.25rem;
-    }
-  
-    .dates {
-      font-size: 1rem;
-    }
-  
-    .description {
-      font-size: 1.05rem;
+}
+
+  @media (max-width: 1000px) {
+    .careerContainer {
+      padding-bottom: 100px;
     }
   }
   

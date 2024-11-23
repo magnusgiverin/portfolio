@@ -105,24 +105,9 @@
     margin-top: 1rem;
 }
 
-.svgIcon {
-    height: 8rem;
-    width: 8rem;
-    color: white;
-}
-
 .ctaLinkFlex {
     margin-top: 2rem;
 }
-
-.ctaLinkFlexText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
 /* Media Queries for Responsive Design */
 
 @media (max-width: 1400px) {
