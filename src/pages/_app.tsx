@@ -1,4 +1,3 @@
-import Footer from '../components/Footer/Footer';
 import '../styles/global.css';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
