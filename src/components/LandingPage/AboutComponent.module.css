@@ -83,6 +83,7 @@
 }
 
 .flexItem {
+    border-radius: 5px;
     width: 50%;
     background-color: #313131;
     padding: 2.5rem;

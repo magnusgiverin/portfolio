@@ -90,6 +90,7 @@
 
 .flexItem {
     width: 50%;
+    border-radius: 5px;
     background-color: #313131;
     padding: 2.5rem;
     display: flex;

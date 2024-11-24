@@ -17,6 +17,7 @@
 }
 
 .skillsTableWrapper {
+    border-radius: 5px;
     overflow-x: auto;
 }
 
