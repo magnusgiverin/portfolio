@@ -16,7 +16,7 @@ const AboutPage = () => {
             <IntroPage 
                 scrollToRef={generalAboutComponentRef} 
                 mainText={"ABOUT"} 
-                subText={"Discover my journey, values, and experiences."}
+                subText={"Discover my journey, values, and experiences"}
             />
             <div ref={generalAboutComponentRef}>
                 <GeneralAbouComponent/>
