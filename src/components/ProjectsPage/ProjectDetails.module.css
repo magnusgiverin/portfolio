@@ -224,10 +224,6 @@
     color: #FB923C;
 }
 
-@media (max-width: 1300px) {
-  
-}
-
 /* Responsive Styles */
 @media (max-width: 900px) {
     .projectsComponent {
@@ -241,11 +237,6 @@
 
     .projectsList {
         grid-template-columns: 1fr;
-    }
-
-    .projectsComponent {
-        margin-left: 10px;
-        margin-right: 10px;
     }
 
     .projectFrame {
