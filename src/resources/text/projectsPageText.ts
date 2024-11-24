@@ -64,7 +64,7 @@ const projectsPageText = {
             type: "Freelance work",
             tag: "freelance",
             skills: ["HTML", "React", "TypeScript", "Tailwind", "Next.js", "Node.js", "Vercel", "Freelancing"],
-            notes: "Gained valuable experience in collaborating with clients and delivering user-focused websites.",
+            notes: "Gained valuable experience in collaborating with clients and delivering user-focused websites. This was my first freelance project, and allowed me to gain insights into the proecesses behind working with a customer, with countless iterations of user-feedback",
         },
         {
             name: "Timeplaner.net",
