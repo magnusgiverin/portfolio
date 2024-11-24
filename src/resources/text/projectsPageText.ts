@@ -53,7 +53,7 @@ const projectsPageText = {
             type: "Personal project",
             tag: "personal",
             skills: ["React", "Next.js", "CSS", "Animations", "Responsive design", "Vercel hosting", "UI design"],
-            notes: "Focused on clean UI design and responsive behavior with modern web technologies. Furthermore, This was the first time i worked with CSS as i only used Tailwind before. This allowed me to expand my skillset as well ass being an incredibly effective procrastination project for the Autumn 2024 exam period at NTNU.",
+            notes: "Focused on clean UI design and responsive behavior with modern web technologies. Furthermore, This was the first time i worked with CSS as i only used Tailwind before. This allowed me to expand my skillset as well as being an incredibly effective procrastination project for the Autumn 2024 exam period at NTNU.",
         },
         {
             name: "Bymuseet i Levanger",
