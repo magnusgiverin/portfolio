@@ -23,7 +23,6 @@ const ProjectsComponent = () => {
             // Navigate to the base URL first (to ensure the page is loaded)
             router.push(baseUrl).then(() => {
                 if (hash) {
-                    console.log(hash)
                     // Scroll to the specific section after navigation
                     const targetElement = document.getElementById(hash);
                     if (targetElement) {
@@ -31,7 +30,7 @@ const ProjectsComponent = () => {
                     }
                 }
             });
-        }, 500); // Adjust timeout to match the scroll-to-top duration
+        }, 100); // Adjust timeout to match the scroll-to-top duration
     };
 
     const handleButtonClick = () => {

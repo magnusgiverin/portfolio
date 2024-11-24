@@ -78,7 +78,7 @@
 }
 
 .githubLink, .websiteLink {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #FB923C;
     transition: transform 0.3s ease, color 0.3s ease; /* Adding transition for smooth scaling and color change */
 }

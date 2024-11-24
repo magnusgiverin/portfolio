@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProjectDetails.module.css';
 import PageHeader from '../General/PageHeader';
 import { FaGithub } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import projectsPageText from '../../resources/text/projectsPageText';
 
 const ProjectDetails = () => {
     const { projects } = projectsPageText;
+    const [showIframe, setShowIframe] = useState(false);
 
     // Group projects by their tag
     const groupedProjects = projects.reduce((acc, project) => {
@@ -17,6 +18,14 @@ const ProjectDetails = () => {
         return acc;
     }, {});
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setShowIframe(true);  // Show iframe after the delay
+        }, 1000); // 1000ms delay (1 second), adjust as needed
+    
+        return () => clearTimeout(timer); // Cleanup the timeout on component unmount
+      }, []);
+      
     // Function to handle redirects
     const handleRedirect = (url: string) => {
         window.open(url, "_blank");
@@ -76,27 +85,29 @@ const ProjectDetails = () => {
 
                         {/* Iframe */}
                         {
-                            project.website && (
-                                <div className={styles.projectFrame}>
-                                    <div className={styles.iframeWrapper}>
-                                        <iframe
-                                            src={project.website}
-                                            title={`Website preview of ${project.name}`}
-                                            className={styles.iframe}
-                                            loading="lazy"    
-                                            sandbox="allow-scripts allow-same-origin"
-                                            />
-                                        <a
-                                            href={project.website}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={styles.iconLink}
-                                        >
-                                        <span className={`${styles.icon} material-icons`}>east</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            )
+                           project.website && (
+                            <div className={styles.projectFrame}>
+                              <div className={styles.iframeWrapper}>
+                                {showIframe && (
+                                  <iframe
+                                    src={project.website}
+                                    title={`Website preview of ${project.name}`}
+                                    className={styles.iframe}
+                                    loading="lazy"
+                                    sandbox=" allow-same-origin"
+                                  />
+                                )}
+                                <a
+                                  href={project.website}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.iconLink}
+                                >
+                                  <span className={`${styles.icon} material-icons`}>east</span>
+                                </a>
+                              </div>
+                            </div>
+                          )
                         }
                         {/* Display Notes */}
                         {project.notes && (
