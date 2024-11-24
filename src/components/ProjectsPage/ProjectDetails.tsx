@@ -95,6 +95,10 @@ const ProjectDetails = () => {
                                     className={styles.iframe}
                                     loading="lazy"
                                     sandbox=" allow-same-origin"
+                                    style={{
+                                        overflow: 'hidden',  // Ensure content outside boundaries isn't visible
+                                        pointerEvents: 'none', // Disable interactions (optional, depending on your use case)
+                                      }}
                                   />
                                 )}
                                 <a

@@ -15,9 +15,8 @@ export default function Home() {
     const careerComponentRef = useRef(null);
     const skillsComponentRef = useRef(null);
     const footerComponentRef = useRef(null);
-    const informationComponentRef = useRef(null);
 
-    const sections = [informationComponentRef, aboutComponentRef, careerComponentRef, skillsComponentRef, projectsComponentRef, footerComponentRef];
+    const sections = [aboutComponentRef, careerComponentRef, skillsComponentRef, projectsComponentRef, footerComponentRef];
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -58,12 +57,10 @@ export default function Home() {
             <LetterNav sections={sections} showNav={showNav} />
             {/* Page Sections */}
             <div ref={welcomeComponentRef}>
-                <WelcomeComponent scrollToRef={informationComponentRef} />
-            </div>
-            <div ref={informationComponentRef}>
-                <InformationComponent />
+                <WelcomeComponent scrollToRef={aboutComponentRef} />
             </div>
             <div ref={aboutComponentRef}>
+                <InformationComponent />
                 <AboutComponent />
             </div>
             <div ref={careerComponentRef}>

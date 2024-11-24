@@ -12,10 +12,8 @@
 .introText {
   width: 90%;
   max-width: 1200px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 70px;
-  padding-left: 5%;
-  align-self: flex-start;
   box-sizing: border-box;
 }
 
@@ -141,14 +139,7 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .introText {
-    padding-left: 20px;
-  }
-}
-
 @media (max-width: 700px) {
-  
   .flexContainer {
     gap: 1rem;
   }
@@ -164,7 +155,6 @@
 
   /* Ensure no content overflows on very small screens */
   .introText {
-    padding-left: 10px;
     width: 100%;
     box-sizing: border-box;
   }

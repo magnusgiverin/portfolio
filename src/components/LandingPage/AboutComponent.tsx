@@ -29,7 +29,6 @@ const AboutComponent = () => {
 
     return (
         <section className={styles.aboutComponent}>
-            <PageHeader text='HOME' />
             <div className={styles.maxWidth}>
                 {/* Header Section */}
                 <h2 className={styles.header}>{about.header}</h2>
