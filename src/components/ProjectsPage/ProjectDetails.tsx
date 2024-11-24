@@ -84,7 +84,6 @@ const ProjectDetails = () => {
                                             title={`Website preview of ${project.name}`}
                                             className={styles.iframe}
                                             loading="lazy"    
-                                            allow="autoplay"
                                             sandbox="allow-scripts allow-same-origin"
                                             />
                                         <a
