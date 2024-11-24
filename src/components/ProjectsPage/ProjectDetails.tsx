@@ -22,8 +22,6 @@ const ProjectDetails = () => {
         window.open(url, "_blank");
     };
 
-    console.log(projects[0].links[0].text)
-
     const renderProjects = (projectsGroup, tag) => (
         <div id={tag} className={styles.projectGroup}>
             <h2 className={styles.projectGroupHeader}>

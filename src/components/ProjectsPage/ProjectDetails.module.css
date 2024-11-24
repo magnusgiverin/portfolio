@@ -225,20 +225,22 @@
 }
 
 @media (max-width: 1300px) {
-    .projectBox {
-        width: 80vw;
-    }
+  
 }
 
 /* Responsive Styles */
 @media (max-width: 900px) {
-    .projectsList {
-        grid-template-columns: 1fr;
+    .projectsComponent {
+        padding-left: 4%;
+        padding-right: 4%;
     }
 
-    .projectBox {
-        padding: 0px;
-        width: 80vw;
+    .projectTitle {
+        font-size: 1.6rem;
+    }
+
+    .projectsList {
+        grid-template-columns: 1fr;
     }
 
     .projectsComponent {
