@@ -102,7 +102,7 @@
     height: 600px; /* Full HD height (before scaling) */
     overflow: hidden; /* Prevent content overflow */
     border: 1px solid #555;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
