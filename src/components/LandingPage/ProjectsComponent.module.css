@@ -115,6 +115,14 @@
         grid-template-columns: 1fr;
     }
 
+    .personalProjectsTitle {
+        font-size: 1.8rem;
+    }
+
+    .projectTitle {
+        font-size: 1.3rem;
+    }
+
     .projectBox {
         padding: 0px;
     }
