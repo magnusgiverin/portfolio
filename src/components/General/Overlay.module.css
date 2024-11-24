@@ -22,7 +22,7 @@
 
 /* Overlay content styling */
 .overlayContent {
-    gap: 30px;
+    gap: 50px;
     display: flex;
     height: max-content;
     flex-direction: row;
@@ -42,7 +42,6 @@
 .navSection {
     flex: 1;
     text-align: left;
-    padding-right: 20px;
 }
 
 .navLinks {
@@ -125,20 +124,16 @@
     animation-delay: 0.40s;
 }
 
-.navLinks>li:nth-child(5) {
+.navLinks>li:nth-child(4) .sublinks li:nth-child(1) {
     animation-delay: 0.45s;
 }
 
-.navLinks>li:nth-child(5) .sublinks li:nth-child(1) {
+.navLinks>li:nth-child(4) .sublinks li:nth-child(2) {
     animation-delay: 0.50s;
 }
 
-.navLinks>li:nth-child(5) .sublinks li:nth-child(2) {
+.navLinks>li:nth-child(4) .sublinks li:nth-child(3) {
     animation-delay: 0.55s;
-}
-
-.navLinks>li:nth-child(5) .sublinks li:nth-child(3) {
-    animation-delay: 0.60s;
 }
 
 .sublinks li a {

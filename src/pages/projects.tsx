@@ -1,13 +1,25 @@
-import React from 'react';
-import Navbar from '../components/General/Navbar';
+import React, { useRef } from 'react';
+import IntroPage from '../components/General/IntroPage';
+import Footer from '../components/General/Footer';
+import ProjectsIntro from '../components/ProjectsPage/ProjectsIntro';
+import ProjectDetails from '../components/ProjectsPage/ProjectDetails';
 
 const ProjectsPage = () => {
+    const projectsIntroRef = useRef(null);
+
     return (
-        <div>
-            <Navbar visible={undefined} sendOverLayStatus={undefined}/> {/* Pass navbar visibility state */}
-            <h1>Projects</h1>
-            {/* Page content */}
-        </div>
+        <>
+            <IntroPage
+                scrollToRef={projectsIntroRef}
+                mainText={"PROJECTS"}
+                subText={"Read about what I've done in my free time"}
+            />
+            <div ref={projectsIntroRef}>
+                <ProjectsIntro />
+            </div>
+            <ProjectDetails />
+            <Footer />
+        </>
     );
 };
 

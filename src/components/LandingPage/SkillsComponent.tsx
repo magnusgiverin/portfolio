@@ -57,18 +57,6 @@ const SkillsComponent = () => {
                     </tbody>
                 </table>
             </div>
-            <div className={styles.ctaLink}>
-                <button onClick={() => handleRedirect(skills.ctaLink.url)} className="group flex items-center space-x-1">
-                    <span
-                        className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
-                    >
-                        east
-                    </span>
-                    <span className={styles.ctaLinkText}>
-                        {skills.ctaLink.text}
-                    </span>
-                </button>
-            </div>
         </div>
     );
 };

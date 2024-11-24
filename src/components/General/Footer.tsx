@@ -92,7 +92,7 @@ const Footer = () => {
             >
                 <div className={styles.footerContent} key={animationKey} onClick={(e) => e.stopPropagation()}>
                     <div className={styles.navSection}>
-                        <h1 className={styles.mainTitle}>Navigation</h1>
+                        <h1 className={styles.mainTitle}  id="footer" >Navigation</h1>
                         <ul className={styles.navLinks}>
                             {navigationLinks.map((link) => (
                                 <li key={link.title}>

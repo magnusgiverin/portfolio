@@ -37,26 +37,6 @@ const landingPageText = {
           }, 
         ],
       },
-    sections: [
-      {
-        title: "Who is Magnus?",
-        description:
-          "I am a technology-driven leader with a strong background in IT development and process improvement. I am passionate about how technology can improve work processes, and I have had the privilege of working across various sectors to deliver innovative solutions.",
-        ctaLink: {
-          text: "Read more about me",
-          url: "/about#",
-        },
-      },
-      {
-        title: "My Journey and Future Goals",
-        description:
-          "From a young age, I was captivated by technology, which sparked my interest in IT. Over the years, I've gained valuable experience through education and hands-on projects. Reflecting on my journey, I've grown both personally and professionally, and I'm now focused on using my skills to drive impactful solutions that foster efficiency and collaboration across industries.",
-        ctaLink: {
-          text: "Explore my education",
-          url: "/about#education",
-        },
-      },
-    ],
   },
   about: {
     header: "About me",
@@ -200,9 +180,9 @@ const landingPageText = {
         github: "https://github.com/kartAI/ntnu-kpro-ai-assistant",
         ctaLink: {
           text: "Learn about the KartAI Project",
-          url: "/projects#kartai",
+          url: "/projects#academic",
         },
-        type: "Academic + Collaborative project",
+        type: "Academic project",
       },
       {
         name: "Portfolio Website",
@@ -211,7 +191,7 @@ const landingPageText = {
         github: "https://github.com/magnusgiverin/portfolio",
         ctaLink: {
           text: "Read more about Portfolio",
-          url: "/projects#portfolio",
+          url: "/projects#personal",
         },
         type: "Personal project",
       },
@@ -223,7 +203,7 @@ const landingPageText = {
         website: "https://bymuseet.com",
         ctaLink: {
           text: "Learn more about Bymuseet",
-          url: "/projects#bymuseet",
+          url: "/projects#freelance",
         },
         type: "Freelance work",
       },
@@ -235,7 +215,7 @@ const landingPageText = {
         website: "https://timeplaner.net",
         ctaLink: {
           text: "Read about Timeplaner",
-          url: "/projects#timeplaner",
+          url: "/projects#personal",
         },
         type: "Personal project",
       },
@@ -246,7 +226,7 @@ const landingPageText = {
         website: "https://calone.com",
         ctaLink: {
           text: "Learn more about CalOne",
-          url: "/projects#calone",
+          url: "/projects#personal",
         },
         type: "Collaborative project",
       },
@@ -323,10 +303,6 @@ const landingPageText = {
         description:
           "Tools for working with data, performing statistical analysis, and visualizing results.",
       },
-    },
-    ctaLink: {
-      text: "Learn more about my skills",
-      url: "/skills",
     },
   },
 };

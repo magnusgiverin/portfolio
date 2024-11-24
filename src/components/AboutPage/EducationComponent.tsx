@@ -65,6 +65,7 @@ const EducationComponent = () => {
           ))}
         </div>
       </div>
+        <PageHeader position='below' text='ABOUT'/>
     </div>
   );
 };

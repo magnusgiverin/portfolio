@@ -12,6 +12,11 @@
     position: relative;
   }
   
+
+.footer {
+    position: relative;
+  }
+  
   .detailsList {
     gap: 5px;
     display: flex;
@@ -111,7 +116,7 @@
     content: '';
     position: absolute;
     top: 50%; /* Vertically aligns the line with the text */
-    width: 150%; /* Spans the entire width */
+    width: 110%; /* Spans the entire width */
     height: 2px; /* Thickness of the line */
     background-color: #ffffff; /* White line */
     z-index: 0; /* Ensure the line is behind the text */

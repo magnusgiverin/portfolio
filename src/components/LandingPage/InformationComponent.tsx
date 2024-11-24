@@ -72,9 +72,7 @@ const InformationComponent = () => {
                 />
                 <span className={styles.caption}>{"- Photo from my summer internship at Telenor in 2024"}</span>
             </div>
-
             {/* Links Section */}
-
         </section>
     );
 };

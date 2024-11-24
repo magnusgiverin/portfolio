@@ -1,13 +1,13 @@
 .container {
     display: flex;
-    flex-direction: column; /* Default to column on small screens */
+    flex-direction: row; /* Default to column on small screens */
     gap: 4rem;
     align-items: center;
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
-    width: 100%; /* Ensure the container takes up full width */
+    width: 90vw; /* Ensure the container takes up full width */
     box-sizing: border-box; /* To avoid padding overflow */
 }
 
@@ -85,36 +85,30 @@
 }
 
 /* Responsive Layout for medium screens (max-width: 1024px) */
+
+/* Responsive Layout for larger screens (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        justify-content: space-between; /* Maximize space between the text and image */
+        gap: 5rem; /* Increase gap between elements */
+    }
+    
+   
+}
+
 @media (max-width: 1024px) {
     .container {
         flex-direction: column; /* Stack content vertically on medium screens */
         justify-content: flex-start;
-        padding-left: 50px;
-        padding-right: 50px;
         gap: 3rem; /* Reduce gap on medium screens */
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .textContainer,
     .imageContainer {
         width: 100%; /* Both text and image take up 100% width on medium screens */
         align-self: flex-start;
-    }
-}
-
-/* Responsive Layout for larger screens (min-width: 1400px) */
-@media (min-width: 1400px) {
-    .container {
-        flex-direction: row; /* Arrange text and image side by side on larger screens */
-        justify-content: space-between; /* Maximize space between the text and image */
-        gap: 5rem; /* Increase gap between elements */
-    }
-
-    .textContainer {
-        max-width: 50%; /* Text takes up 50% of the container */
-    }
-
-    .imageContainer {
-        max-width: 45%; /* Image takes up 45% of the container */
     }
 }
 

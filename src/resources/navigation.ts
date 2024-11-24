@@ -21,17 +21,12 @@ const navigationLinks = [
       ],
     },
     {
-      title: "Skills",
-      path: "/skills#",
-      sublinks: [],
-    },
-    {
       title: "Projects",
       path: "/projects#",
       sublinks: [
         { title: "Freelance Work", path: "/projects#freelance" },
         { title: "Personal Projects", path: "/projects#personal" },
-        { title: "School Projects", path: "/projects#school" },
+        { title: "Academic Projects", path: "/projects#academic" },
       ],
     },
   ];

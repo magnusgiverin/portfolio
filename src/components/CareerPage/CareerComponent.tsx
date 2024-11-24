@@ -87,8 +87,8 @@ const CareerComponent = () => {
   );
 
   return (
+    <>
     <section id="career" className={styles.careerContainer}>
-      <PageHeader text="CAREER" />
       <div className={styles.titleSection}>
         <h2 className={styles.careerTitle}>My Professional Journey</h2>
         <p className={styles.careerSubtitle}>A timeline of my career highlights and experiences.</p>
@@ -109,6 +109,10 @@ const CareerComponent = () => {
         )}
       </VerticalTimeline>
     </section>
+      <div className={styles.footer}>
+        <PageHeader position='below' text='CAREER' />
+      </div>
+      </>
   );
 };
 
