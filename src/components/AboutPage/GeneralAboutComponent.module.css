@@ -231,6 +231,10 @@
 
         /* Stack flex items vertically */
     }
+
+    .flexItem {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 640px) {
