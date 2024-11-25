@@ -2,12 +2,11 @@
 .introComponent {
     padding-top: 100px;
     padding-bottom: 100px;
-   
     position: relative;
 }
 
 .maxWidth {
-    max-width: 80rem;
+    max-width: 84rem;
     margin-left: auto;
     margin-right: auto;
 }
