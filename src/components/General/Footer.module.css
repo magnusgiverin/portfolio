@@ -18,7 +18,7 @@
 }
 
 .footerContent {
-    gap: 30px;
+    gap: 50px;
     display: flex;
     height: max-content;
     flex-direction: row; /* Keep content in a row layout */
