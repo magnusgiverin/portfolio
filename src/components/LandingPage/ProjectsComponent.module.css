@@ -119,4 +119,9 @@
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    .personalProjectsDescription,
+    .projectDescription {
+        font-size: 0.875rem;
+    }
 }

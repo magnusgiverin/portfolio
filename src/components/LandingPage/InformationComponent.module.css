@@ -101,8 +101,11 @@
         gap: 2rem; /* Further reduce gap on small screens */
     }
 
-    .title {
-        font-size: 1.75rem; /* Reduce font size for small screens */
+    .introduction,
+    .cvOverview,
+    .caption,
+    .opportunities {
+        font-size: 0.875rem; /* Smaller description font size */
     }
 }
 

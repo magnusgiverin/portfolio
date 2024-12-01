@@ -36,3 +36,8 @@
     transform: translateX(0.2rem) translateY(-0.2rem); /* For externalIcon */
 }
 
+@media (max-width: 640px) {
+    .ctaLinkText {
+        font-size: 1rem;
+    }
+}

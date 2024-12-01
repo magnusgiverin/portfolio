@@ -29,8 +29,9 @@ const AboutComponent = () => {
                 </div>
 
                 {/* CTA Link */}
-                <CtaLink navigate={about.ctaLink.url} text={about.ctaLink.text} />
-
+                <div className="flex flex-col mt-6">
+                    <CtaLink navigate={about.ctaLink.url} text={about.ctaLink.text} />
+                </div>
                 {/* Sections */}
                 <div className={styles.flexContainer}>
                     {about.sections.map((section, index) => (
@@ -41,7 +42,6 @@ const AboutComponent = () => {
                                     {section.description}
                                 </p>
                             </div>
-
                             <div className="flex flex-col mt-6">
                                 <CtaLink navigate={section.ctaLink.url} text={section.ctaLink.text} />
                             </div>
