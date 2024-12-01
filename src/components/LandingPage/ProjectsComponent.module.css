@@ -97,18 +97,6 @@
     margin-top: 2rem;
 }
 
-.ctaLinkIcon {
-    color: #FB923C; /* Ensures the icon is orange */
-  }
-
-.ctaLinkText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
 /* Responsive Styles */
 @media (max-width: 900px) {
     .projectsList {

@@ -47,20 +47,23 @@ const Navbar = ({ visible, sendOverLayStatus }) => {
 
         {/* Back to Home Link */}
         {isNotHome && visible ? (
-          <div className='group flex flex-row gap-4'>
-            <Link href="/">
-              <div className="group flex flex-row items-center gap-4">
+          <div className={styles.ctaLinkWrapper}>
+            <Link
+              className="group"
+              href={"/"}
+            >
+              <div className={styles.ctaLinkWrapper}>
                 <span
-                  className={`group-hover:-translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
+                  className={`material-icons ${styles.ctaLinkIcon} ${styles.backIcon}`}
                 >
                   west
                 </span>
+
                 <span className={styles.ctaLinkText}>
                   Back to Home
                 </span>
               </div>
             </Link>
-
             <span className={`${styles.currentLocation}`}>
               <span className={styles.currentLocationBar}></span> {/* White bar */}
               Current Location: {currentRoute}

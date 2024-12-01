@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './GeneralAboutComponent.module.css';
 import aboutPageText from '../../resources/text/aboutPageText';
+import CtaLink from '../General/CtaLink';
 
 const GeneralAbouComponent = () => {
     const { general } = aboutPageText;
@@ -46,12 +47,7 @@ const GeneralAbouComponent = () => {
                                 <div className={styles.flexItemTitleContainer}>
                                     <h2 className={styles.flexItemTitle}>{section.title}</h2>
                                     {section.link && (
-                                        <button
-                                            onClick={() => handleScroll(section.link)}
-                                            className={`material-icons ${styles.hoverAnimate}`}
-                                        >
-                                            south_east
-                                        </button>
+                                        <CtaLink navigate={section.link} text={undefined}/>
                                     )}
                                 </div>
                                 <p className={styles.flexItemDescription}>

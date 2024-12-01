@@ -29,11 +29,11 @@ const landingPageText = {
             },
           {
             text: "Career journey summarised",
-            url: "#career",
+            url: "/#career",
           },
           {
             text: "Overview of Projects",
-            url: "#projects",
+            url: "/#projects",
           }, 
         ],
       },
@@ -159,7 +159,7 @@ const landingPageText = {
     ],
     ctaLink: {
       text: "Read more my career",
-      url: "/career",
+      url: "/career#",
     },
   },
   projects: {
@@ -170,7 +170,7 @@ const landingPageText = {
     },
     ctaLink: {
       text: "Explore my projects",
-      url: "/projects",
+      url: "/projects#",
     },
     projects: [
       {

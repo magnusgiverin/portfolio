@@ -71,28 +71,12 @@
     gap: 1rem;
 }
 
-.ctaLinkIcon {
-    color: #FB923C;
-}
-
-.ctaLinkText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
-/* Responsive Layout for medium screens (max-width: 1024px) */
-
 /* Responsive Layout for larger screens (min-width: 1400px) */
 @media (min-width: 1400px) {
     .container {
         justify-content: space-between; /* Maximize space between the text and image */
         gap: 5rem; /* Increase gap between elements */
     }
-    
-   
 }
 
 @media (max-width: 1024px) {

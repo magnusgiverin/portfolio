@@ -1,0 +1,38 @@
+.ctaLinkWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Adjust spacing between text and icon */
+}
+
+.ctaLinkIcon {
+    color: #FB923C;
+    transition: transform 300ms ease-out; /* Transition for smooth effect */
+    padding-right: 2px;
+}
+
+.ctaLinkText {
+    font-size: 1.125rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #FB923C;
+    text-underline-offset: 0.25rem;
+    transition: transform 300ms ease-out, color 300ms ease-out; /* Transition for both transform and color */
+}
+
+.ctaLinkText:hover {
+    color: #FB923C;
+}
+
+/* Hover effect for the entire wrapper */
+.ctaLinkWrapper:hover .ctaLinkIcon {
+    transform: translateX(0.2rem) translateY(0.2rem); /* For scrollIcon */
+}
+
+.ctaLinkWrapper:hover .redirectIcon {
+    transform: translateX(0.3rem); /* For redirectIcon */
+}
+
+.ctaLinkWrapper:hover .externalIcon {
+    transform: translateX(0.2rem) translateY(-0.2rem); /* For externalIcon */
+}
+

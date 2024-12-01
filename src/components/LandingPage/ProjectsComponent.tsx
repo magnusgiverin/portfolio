@@ -6,32 +6,12 @@ import landingPageText from '../../resources/text/landingPageText';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/router';
+import CtaLink from '../General/CtaLink';
 
 const ProjectsComponent = () => {
     const [animationOn, setAnimationOn] = useState(false);
 
     const { projects } = landingPageText;
-
-    const router = useRouter();
-
-    const handleRedirect = (url: string) => {
-        // Extract the base URL and hash fragment (if any)
-        const [baseUrl, hash] = url.split('#');
-
-        // Delay the routing until the scroll to the top completes
-        setTimeout(() => {
-            // Navigate to the base URL first (to ensure the page is loaded)
-            router.push(baseUrl).then(() => {
-                if (hash) {
-                    // Scroll to the specific section after navigation
-                    const targetElement = document.getElementById(hash);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        }, 100); // Adjust timeout to match the scroll-to-top duration
-    };
 
     const handleButtonClick = () => {
         setAnimationOn(true);
@@ -50,16 +30,7 @@ const ProjectsComponent = () => {
             </div>
 
             <div className={styles.ctaLink}>
-                <button onClick={handleButtonClick} className="group flex items-center space-x-1">
-                    <span
-                        className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
-                    >
-                        east
-                    </span>
-                    <span className={styles.ctaLinkText}>
-                        {projects.ctaLink.text}
-                    </span>
-                </button>
+                <CtaLink index={undefined} navigate={projects.ctaLink.url} text={projects.ctaLink.text} onClick={handleButtonClick}/>
             </div>
 
             {/* Project Boxes */}
@@ -91,16 +62,7 @@ const ProjectsComponent = () => {
 
                         {/* Terminal Animation CTA */}
                         <div className={styles.ctaLink}>
-                            <button onClick={() => handleRedirect(project.ctaLink.url)} className="group flex items-center space-x-1">
-                                <span
-                                    className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
-                                >
-                                    east
-                                </span>
-                                <span className={styles.ctaLinkText}>
-                                    {project.ctaLink.text}
-                                </span>
-                            </button>
+                            <CtaLink index={index} navigate={project.ctaLink.url} text={project.ctaLink.text}/>
                         </div>
                     </div>
                 ))}

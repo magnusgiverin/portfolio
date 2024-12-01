@@ -19,7 +19,7 @@
 }
 
 .mainText {
-    font-size: 12vw;
+    font-size: 13rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #ffffffe8;
@@ -103,6 +103,18 @@
     animation-delay: 0.9s;
 }
 
+@media (max-width: 1150px) {
+    .mainText {
+        font-size: 10rem;
+    }
+}
+
+@media (max-width: 890px) {
+    .mainText {
+        font-size: 7rem;
+    }
+}
+
 @media (max-width: 640px) {
     .subsection {
         display: none;
@@ -118,7 +130,7 @@
     }
 
     .mainText {
-        font-size: 17vw;
+        font-size: 4rem;
         text-align: center;
         /* Center text horizontally */
         transform: none;

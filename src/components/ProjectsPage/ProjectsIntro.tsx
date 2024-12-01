@@ -2,21 +2,10 @@ import React from 'react';
 import styles from './ProjectsIntro.module.css';
 import projectPageText from '../../resources/text/projectsPageText';
 import PageHeader from '../General/PageHeader';
+import CtaLink from '../General/CtaLink';
 
 const ProjectsIntro = () => {
     const { intro } = projectPageText;
-
-    const handleScroll = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            const offset = 120; // Adjust this value to change how many pixels above the target you want to scroll
-            const top = section.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({
-                top: top,
-                behavior: 'smooth',
-            });
-        }
-    };
 
     return (
         <section className={styles.introComponent}>
@@ -36,20 +25,7 @@ const ProjectsIntro = () => {
                     ))}
                 </div>
                 <div className={styles.ctaLink}>
-                    <button
-                        onClick={() => handleScroll('footer')} // Wrap in a function
-                        className="group flex items-center space-x-1"
-                    >
-                        <span
-                            className={`group-hover:translate-y-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
-                        >
-                            south
-                        </span>
-
-                        <span className={styles.ctaLinkText}>
-                            {intro.ctaLink.text}
-                        </span>
-                    </button>
+                    <CtaLink navigate={"/projects#footer"} text={intro.ctaLink.text}/>
                 </div>
             </div>
             <PageHeader text='PROJECTS' position='below' />

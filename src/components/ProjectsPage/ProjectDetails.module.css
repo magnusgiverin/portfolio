@@ -197,18 +197,6 @@
     line-height: 1.5;
 }
 
-.ctaLinkIcon {
-    color: #FB923C;
-}
-
-.ctaLinkText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
 .projectNotes {
     margin-top: 20px;
     padding: 10px;

@@ -200,10 +200,7 @@
         /* Smaller description font size */
     }
 
-    .ctaLinkText {
-        font-size: 1rem;
-        /* Smaller CTA text */
-    }
+   
 
     .flexItemTitle {
         font-size: 1.25rem;
@@ -219,11 +216,6 @@
         height: 6rem;
         /* Smaller SVG icon */
         width: 6rem;
-    }
-
-    .ctaLinkFlexText {
-        font-size: 1rem;
-        /* Smaller CTA flex text */
     }
 
     .flexContainer {

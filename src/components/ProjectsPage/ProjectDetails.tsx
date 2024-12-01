@@ -4,6 +4,7 @@ import PageHeader from '../General/PageHeader';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import projectsPageText from '../../resources/text/projectsPageText';
+import CtaLink from '../General/CtaLink';
 
 const ProjectDetails = () => {
     const { projects } = projectsPageText;
@@ -26,11 +27,6 @@ const ProjectDetails = () => {
         return () => clearTimeout(timer); // Cleanup the timeout on component unmount
       }, []);
       
-    // Function to handle redirects
-    const handleRedirect = (url: string) => {
-        window.open(url, "_blank");
-    };
-
     const renderProjects = (projectsGroup, tag) => (
         <div id={tag} className={styles.projectGroup}>
             <h2 className={styles.projectGroupHeader}>
@@ -65,22 +61,7 @@ const ProjectDetails = () => {
 
                         {/* Links */}
                         {project.links?.map((link, linkIndex) => (
-                            <button
-                                key={linkIndex}
-                                onClick={() => handleRedirect(link.link)}
-                                className="group flex items-center space-x-1"
-                            >
-                                <span
-                                    className={`group-hover:translate-x-1 transition-smooth transition-all duration-300 ease-out material-icons ${styles.ctaLinkIcon}`}
-                                >
-                                    east
-                                </span>
-
-                                <span className={styles.ctaLinkText}>
-                                    {link.text}
-                                </span>
-                            </button>
-
+                            <CtaLink index={linkIndex} navigate={link.link} text={link.text}/>
                         ))}
 
                         {/* Iframe */}
@@ -140,7 +121,6 @@ const ProjectDetails = () => {
 
     return (
         <div id="projects" className={`min-h-screen ${styles.projectsComponent}`}>
-            <PageHeader text="PROJECTS" />
             {/* Render grouped projects */}
             {Object.entries(groupedProjects).map(([tag, projectsGroup]) =>
                 renderProjects(projectsGroup, tag)

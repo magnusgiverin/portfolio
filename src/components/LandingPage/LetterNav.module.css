@@ -30,7 +30,7 @@
 .navItem {
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 1.1rem;
   color: rgb(78, 78, 78);
   cursor: pointer;
   transition: color 0.3s ease;
@@ -42,7 +42,7 @@
     gap: 3px;
   }
   .navItem {
-    font-size: 18px;
+    font-size: 1rem;
   }
   .nav {
     padding-left: 0;

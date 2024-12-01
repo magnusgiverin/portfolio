@@ -64,18 +64,6 @@
     margin-top: 2rem;
 }
 
-.ctaLinkIcon {
-    color: #FB923C; /* Ensures the icon is orange */
-  }
-
-.ctaLinkText {
-    font-size: 1.125rem;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #FB923C;
-    text-underline-offset: 0.25rem;
-}
-
 /* Media Queries for Responsive Design */
 
 @media (max-width: 1400px) {
@@ -117,10 +105,6 @@
         font-size: 0.875rem; /* Smaller description font size */
     }
 
-    .ctaLinkText {
-        font-size: 1rem; /* Smaller CTA text */
-    }
-
     .flexItemTitle {
         font-size: 1.25rem; /* Smaller title for flex items */
     }
@@ -132,10 +116,6 @@
     .svgIcon {
         height: 6rem; /* Smaller SVG icon */
         width: 6rem;
-    }
-
-    .ctaLinkFlexText {
-        font-size: 1rem; /* Smaller CTA flex text */
     }
 
     .flexContainer {
