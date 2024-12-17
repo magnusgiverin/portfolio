@@ -136,7 +136,7 @@ const Overlay = ({ visible }) => {
           <div className={styles.profileContainer}> {/* New container for profile picture and links */}
             <img src="me/magnus.JPG" alt="Magnus" className={styles.profilePic} />
             <div className={styles.linksContainer}>
-              <a href="https://www.linkedin.com/in/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
+              <a href="https://www.linkedin.com/in/magnus-giverin-5344b5188/" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
               <a href="https://github.com/magnusgiverin" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
               <a href='/documents/CV.pdf' target='_blank' className={styles.link}>CV</a>
             </div>

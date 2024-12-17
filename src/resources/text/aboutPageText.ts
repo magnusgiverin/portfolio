@@ -50,7 +50,7 @@ const aboutPageText = {
           },
           {
             text: "LinkedIn",
-            linkTo: "https://www.linkedin.com/in/magnusgiverin",
+            linkTo: "https://www.linkedin.com/in/magnus-giverin-5344b5188/",
             icon: FaLinkedin,
           },
           {
