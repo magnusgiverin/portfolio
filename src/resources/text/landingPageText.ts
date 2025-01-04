@@ -158,7 +158,7 @@ const landingPageText = {
       },
     ],
     ctaLink: {
-      text: "Read more my career",
+      text: "Read more about my career",
       url: "/career#",
     },
   },
@@ -230,6 +230,16 @@ const landingPageText = {
         },
         type: "Collaborative project",
       },
+      {
+        name: "NORSTEC web",
+        description: "NORSTEC is a collective for students working with space technologies in Norway. I was tasked with elevating their web presence by developing their homepage together with a designer to make NORSTEC more accessible for students and the Norwegian space industry.",
+        github: "https://github.com/magnusgiverin/norstec-website",
+        website: "https://norstec.no",
+        ctaLink: {
+          text: "Read more about NORSTEC",
+          url: "/projects#freelance",
+        },
+      },
     ],
   },
   skills: {
@@ -256,9 +266,10 @@ const landingPageText = {
         skills: [
           "CSS",
           "HTML",
-          "React",
           "Next",
           "Node",
+          "React",
+          "Sanity CMS",
           "Tailwind",
           "TRPC",
           "Vercel",

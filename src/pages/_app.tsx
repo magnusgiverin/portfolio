@@ -1,8 +1,9 @@
-import '../styles/global.css';
-import { Analytics } from '@vercel/analytics/react';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
+import Script from "next/script";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 function useScrollPosition() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -44,7 +45,7 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
         window.scrollTo(0, 0); // Default to top if no saved position
       }
       setIsRouteChanging(false); // Route change handler will be triggered after animation
-    
+
     };
 
     router.events.on('routeChangeStart', handleRouteChangeStart);
@@ -68,8 +69,22 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Head>
 
+      {/* Google Analytics */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2GPC8SMCVB"
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-2GPC8SMCVB');
+        `}
+      </Script>
+
       {/* Wrapping the page content with TransitionEffect component */}
-        <Component {...pageProps} />
+      <Component {...pageProps} />
 
       <Analytics />
     </>

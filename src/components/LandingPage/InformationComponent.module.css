@@ -117,6 +117,7 @@
     .textContainer,
     .imageContainer {
         width: 100%; /* Stack both elements at 100% width */
+        margin-top: 20px;
     }
 
     .profileImage {

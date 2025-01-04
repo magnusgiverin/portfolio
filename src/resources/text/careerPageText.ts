@@ -86,7 +86,7 @@ const careerPageText = {
         title: "Full-stack Developer Intern",
         company: "Kommunal Landspensjonskasse (KLP)",
         description:
-          "A summer internship whee i worked in KLP Teknologi, the technology divison of KLP - Norway's largest pension company",
+          "A summer internship where i worked in KLP Teknologi, the technology divison of KLP - Norway's largest pension company",
         dates: {
           from: "06/2023",
           to: "08/2023",

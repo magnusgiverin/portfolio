@@ -17,8 +17,8 @@ const projectsPageText = {
             "I’ve worked on various personal and collaborative projects, applying my skills in real-world scenarios. These experiences have allowed me to innovate and drive progress both individually and in teams.",
         },
         {
-          title: "1",
-          subtitle: "Freelance project",
+          title: "2",
+          subtitle: "Freelance projects",
           description:
             "I’ve completed one freelance project in industries like tech, education, and administration. I helped a business improve their digital presence with tailored solutions. I’m open to new freelance opportunities.",
         },
@@ -86,7 +86,18 @@ const projectsPageText = {
             tag: "personal",
             skills: ["Python", "Data parsing", "Version control", "Team collaboration"],
             notes: "This project started as a tool for allowing students at NTNU to better generate and maintain their class calendars. As a result of slight creative differences and performance issues with Python in web development, I opted to create an enhanced version ussing proper version control and a more performant tech stack.",
-        }
+        },
+        {
+            name: "NORSTEC web",
+            description: "NORSTEC is a collective for students working with space technologies in Norway. I was tasked with elevating their web presence by developing their homepage with a designer to make NORSTEC more accessible for students and the Norwegian space industry.",
+            github: "https://github.com/magnusgiverin/norstec-website",
+            website: "https://norstec.no",
+            id: "norstec",
+            type: "Freelance work",
+            tag: "freelance",
+            skills: ["HTML", "CMS", "Sanity", "React", "TypeScript", "Tailwind", "Next.js", "Figma"],
+            notes: "Worked with a designer to develop a website which fit the needs of NORSTEC while also being visually appealing. Furthermore, the desire to have a content management system (CMS) allowed me to explore new technologies and make the website easily updatable for NORSTEC.",
+        },
 ]
 
 };
