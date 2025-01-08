@@ -21,12 +21,12 @@ const ProjectDetails = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          setShowIframe(true);  // Show iframe after the delay
+            setShowIframe(true);  // Show iframe after the delay
         }, 1000); // 1000ms delay (1 second), adjust as needed
-    
+
         return () => clearTimeout(timer); // Cleanup the timeout on component unmount
-      }, []);
-      
+    }, []);
+
     const renderProjects = (projectsGroup, tag) => (
         <div id={tag} className={styles.projectGroup}>
             <h2 className={styles.projectGroupHeader}>
@@ -61,38 +61,38 @@ const ProjectDetails = () => {
 
                         {/* Links */}
                         {project.links?.map((link, linkIndex) => (
-                            <CtaLink index={linkIndex} navigate={link.link} text={link.text}/>
+                            <CtaLink index={linkIndex} navigate={link.link} text={link.text} />
                         ))}
 
                         {/* Iframe */}
                         {
-                           project.website && (
-                            <div className={styles.projectFrame}>
-                              <div className={styles.iframeWrapper}>
-                                {showIframe && (
-                                  <iframe
-                                    src={project.website}
-                                    title={`Website preview of ${project.name}`}
-                                    className={styles.iframe}
-                                    loading="lazy"
-                                    sandbox=" allow-same-origin"
-                                    style={{
-                                        overflow: 'hidden',  // Ensure content outside boundaries isn't visible
-                                        pointerEvents: 'none', // Disable interactions (optional, depending on your use case)
-                                      }}
-                                  />
-                                )}
-                                <a
-                                  href={project.website}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className={styles.iconLink}
-                                >
-                                  <span className={`${styles.icon} material-icons`}>east</span>
-                                </a>
-                              </div>
-                            </div>
-                          )
+                            project.website && (
+                                <div className={styles.projectFrame}>
+                                    <div className={styles.iframeWrapper}>
+                                        {showIframe && (
+                                            <iframe
+                                                src={project.website}
+                                                title={`Website preview of ${project.name}`}
+                                                className={styles.iframe}
+                                                loading="lazy"
+                                                sandbox=" allow-same-origin"
+                                                style={{
+                                                    overflow: 'hidden',  // Ensure content outside boundaries isn't visible
+                                                    pointerEvents: 'none', // Disable interactions (optional, depending on your use case)
+                                                }}
+                                            />
+                                        )}
+                                        <a
+                                            href={project.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.iconLink}
+                                        >
+                                            <span className={`${styles.icon} material-icons`}>east</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
                         }
                         {/* Display Notes */}
                         {project.notes && (
@@ -103,7 +103,7 @@ const ProjectDetails = () => {
                         )}
 
                         {/* Skills List */}
-                        < ul className={styles.skillsList} >
+                        <ul className={styles.skillsList} >
                             {
                                 project.skills.map((skill, skillIndex) => (
                                     <li key={skillIndex} className={styles.skillItem}>
@@ -125,7 +125,7 @@ const ProjectDetails = () => {
             {Object.entries(groupedProjects).map(([tag, projectsGroup]) =>
                 renderProjects(projectsGroup, tag)
             )}
-            <PageHeader text="PROJECTS" position='below'/>
+            <PageHeader text="PROJECTS" position='below' />
         </div>
     );
 };

@@ -52,7 +52,7 @@ const projectsPageText = {
             id: "portfolio",
             type: "Personal project",
             tag: "personal",
-            skills: ["React", "Next.js", "CSS", "Animations", "Responsive design", "Vercel hosting", "UI design"],
+            skills: ["React", "Next.js", "CSS", "Animations", "Responsive", "Vercel", "UI design"],
             notes: "Focused on clean UI design and responsive behavior with modern web technologies. Furthermore, This was the first time i worked with CSS as i only used Tailwind before. This allowed me to expand my skillset as well as being an incredibly effective procrastination project for the Autumn 2024 exam period at NTNU.",
         },
         {
@@ -75,7 +75,7 @@ const projectsPageText = {
             type: "Personal project",
             tag: "personal",
             skills: ["API integration", "Web scraping", "Web caches", "Python", "Collaboration"],
-            notes: "Refined skills in API integration and learned the importance of efficient data scraping and caching techniques. This project came as a result of finding issues with using Python as a frontend tool in the CalOne project. In addition to this, it marked my first solo-project using Typescript and other moderne web development frameworks",
+            notes: "Refined skills in API integration and learned the importance of efficient data scraping and caching techniques. This project came as a result of finding issues with using Python as a frontend tool in the CalOne project. In addition to this, it marked my first solo-project using Typescript and other moderne web development frameworks.",
         },
         {
             name: "Calone.com",
@@ -84,7 +84,7 @@ const projectsPageText = {
             id: "calone",
             type: "Collaborative project",
             tag: "personal",
-            skills: ["Python", "Data parsing", "Version control", "Team collaboration"],
+            skills: ["Python", "Data parsing", "Version control", "Collaboration", 'Java'],
             notes: "This project started as a tool for allowing students at NTNU to better generate and maintain their class calendars. As a result of slight creative differences and performance issues with Python in web development, I opted to create an enhanced version ussing proper version control and a more performant tech stack.",
         },
         {
@@ -95,7 +95,7 @@ const projectsPageText = {
             id: "norstec",
             type: "Freelance work",
             tag: "freelance",
-            skills: ["HTML", "CMS", "Sanity", "React", "TypeScript", "Tailwind", "Next.js", "Figma"],
+            skills: ["HTML", "Sanity", "React", "TypeScript", "Tailwind", "Next.js", "Figma", "Freelancing"],
             notes: "Worked with a designer to develop a website which fit the needs of NORSTEC while also being visually appealing. Furthermore, the desire to have a content management system (CMS) allowed me to explore new technologies and make the website easily updatable for NORSTEC.",
         },
 ]
