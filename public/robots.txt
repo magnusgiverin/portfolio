@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://magnus-giverin.com
+
+# Sitemaps
+Sitemap: https://magnus-giverin.com/sitemap.xml

@@ -13,10 +13,10 @@ function useScrollPosition() {
       setScrollPosition(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -45,23 +45,29 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
         window.scrollTo(0, 0); // Default to top if no saved position
       }
       setIsRouteChanging(false); // Route change handler will be triggered after animation
-
     };
 
-    router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    router.events.on("routeChangeStart", handleRouteChangeStart);
+    router.events.on("routeChangeComplete", handleRouteChangeComplete);
 
     // Cleanup event listeners
     return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      router.events.off("routeChangeStart", handleRouteChangeStart);
+      router.events.off("routeChangeComplete", handleRouteChangeComplete);
     };
   }, [router, scrollPosition]);
-
 
   return (
     <>
       <Head>
+        {/* Essential meta tags */}
+        <title>Your Website Title</title>
+        <meta name="description" content="The portfolio website for Magnus Andreas Giverin." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Magnus Andreas Giverin" />
+        <meta name="keywords" content="design, developer, ntnu, student, projects, coding" />
+
+        {/* Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand&display=swap"
           rel="stylesheet"
