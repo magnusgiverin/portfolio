@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
     <>
       <Head>
         {/* Essential meta tags */}
-        <title>Your Website Title</title>
+        <title>Magnus Giverin</title>
         <meta name="description" content="The portfolio website for Magnus Andreas Giverin." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Magnus Andreas Giverin" />
