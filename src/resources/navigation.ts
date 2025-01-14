@@ -24,9 +24,9 @@ const navigationLinks = [
       title: "Projects",
       path: "/projects#",
       sublinks: [
-        { title: "Freelance Work", path: "/projects#freelance" },
-        { title: "Personal Projects", path: "/projects#personal" },
         { title: "Academic Projects", path: "/projects#academic" },
+        { title: "Personal Projects", path: "/projects#personal" },
+        { title: "Freelance Work", path: "/projects#freelance" },
       ],
     },
   ];
