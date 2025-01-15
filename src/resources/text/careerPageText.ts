@@ -21,25 +21,6 @@ const careerPageText = {
         url: "https://orbitntnu.com/",
         icon: "leaderboard",
       },
-      {
-        title: "Teaching Assistant",
-        company: "Norwegian University of Science and Technology (NTNU)",
-        description:
-          "Working at NTNU on behalf of professors to aid in teaching and correction of assignments",
-        dates: {
-          from: "01/2023",
-          to: "Present",
-        },
-        location: "Trondheim, Norway",
-        image: "/logos/ntnu.png",
-        details: [
-          "Teaching Assistant in four courses - Object-Oriented Programming (C++), Python, Advanced Software Engineering, and Introduction to Computer Science",
-          "Aided in understanding and held group-based work sessions",
-          "Corrected assignments and communicated directly with NTNU faculty regarding assignments",
-        ],
-        url: "https://www.ntnu.no/",
-        icon: "school",
-      },
     ],
     pastPositions: [
       {
@@ -101,6 +82,25 @@ const careerPageText = {
         ],
         url: "https://www.klp.no/",
         icon: "code",
+      },
+      {
+        title: "Teaching Assistant",
+        company: "Norwegian University of Science and Technology (NTNU)",
+        description:
+          "Working at NTNU on behalf of professors to aid in teaching and correction of assignments",
+        dates: {
+          from: "01/2023",
+          to: "10/2024",
+        },
+        location: "Trondheim, Norway",
+        image: "/logos/ntnu.png",
+        details: [
+          "Teaching Assistant in four courses - Object-Oriented Programming (C++), Python, Advanced Software Engineering, and Introduction to Computer Science",
+          "Aided in understanding and held group-based work sessions",
+          "Corrected assignments and communicated directly with NTNU faculty regarding assignments",
+        ],
+        url: "https://www.ntnu.no/",
+        icon: "school",
       },
       {
         title: "Design Team Leader",

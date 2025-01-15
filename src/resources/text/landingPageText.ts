@@ -141,7 +141,7 @@ const landingPageText = {
           "Assisted in teaching Object-Oriented Programming, Python, and Advanced Software Engineering courses, and corrected assignments.",
         dates: {
           from: "January 2023",
-          to: "Present",
+          to: "November 2024",
         },
         location: "Trondheim, Norway",
       },
