@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://magnus-giverin.com
+Host: https://magnus.giverin.no
 
 # Sitemaps
-Sitemap: https://magnus-giverin.com/sitemap.xml
+Sitemap: https://magnus.giverin.no/sitemap.xml
