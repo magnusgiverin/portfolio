@@ -91,6 +91,17 @@ const landingPageText = {
     title: "My Career Journey",
     positions: [
       {
+        title: "Board Mentor",
+        company: "Orbit NTNU",
+        description:
+          "Mentoring the board of Orbit NTNU in their respective roles, ensuring quality in the code produced, and minimizing technical debt..",
+        dates: {
+          from: "March 2025",
+          to: "Present",
+        },
+        location: "Trondheim, Norway",
+      },
+      {
         title: "OSS Engineer Intern",
         company: "Telenor Norway",
         description:
@@ -108,7 +119,7 @@ const landingPageText = {
           "Managed two IT teams and oversaw the implementation of a new member management tool while minimizing technical debt.",
         dates: {
           from: "February 2024",
-          to: "Present",
+          to: "March 2025",
         },
         location: "Trondheim, Norway",
       },

@@ -2,25 +2,24 @@ const careerPageText = {
   positions: {
     currentPositions: [
       {
-        title: "CIO",
+        title: "Board Mentor",
         company: "Orbit NTNU",
         description:
-          "A board position in Scandinavias largest technical student organisastion (with over 120 active members)",
+          "A board mentor position in Scandinavias largest technical student organisastion (with over 120 active members)",
         dates: {
-          from: "02/2024",
+          from: "03/2025",
           to: "Present",
         },
         location: "Trondheim, Norway",
         image: "/logos/orbit.png",
         details: [
-          "Managed two teams within IT development, Web and DevOps",
-          "Oversaw the implementation of a new member management tool in the organization",
-          "Ensured quality in the code produced, and minimized technical debt",
-          "Worked with industry partners (Intility, KSAT, EMP Secure) to ensure quality in our IT systems",
+          "Mentoring the board of Orbit NTNU in their respective roles",
+          "Ensuring quality in the code produced, and minimizing technical debt",
+          "Working with industry partners (Intility, KSAT, EMP Secure) to ensure quality in our IT systems",
         ],
         url: "https://orbitntnu.com/",
-        icon: "leaderboard",
-      },
+        icon: "auto_stories",
+      }
     ],
     pastPositions: [
       {
@@ -45,6 +44,26 @@ const careerPageText = {
         url: "https://www.telenor.no/privat/",
         reccomendation: "/documents/telenor_attest.pdf",
         icon: "phone",
+      },
+      {
+        title: "CIO",
+        company: "Orbit NTNU",
+        description:
+          "A board position in Scandinavias largest technical student organisastion (with over 120 active members)",
+        dates: {
+          from: "02/2024",
+          to: "03/2025",
+        },
+        location: "Trondheim, Norway",
+        image: "/logos/orbit.png",
+        details: [
+          "Managed two teams within IT development, Web and DevOps",
+          "Oversaw the implementation of a new member management tool in the organization",
+          "Ensured quality in the code produced, and minimized technical debt",
+          "Worked with industry partners (Intility, KSAT, EMP Secure) to ensure quality in our IT systems",
+        ],
+        url: "https://orbitntnu.com/",
+        icon: "leaderboard",
       },
       {
         title: "Web Team Leader",
