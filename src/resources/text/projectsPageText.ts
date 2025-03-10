@@ -78,16 +78,6 @@ const projectsPageText = {
             notes: "Refined skills in API integration and learned the importance of efficient data scraping and caching techniques. This project came as a result of finding issues with using Python as a frontend tool in the CalOne project. In addition to this, it marked my first solo-project using Typescript and other moderne web development frameworks.",
         },
         {
-            name: "Calone.com",
-            description: "A precursor to Timeplaner.net, focused on parsing and interpreting NTNU data using Python. Highlighted challenges of Python’s performance in web development and motivated a shift to a modern stack.",
-            website: "https://calone.com",
-            id: "calone",
-            type: "Collaborative project",
-            tag: "personal",
-            skills: ["Python", "Data parsing", "Version control", "Collaboration", 'Java'],
-            notes: "This project started as a tool for allowing students at NTNU to better generate and maintain their class calendars. As a result of slight creative differences and performance issues with Python in web development, I opted to create an enhanced version ussing proper version control and a more performant tech stack.",
-        },
-        {
             name: "NORSTEC web",
             description: "NORSTEC is a collective for students working with space technologies in Norway. I was tasked with elevating their web presence by developing their homepage with a designer to make NORSTEC more accessible for students and the Norwegian space industry.",
             github: "https://github.com/magnusgiverin/norstec-website",
@@ -97,6 +87,16 @@ const projectsPageText = {
             tag: "freelance",
             skills: ["HTML", "Sanity", "React", "TypeScript", "Tailwind", "Next.js", "Figma", "Freelancing"],
             notes: "Worked with a designer to develop a website which fit the needs of NORSTEC while also being visually appealing. Furthermore, the desire to have a content management system (CMS) allowed me to explore new technologies and make the website easily updatable for NORSTEC.",
+        },
+        {
+            name: "Calone.com",
+            description: "A precursor to Timeplaner.net, focused on parsing and interpreting NTNU data using Python. Highlighted challenges of Python’s performance in web development and motivated a shift to a modern stack.",
+            website: "https://calone.com",
+            id: "calone",
+            type: "Collaborative project",
+            tag: "personal",
+            skills: ["Python", "Data parsing", "Version control", "Collaboration", 'Java'],
+            notes: "This project started as a tool for allowing students at NTNU to better generate and maintain their class calendars. As a result of slight creative differences and performance issues with Python in web development, I opted to create an enhanced version ussing proper version control and a more performant tech stack.",
         },
 ]
 
