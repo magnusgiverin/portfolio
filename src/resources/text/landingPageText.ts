@@ -185,6 +185,16 @@ const landingPageText = {
     },
     projects: [
       {
+        name: "BO Prefetcher",
+        description:
+          "A research paper impmenting a Best Offset Prefetcher in Gem5 to see the effect of prefetching on Instructions per Cycle (IPC) through hardware prefetching in the L2 cache. The paper was written in collaboration with a fellow student, and was a part of the course work in the subject TDT4260 Computer Architecture at NTNU",
+        ctaLink: {
+          text: "Read the paper",
+          url: "/projects#academic",
+        },
+        type: "Academic project",
+      },
+      {
         name: "AI Building Applications",
         description:
           "A collaborative project between NTNU and Norkart, focussing around streamlining and improving upon the existing building application process in Kristiansand Municipality using existing AI solutions by KartAI (a Norkart project). This was a semester project which involved all aspects of working with a customer using agile development methods. The project marked my first official publication by NTNU.",
