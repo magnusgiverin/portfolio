@@ -29,6 +29,7 @@ const ProjectDetails = () => {
 
     const renderProjects = (projectsGroup, tag) => (
         <div id={tag} className={styles.projectGroup}>
+            <div className={styles.maxWidth}> 
             <h2 className={styles.projectGroupHeader}>
                 {tag.charAt(0).toUpperCase() + tag.slice(1)} Projects
             </h2>
@@ -65,7 +66,7 @@ const ProjectDetails = () => {
                         ))}
 
                         {/* Iframe */}
-                        {
+                        {/* {
                             project.website && (
                                 <div className={styles.projectFrame}>
                                     <div className={styles.iframeWrapper}>
@@ -93,7 +94,7 @@ const ProjectDetails = () => {
                                     </div>
                                 </div>
                             )
-                        }
+                        } */}
                         {/* Display Notes */}
                         {project.notes && (
                             <div className={styles.projectNotes}>
@@ -116,6 +117,7 @@ const ProjectDetails = () => {
                 ))
                 }
             </div >
+            </div>
         </div >
     );
 

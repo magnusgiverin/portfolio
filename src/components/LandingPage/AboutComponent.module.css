@@ -3,12 +3,12 @@
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .maxWidth {
-    max-width: 80rem;
+    max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,7 +23,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 8rem;
 }
 
 .column {
@@ -91,13 +91,6 @@
 
 /* Media Queries for Responsive Design */
 
-@media (max-width: 1400px) {
-    .maxWidth {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-}
-
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: 1fr; /* Stack columns vertically */
@@ -144,12 +137,5 @@
 
     .flexItem {
         padding: 1.5rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .maxWidth {
-        margin-left: 20px;
-        margin-right: 20px;
     }
 }

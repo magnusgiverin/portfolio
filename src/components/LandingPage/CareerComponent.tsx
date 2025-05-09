@@ -9,26 +9,28 @@ const CareerComponent = () => {
     const { career } = landingPageText
 
     return (
-        <div id={"career"} className={`min-h-screen ${styles.careerComponent}`}>
+        <section id={"career"} className={`min-h-screen ${styles.careerComponent}`}>
             <PageHeader text='HOME' />
-            <h2 className={styles.title}>{career.title}</h2>
-            <div className={styles.grid}>
-                {career.positions.map((position, index) => (
-                    <div key={index} className={styles.position}>
-                        <div className={styles.number}>{index + 1}</div>
-                        <h3 className={styles.positionTitle}>{position.title}</h3>
-                        <p className={styles.company}>{position.company}</p>
-                        <p className={styles.dates}>
-                            {position.dates.from} - {position.dates.to}
-                        </p>
-                        <p className={styles.description}>{position.description}</p>
-                    </div>
-                ))}
+            <div className={styles.maxWidth}>
+                <h2 className={styles.title}>{career.title}</h2>
+                <div className={styles.grid}>
+                    {career.positions.map((position, index) => (
+                        <div key={index} className={styles.position}>
+                            <div className={styles.number}>{index + 1}</div>
+                            <h3 className={styles.positionTitle}>{position.title}</h3>
+                            <p className={styles.company}>{position.company}</p>
+                            <p className={styles.dates}>
+                                {position.dates.from} - {position.dates.to}
+                            </p>
+                            <p className={styles.description}>{position.description}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className={styles.ctaLink}>
+                    <CtaLink navigate={career.ctaLink.url} text={career.ctaLink.text} />
+                </div>
             </div>
-            <div className={styles.ctaLink}>
-                <CtaLink navigate={career.ctaLink.url} text={career.ctaLink.text} />
-            </div>
-        </div>
+        </section>
     );
 };
 

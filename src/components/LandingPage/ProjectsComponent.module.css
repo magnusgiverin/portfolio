@@ -7,6 +7,12 @@
     position: relative;
 }
 
+.maxWidth {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .personalProjectsText {
     text-align: left;
 }
@@ -26,7 +32,7 @@
 .projectsList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
-    gap: 110px;
+    gap: 60px;
     margin-top: 60px;
 }
 
@@ -96,6 +102,55 @@
     margin-top: 2rem;
 }
 
+.tableContainer {
+    margin-top: 60px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.projectsTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.projectsTable th, .projectsTable td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.projectsTable th {
+    font-size: 1.1rem;
+    color: #ffffff;
+    background-color: #1e1e1e;
+}
+
+.expandButton {
+    background: none;
+    border: none;
+    color: #FB923C;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.expandButton:hover {
+    color: #f88a20;
+    transform: scale(1.1);
+}
+
+.expandedRow {
+    background-color: #2a2a2a;
+}
+
+.expandedContent {
+    padding: 1rem 2rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
 /* Responsive Styles */
 @media (max-width: 900px) {
     .projectsList {
@@ -113,11 +168,6 @@
 
     .projectBox {
         padding: 0px;
-    }
-
-    .projectsComponent {
-        margin-left: 10px;
-        margin-right: 10px;
     }
 
     .personalProjectsDescription,

@@ -260,6 +260,7 @@ const landingPageText = {
           text: "Read more about NORSTEC",
           url: "/projects#freelance",
         },
+        type: "Freelance work",
       },
     ],
   },

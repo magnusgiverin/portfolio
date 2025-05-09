@@ -2,10 +2,16 @@
 .careerComponent {
     padding-top: 100px;
     padding-bottom: 100px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     margin: 0 auto;
     position: relative;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.maxWidth {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
@@ -13,17 +19,15 @@
     font-weight: 700;
     margin-bottom: 2rem;
     color: white;
-    text-align: center;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
 }
 
 .position {
-    padding: 2rem;
     border-radius: 8px;
     color: white;
 }
@@ -54,8 +58,7 @@
 }
 
 .ctaLink {
-    padding: 2rem;
-    margin-top: 2rem;
+    padding-top: 8rem;;
 }
 
 @media (max-width: 1500px) {
@@ -73,10 +76,13 @@
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        margin-left: 1.5rem;
-        margin-right: 0.5rem;
+        gap: 4rem;
     }
+
+    .ctaLink {
+        padding-top: 4rem;
+    }
+
 
     .position {
         padding: 0rem;
@@ -85,7 +91,6 @@
     .title {
         font-size: 1.5rem; /* Smaller header size on smaller screens */
         text-align: left;
-        margin-left: 20px;
     }
 
     .number {

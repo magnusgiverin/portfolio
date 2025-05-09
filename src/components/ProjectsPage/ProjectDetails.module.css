@@ -1,10 +1,15 @@
 .projectsComponent {
     padding-top: 100px;
     padding-bottom: 100px;
+    position: relative;
     padding-left: 8%;
     padding-right: 8%;
-    margin: 0 auto;
-    position: relative;
+}
+
+.maxWidth {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .personalProjectsText {
@@ -25,19 +30,19 @@
 
 .projectsList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2.6vw;
     margin-top: 60px;
+    flex-direction: column;
 }
 
 .projectBox {
-    justify-content: flex-start; /* Align items to start */
-    height: auto;
-    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Consistent spacing between items */
+    height: 100%;
     padding-bottom: 50px;
+    align-items: stretch; 
+    height: auto;
 }
 
 .projectTitle {
@@ -63,6 +68,8 @@
     display: flex;
     justify-content: space-between; /* Space between the project type and links */
     align-items: center; /* Vertically center the items */
+    margin-bottom: 10px;
+
 }
 
 .projectSubText {
@@ -91,13 +98,20 @@
     font-size: 1rem;
     color: #bbb;
     margin-top: 20px;
+    margin-bottom: 20px;
     line-height: 1.6;
-    flex-grow: 1;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;         /* Makes all notes take up equal space */
+    align-items: stretch; /* Stretches content to fill the available space */
 }
+
 
 .projectFrame {
     position: relative;
     margin-top: 20px;
+    margin-bottom: 20px;
     height: 600px; /* Full HD height (before scaling) */
     overflow: hidden; /* Prevent content overflow */
     border: 1px solid #555;
@@ -211,21 +225,11 @@
     color: #FB923C;
 }
 
-@media (max-width: 5000px) {
-    .projectsComponent {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-}
 /* Responsive Styles */
 @media (max-width: 900px) {
-    .projectsComponent {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
 
     .projectTitle {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .projectsList {

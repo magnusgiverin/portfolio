@@ -3,10 +3,12 @@
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .maxWidth {
-    max-width: 84rem;
+    max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -21,7 +23,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 8rem;
 }
 
 .column {

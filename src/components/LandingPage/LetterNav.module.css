@@ -38,15 +38,7 @@
 
 @media (max-width: 640px) {
   .nav {
-    left: 7px;
-    gap: 3px;
-  }
-  .navItem {
-    font-size: 1rem;
-  }
-  .nav {
-    padding-left: 0;
-
+    display: none;
   }
 }
 

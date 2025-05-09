@@ -29,35 +29,37 @@ const SkillsComponent = () => {
     };
 
     return (
-        <div className={styles.skillsContainer}>
+        <section className={styles.skillsContainer}>
             <PageHeader text='HOME' />
-            <h2 className={styles.skillsTitle}>Skills</h2>
-            <div className={styles.skillsTableWrapper}>
-                <table className={styles.skillsTable}>
-                    <thead>
-                        <tr>
-                            <th className={styles.categoryHeader}>Category</th>
-                            <th className={styles.skillsHeader}>Skills</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Object.entries(skills.table).map(([category, { title, skills, description }]) => (
-                            <tr key={category}>
-                                <td className={styles.categoryCell}>
-                                    <div className={styles.categoryName}>
-                                        {title.toUpperCase()}
-                                    </div>
-                                    <p className={styles.categoryDescription}>{description}</p>
-                                </td>
-                                <td className={styles.skillsCell}>
-                                    {skills.join(', ')}
-                                </td>
+            <div className={styles.maxWidth}>
+                <h2 className={styles.skillsTitle}>Skills</h2>
+                <div className={styles.skillsTableWrapper}>
+                    <table className={styles.skillsTable}>
+                        <thead>
+                            <tr>
+                                <th className={styles.categoryHeader}>Category</th>
+                                <th className={styles.skillsHeader}>Skills</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {Object.entries(skills.table).map(([category, { title, skills, description }]) => (
+                                <tr key={category}>
+                                    <td className={styles.categoryCell}>
+                                        <div className={styles.categoryName}>
+                                            {title.toUpperCase()}
+                                        </div>
+                                        <p className={styles.categoryDescription}>{description}</p>
+                                    </td>
+                                    <td className={styles.skillsCell}>
+                                        {skills.join(', ')}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
