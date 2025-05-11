@@ -5,6 +5,7 @@
     position: relative;
     padding-left: 8%;
     padding-right: 8%;
+    margin: 0 auto;
 }
 
 .maxWidth {
@@ -68,13 +69,6 @@
 
 /* Media Queries for Responsive Design */
 
-@media (max-width: 1400px) {
-    .maxWidth {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-}
-
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: 1fr; /* Stack columns vertically */
@@ -125,9 +119,3 @@
     }
 }
 
-@media (max-width: 640px) {
-    .maxWidth {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
