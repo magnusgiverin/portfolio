@@ -5,10 +5,15 @@ const CtaLink = ({ index = undefined, navigate, text, onClick = undefined }) => 
     const router = useRouter();
 
     // Function to handle redirects and scrolling on other pages
-    const handleRedirect = (url: string) => {
+    const handleRedirect = (url: string, openNewPage: boolean = false) => {
         // Extract the base URL and hash fragment (if any)
         const [baseUrl, hash] = url.split('#');
 
+        if(openNewPage) {
+            window.open(url, "_blank");
+            return;
+        }
+        
         if (baseUrl === window.location.pathname) {
             // If the URL is the same page, scroll to the section
             if (hash) {
@@ -60,7 +65,7 @@ const CtaLink = ({ index = undefined, navigate, text, onClick = undefined }) => 
             }
         } else {
             // If it's an external URL or document, handle the redirect
-            handleRedirect(link);
+            handleRedirect(link, true);
         }
     };
 

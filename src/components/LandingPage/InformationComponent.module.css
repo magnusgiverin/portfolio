@@ -1,29 +1,10 @@
 .container {
-    display: flex;
-    flex-direction: row; /* Default to column on small screens */
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Space between text and image */
     padding-top: 100px;
-    position: relative;
-    box-sizing: border-box; /* To avoid padding overflow */
     padding-left: 8%;
     padding-right: 8%;
     margin: 0 auto;
     position: relative;
-}
-
-.maxWidth {
-    max-width: 90rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: white;
 }
 
 .textContainer {
@@ -31,6 +12,33 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-align: left; /* Align text to the left */
+}
+
+.imageContainer {
+    flex: 1; /* Allow the image container to grow */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.maxWidth {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row; /* Default to row */
+    align-items: center;
+    gap: 5rem; /* Space between text and image */
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
 }
 
 .introduction,
@@ -46,15 +54,6 @@
     gap: 0.5rem;
 }
 
-.imageContainer {
-    width: 40%; /* Default to 60% width on larger screens */
-    display: flex;
-    justify-content: right;
-    align-items: flex-end;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .caption {
     color: #e4e4e4;
 }
@@ -63,6 +62,7 @@
     width: 100%; /* Full width of the container */
     height: auto;
     max-width: 100%; /* Allow the image to grow and shrink with container */
+    border-radius: 10px;
 }
 
 .linksSection {
@@ -75,17 +75,16 @@
 
 /* Responsive Layout for larger screens (min-width: 1400px) */
 @media (min-width: 1400px) {
-    .container {
+    .maxWidth {
         justify-content: space-between; /* Maximize space between the text and image */
-        gap: 5rem; /* Increase gap between elements */
+        gap: auto; /* Automatically fill the remaining space */
     }
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .maxWidth {
         flex-direction: column; /* Stack content vertically on medium screens */
-        justify-content: flex-start;
-        gap: 3rem; /* Reduce gap on medium screens */
+        gap: 2rem; /* Add some spacing for stacked layout */
     }
 
     .textContainer,

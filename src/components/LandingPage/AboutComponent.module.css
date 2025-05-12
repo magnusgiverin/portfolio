@@ -1,10 +1,9 @@
-/* AboutComponent.module.css */
 .aboutComponent {
     padding-top: 100px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     padding-bottom: 100px;
     position: relative;
-    padding-left: 8%;
-    padding-right: 8%;
 }
 
 .maxWidth {
@@ -23,7 +22,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8rem;
+    gap: 2rem;
 }
 
 .column {
@@ -65,12 +64,33 @@
 .flexContainer {
     display: flex;
     gap: 3.125rem;
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next row */
     margin-top: 5rem;
 }
 
+.flexContainer>* {
+    flex: 1 1 calc(50% - 1.5625rem);
+    /* Ensures each item takes up 50% of the row width minus half the gap */
+    /* Adjusting width of each item to be half of the container minus the gap */
+    box-sizing: border-box;
+    /* Ensure padding and borders are included in the width */
+}
+
+.flexItemTitleContainer {
+    display: flex;
+    /* Ensure flexbox is applied */
+    flex-direction: row;
+    /* Set direction to row */
+    align-items: center;
+    /* Align items vertically */
+    gap: 10px;
+    /* Add space between items */
+}
+
 .flexItem {
-    border-radius: 5px;
     width: 50%;
+    border-radius: 5px;
     background-color: #313131;
     padding: 2.5rem;
     display: flex;
@@ -89,11 +109,62 @@
     margin-top: 1rem;
 }
 
+.svgIcon {
+    height: 8rem;
+    width: 8rem;
+    color: white;
+}
+
+.externalLinksContainer {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    /* Space between links */
+    align-items: center;
+}
+
+.icon {
+    color: #FB923C;
+    /* Base color */
+    cursor: pointer;
+    /* Show pointer on hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth animation */
+    font-size: 1.8rem;
+}
+
+.icon:hover {
+    transform: translate(2px);
+    /* Move to the bottom-right */
+}
+
+.hoverAnimate {
+    color: #FB923C;
+    /* Base color */
+    cursor: pointer;
+    /* Show pointer on hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth animation */
+}
+
+.hoverAnimate:hover {
+    transform: translate(5px, 5px);
+    /* Move to the bottom-right */
+}
+
 /* Media Queries for Responsive Design */
+
+@media (max-width: 1400px) {
+    .maxWidth {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
 
 @media (max-width: 1024px) {
     .grid {
-        grid-template-columns: 1fr; /* Stack columns vertically */
+        grid-template-columns: 1fr;
+        /* Stack columns vertically */
     }
 
     .flexContainer {
@@ -101,41 +172,67 @@
     }
 
     .flexItem {
-        width: 100%; /* Make flex items full width on smaller screens */
-        height: auto; /* Allow flex items to adjust height */
+        width: 100%;
+        /* Make flex items full width on smaller screens */
+        height: auto;
+        /* Allow flex items to adjust height */
     }
 }
 
 @media (max-width: 768px) {
     .header {
-        font-size: 1.5rem; /* Smaller header size on smaller screens */
+        font-size: 1.5rem;
+        /* Smaller header size on smaller screens */
     }
 
     .columnTitle {
-        font-size: 2rem; /* Smaller title font size for columns */
+        font-size: 2rem;
+        /* Smaller title font size for columns */
     }
 
     .columnSubtitle {
-        font-size: 1rem; /* Smaller subtitle for columns */
+        font-size: 1rem;
+        /* Smaller subtitle for columns */
     }
 
     .columnDescription {
-        font-size: 0.875rem; /* Smaller description font size */
+        font-size: 0.875rem;
+        /* Smaller description font size */
     }
 
+   
+
     .flexItemTitle {
-        font-size: 1.25rem; /* Smaller title for flex items */
+        font-size: 1.25rem;
+        /* Smaller title for flex items */
     }
 
     .flexItemDescription {
-        font-size: 0.875rem; /* Smaller description text */
+        font-size: 0.875rem;
+        /* Smaller description text */
+    }
+
+    .svgIcon {
+        height: 6rem;
+        /* Smaller SVG icon */
+        width: 6rem;
     }
 
     .flexContainer {
-        flex-direction: column; /* Stack flex items vertically */
+        flex-direction: column;
+
+        /* Stack flex items vertically */
     }
 
     .flexItem {
         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .maxWidth {
+        max-width: 90rem;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }

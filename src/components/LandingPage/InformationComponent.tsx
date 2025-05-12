@@ -7,7 +7,8 @@ const InformationComponent = () => {
     const { information } = landingPageText;
 
     return (
-        <section className={`${styles.container} ${styles.maxWidth}`}>
+        <section className={`${styles.container}`}>
+            <div className={`${styles.maxWidth}`}>
             {/* Left Column */}
             <div className={styles.textContainer}>
                 <h2 className={styles.title}>{information.title}</h2>
@@ -31,6 +32,7 @@ const InformationComponent = () => {
                 <span className={styles.caption}>{"- Photo from my summer internship at Telenor in 2024"}</span>
             </div>
             {/* Links Section */}
+            </div>
         </section>
     );
 };
